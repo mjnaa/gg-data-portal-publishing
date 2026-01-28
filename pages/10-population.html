@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>경기 데이터 분석 포털</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="경기 데이터 분석 포털" />
+  <!-- style sheets -->
+  <link href="../resources/css/token/krds_tokens.css" rel="stylesheet">
+  <link href="../resources/css/common/common.css" rel="stylesheet">
+  <link href="../resources/css/component/component.css" rel="stylesheet">
+  <link href="../resources/css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+  <div>
+    <!-- header -->
+
+    <div class="container">
+      <div class="inner">
+        <!-- breadcrumb -->
+        <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="home"><a href="#" class="txt">홈</a></li>
+            <li><a href="#" class="txt">분석 모델</a></li>
+            <li><a href="#" class="txt">생활인구</a></li>
+            <li><a href="#" class="txt on">생활인구 분석</a></li>
+          </ol>
+        </nav>
+        <!-- breadcrumb -->
+
+        <!-- 페이지 타이틀 영역 -->
+        <div class="page-title-wrap">
+          <h1 class="h-tit">생활인구 분석</h1>
+          <div class="btn-wrap">
+            <!-- 모바일용 필터-->
+            <button type="button" class="krds-btn medium text m-filter open-modal" data-target="popFilterId">
+              <i class="svg-icon ico-filter"></i>
+              <span class="span">검색 필터</span>
+            </button>
+            <!-- //모바일용 필터-->
+            <button type="button" class="krds-btn medium text">
+              <i class="svg-icon ico-print"></i>
+              보고서 출력
+            </button>
+            <button type="button" class="krds-btn medium text">
+              <i class="svg-icon ico-information"></i>
+              이용가이드
+            </button>
+          </div>
+        </div>
+        <!-- //페이지 타이틀 영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <div class="search-between-conts">
+          <!-- 왼쪽 검색 필터 영역-->
+          <div class="aside">
+            <dl class="filter-dl krds-tab-area layer">
+              <dt>검색 필터</dt>
+
+              <!-- tab list -->
+              <div class="tab fill full">
+                <ul role="tablist">
+                  <li id="tab_01" role="tab" aria-selected="true" aria-controls="panel_01" class="active">
+                    <button type="button" class="btn-tab">행정구역<i class="sr-only created"> 선택됨</i></button>
+                  </li>
+                  <li id="tab_02" role="tab" aria-selected="false" aria-controls="panel_02">
+                    <button type="button" class="btn-tab">임의영역</button>
+                  </li>
+                </ul>
+              </div>
+              <!-- //tab list -->
+
+              <!-- tab contents -->
+              <div class="tab-conts-wrap">
+                <!-- 행정구역-->
+                <section id="panel_01" aria-labelledby="tab_01" class="tab-conts active" data-quick-nav="false">
+                  <dd>
+                    <ul class="filter-list krds-accordion type-line">
+                      <li class="li accordion-item active">
+                        <h3 class="accordion-header">
+                          <button type="button" class="btn-accordion active"
+                            id="acc_pc_hd_01" aria-controls="acc_pc_col_01">
+                            <div class="tit">시·군</div>
+                          </button>
+                        </h3>
+                        <div class="accordion-collapse collapse" id="acc_pc_col_01" aria-labelledby="acc_pc_hd_01">
+                          <div class="accordion-body">
+                            <div class="form-group">
+                              <div class="form-conts">
+                                <select class="krds-form-select medium completed" title="선택">
+                                  <option value="" selected>가평군</option>
+                                  <option value="">과천시</option>
+                                  <option value="">광명시</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="li accordion-item active">
+                        <h3 class="accordion-header">
+                          <button type="button" class="btn-accordion active"
+                            id="acc_pc_hd_02" aria-controls="acc_pc_col_02">
+                            <div class="tit">행정동</div>
+                          </button>
+                        </h3>
+                        <div class="accordion-collapse collapse" id="acc_pc_col_02" aria-labelledby="acc_pc_hd_02">
+                          <div class="accordion-body">
+                            <div class="krds-check-area chk-column">
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="chk_1" id="chk_pc_1" class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="chk_pc_1">전체</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="chk_2" id="chk_pc_2" class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="chk_pc_2">가평읍</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="chk_3" id="chk_pc_3" class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="chk_pc_3">설악면</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="li accordion-item active">
+                        <h3 class="accordion-header">
+                          <button type="button" class="btn-accordion active"
+                            id="acc_pc_hd_03" aria-controls="acc_pc_col_03">
+                            <div class="tit">기준연월</div>
+                          </button>
+                        </h3>
+                        <div class="accordion-collapse collapse" id="acc_pc_col_03" aria-labelledby="acc_pc_hd_03">
+                          <div class="accordion-body grid-2">
+                            <div class="form-group">
+                              <div class="form-conts">
+                                <select class="krds-form-select medium completed" title="선택">
+                                  <option value="" selected>2025년</option>
+                                  <option value="">2024년</option>
+                                  <option value="">2023년</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="form-conts">
+                                <select class="krds-form-select medium completed" title="선택">
+                                  <option value="" selected>1월</option>
+                                  <option value="">2월</option>
+                                  <option value="">3월</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="li accordion-item active">
+                        <h3 class="accordion-header">
+                          <button type="button" class="btn-accordion active"
+                            id="acc_pc_hd_04" aria-controls="acc_pc_col_04">
+                            <div class="tit">시각화</div>
+                          </button>
+                        </h3>
+                        <div class="accordion-collapse collapse" id="acc_pc_col_04" aria-labelledby="acc_pc_hd_04">
+                          <div class="accordion-body">
+                            <div class="form-group">
+                              <div class="form-conts">
+                                <select class="krds-form-select medium completed" title="선택">
+                                  <option value="" selected>격자(50x50)</option>
+                                  <option value="">밀도맵(HeatMap)</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="li accordion-item active">
+                        <h3 class="accordion-header">
+                          <button type="button" class="btn-accordion active"
+                            id="acc_pc_hd_05" aria-controls="acc_pc_col_05">
+                            <div class="tit">분석조건</div>
+                          </button>
+                        </h3>
+                        <div class="accordion-collapse collapse" id="acc_pc_col_05" aria-labelledby="acc_pc_hd_05">
+                          <div class="accordion-body">
+                            <div class="form-group">
+                              <div class="form-conts">
+                                <select class="krds-form-select medium completed" title="선택">
+                                  <option value="" selected>성연령별</option>
+                                  <option value="">시간대별</option>
+                                  <option value="">요일별</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="krds-check-area chk-column">
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="chk_4" id="chk_pc_4" class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="chk_pc_4">전체</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="chk_5" id="chk_pc_5" class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="chk_pc_5">10대 남</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="chk_6" id="chk_pc_6" class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="chk_pc_6">10대 여</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </dd>
+                </section>
+                <!-- //행정구역-->
+
+                <!-- 임의영역-->
+                <section id="panel_02" aria-labelledby="tab_02" class="tab-conts" data-quick-nav="false">
+                  <dd>
+                    <ul class="filter-list krds-accordion type-line">
+                      <li class="li">
+                        <div class="mb-16">
+                          <button type="button" class="krds-btn medium tertiary w-100">
+                            <i class="svg-icon ico-map"></i>
+                            그리기
+                          </button>
+                        </div>
+                      </li>
+
+                      <li class="li accordion-item active">
+                        <h3 class="accordion-header">
+                          <button type="button" class="btn-accordion active"
+                            id="acc_pc_hd_06" aria-controls="acc_pc_col_06">
+                            <div class="tit">기준연월</div>
+                          </button>
+                        </h3>
+                        <div class="accordion-collapse collapse" id="acc_pc_col_06" aria-labelledby="acc_pc_hd_06">
+                          <div class="accordion-body grid-2">
+                            <div class="form-group">
+                              <div class="form-conts">
+                                <select class="krds-form-select medium completed" title="선택">
+                                  <option value="" selected>2025년</option>
+                                  <option value="">2024년</option>
+                                  <option value="">2023년</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="form-conts">
+                                <select class="krds-form-select medium completed" title="선택">
+                                  <option value="" selected>1월</option>
+                                  <option value="">2월</option>
+                                  <option value="">3월</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="li accordion-item active">
+                        <h3 class="accordion-header">
+                          <button type="button" class="btn-accordion active"
+                            id="acc_pc_hd_07" aria-controls="acc_pc_col_07">
+                            <div class="tit">시각화</div>
+                          </button>
+                        </h3>
+                        <div class="accordion-collapse collapse" id="acc_pc_col_07" aria-labelledby="acc_pc_hd_07">
+                          <div class="accordion-body">
+                            <div class="form-group">
+                              <div class="form-conts">
+                                <select class="krds-form-select medium completed" title="선택">
+                                  <option value="" selected>격자(50x50)</option>
+                                  <option value="">밀도맵(HeatMap)</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="li accordion-item active">
+                        <h3 class="accordion-header">
+                          <button type="button" class="btn-accordion active"
+                            id="acc_pc_hd_08" aria-controls="acc_pc_col_08">
+                            <div class="tit">분석조건</div>
+                          </button>
+                        </h3>
+                        <div class="accordion-collapse collapse" id="acc_pc_col_08" aria-labelledby="acc_pc_hd_08">
+                          <div class="accordion-body">
+                            <div class="form-group">
+                              <div class="form-conts">
+                                <select class="krds-form-select medium completed" title="선택">
+                                  <option value="" selected>성연령별</option>
+                                  <option value="">시간대별</option>
+                                  <option value="">요일별</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="krds-check-area chk-column">
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="chk_7" id="chk_pc_7" class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="chk_pc_7">전체</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="chk_8" id="chk_pc_8" class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="chk_pc_8">10대 남</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="chk_9" id="chk_pc_9" class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="chk_pc_9">10대 여</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </dd>
+                </section>
+                <!-- //임의영역-->
+              </div>
+              <!-- //tab contents -->
+            </dl>
+
+            <div class="filter-btn">
+              <button type="button" class="krds-btn medium tertiary">초기화</button>
+              <button type="button" class="krds-btn medium primary">분석하기</button>
+            </div>
+          </div>
+          <!-- //왼쪽 검색 필터 영역-->
+
+          <!-- 분석 결과-->
+          <div class="contents">
+
+            <div class="section-5">
+              <!-- 지도 영역-->
+              <div class="data-area">
+                <div class="img-area" style="width: 100%">
+                  <img src="../resources/img/bg/dummy-map.png" alt="map 더미 이미지">
+                </div>
+              </div>
+              <!-- //지도 영역-->
+
+              <ul class="krds-info-list decimal">
+                <li>해당 데이터는 <span class="font-bold color-point">일별 시간당 평균 값</span>으로 표출됩니다.</li>
+              </ul>
+
+              <!-- 도움 박스-->
+              <div class="section-5 helper-box">
+                <p class="helper-tit">생활인구 특성 정의</p>
+                <p class="helper-txt">거주/직장/방문 세 가지 인구로 구분하고 있으며, 아래 기준에 따라 각 구분을 매월 추출하여 반영</p>
+                <ul class="krds-info-list decimal">
+                  <li>거주인구 : 존재지 전월 야간시간대(00시 ~ 06시) 14일 이상 해당 지역 내에 상주한 사람들</li>
+                  <li>직장인구 : 존재지 전월 주간시간대(09시 ~ 18시) 14일 이상 해당 지역 내에 상주한 사람들</li>
+                  <li>방문인구 : 전월 해당 지역에 13일 이하 방문한 사람들</li>
+                </ul>
+              </div>
+              <!-- //도움 박스-->
+            </div>
+
+            <!-- 샘플 : 생활인구 특성별 비교분석 -->
+            <div class="section-5">
+              <div class="con-title-wrap">
+                <div class="con-title">
+                  <h1 class="txt">생활인구 특성별 비교분석</h1>
+                  <span class="krds-badge bg-light-primary">기준연월 : 2025년 10월</span>
+                </div>
+                <div class="btn-wrap">
+                  <button type="button" class="krds-btn medium text">
+                    <i class="svg-icon ico-print"></i>
+                    출력하기
+                  </button>
+                </div>
+              </div>
+
+              <!-- 차트 영역-->
+              <div class="chart-area">
+                <div class="img-area" style="width: 100%">
+                  <img src="../resources/img/bg/dummy-chart.png" alt="chart 더미 이미지">
+                </div>
+              </div>
+              <!-- //차트 영역-->
+
+              <p class="l-small-txt">*결과정보는 선택된 기간의 평균값으로 산정됨</p>
+
+              <!-- 표 영역 -->
+              <div class="krds-table-wrap">
+                <table class="tbl col data center-table no-pointer mobile">
+                  <caption>
+                    생활인구 특성별 비교분석 표
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="border-right">구분</th>
+                      <th scope="col">10대남</th>
+                      <th scope="col">20대남</th>
+                      <th scope="col">30대남</th>
+                      <th scope="col">40대남</th>
+                      <th scope="col">50대남</th>
+                      <th scope="col">60대남</th>
+                      <th scope="col">70대남</th>
+                      <th scope="col">10대여</th>
+                      <th scope="col">20대여</th>
+                      <th scope="col">30대여</th>
+                      <th scope="col">40대여</th>
+                      <th scope="col">50대여</th>
+                      <th scope="col">60대여</th>
+                      <th scope="col">70대여</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">구분</span>
+                        <span class="tds">거주인구</span>
+                      </td>
+                      <td>
+                        <span class="add-head">10대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">20대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">30대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">40대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">50대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">60대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">70대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">10대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">20대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">30대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">40대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">50대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">60대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">70대여</span><span class="tds">227</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">구분</span>
+                        <span class="tds">직장인구</span>
+                      </td>
+                      <td>
+                        <span class="add-head">10대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">20대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">30대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">40대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">50대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">60대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">70대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">10대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">20대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">30대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">40대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">50대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">60대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">70대여</span><span class="tds">227</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">구분</span>
+                        <span class="tds">방문인구</span>
+                      </td>
+                      <td>
+                        <span class="add-head">10대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">20대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">30대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">40대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">50대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">60대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">70대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">10대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">20대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">30대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">40대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">50대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">60대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">70대여</span><span class="tds">227</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">구분</span>
+                        <span class="tds">합계</span>
+                      </td>
+                      <td>
+                        <span class="add-head">10대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">20대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">30대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">40대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">50대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">60대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">70대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">10대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">20대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">30대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">40대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">50대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">60대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">70대여</span><span class="tds">227</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- //표 영역 -->
+
+            </div>
+            <!-- //샘플 : 생활인구 특성별 비교분석 -->
+
+            <!-- 샘플 : 거주인구 현황 -->
+            <div class="section-5">
+              <div class="con-title-wrap">
+                <div class="con-title">
+                  <h1 class="txt">거주인구 현황</h1>
+                  <span class="krds-badge bg-light-primary">기준연월 : 2025년 10월</span>
+                </div>
+                <div class="btn-wrap">
+                  <button type="button" class="krds-btn medium text">
+                    <i class="svg-icon ico-print"></i>
+                    출력하기
+                  </button>
+                </div>
+              </div>
+
+              <p class="h-small-txt">성연령별 현황</p>
+
+              <!-- 차트 영역-->
+              <div class="chart-area">
+                <div class="img-area" style="width: 100%">
+                  <img src="../resources/img/bg/dummy-chart2.png" alt="chart 더미 이미지">
+                </div>
+              </div>
+              <!-- //차트 영역-->
+
+              <p class="l-small-txt">*결과정보는 선택된 기간의 평균값으로 산정됨</p>
+
+              <!-- 표 영역 -->
+              <div class="krds-table-wrap">
+                <table class="tbl col data center-table no-pointer mobile">
+                  <caption>
+                    거주인구 현황(성연령별 현황) 표
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="border-right">구분</th>
+                      <th scope="col">10대남</th>
+                      <th scope="col">20대남</th>
+                      <th scope="col">30대남</th>
+                      <th scope="col">40대남</th>
+                      <th scope="col">50대남</th>
+                      <th scope="col">60대남</th>
+                      <th scope="col">70대남</th>
+                      <th scope="col">10대여</th>
+                      <th scope="col">20대여</th>
+                      <th scope="col">30대여</th>
+                      <th scope="col">40대여</th>
+                      <th scope="col">50대여</th>
+                      <th scope="col">60대여</th>
+                      <th scope="col">70대여</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">구분</span>
+                        <span class="tds">상면</span>
+                      </td>
+                      <td>
+                        <span class="add-head">10대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">20대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">30대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">40대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">50대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">60대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">70대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">10대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">20대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">30대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">40대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">50대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">60대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">70대여</span><span class="tds">227</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">구분</span>
+                        <span class="tds">설악면</span>
+                      </td>
+                      <td>
+                        <span class="add-head">10대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">20대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">30대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">40대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">50대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">60대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">70대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">10대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">20대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">30대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">40대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">50대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">60대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">70대여</span><span class="tds">227</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">구분</span>
+                        <span class="tds">북면</span>
+                      </td>
+                      <td>
+                        <span class="add-head">10대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">20대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">30대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">40대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">50대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">60대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">70대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">10대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">20대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">30대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">40대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">50대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">60대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">70대여</span><span class="tds">227</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">구분</span>
+                        <span class="tds">합계</span>
+                      </td>
+                      <td>
+                        <span class="add-head">10대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">20대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">30대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">40대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">50대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">60대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">70대남</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">10대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">20대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">30대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">40대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">50대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">60대여</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">70대여</span><span class="tds">227</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- //표 영역 -->
+
+            </div>
+
+            <div class="section-5">
+              <p class="h-small-txt">성별 현황</p>
+
+              <!-- 차트 영역-->
+              <div class="chart-area">
+                <div class="img-area" style="width: 100%">
+                  <img src="../resources/img/bg/dummy-chart3.png" alt="chart 더미 이미지">
+                </div>
+              </div>
+              <!-- //차트 영역-->
+
+              <!-- 표 영역 -->
+              <div class="krds-table-wrap">
+                <table class="tbl col data center-table no-pointer mobile">
+                  <caption>
+                    거주인구 현황(성별 현황) 표
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="border-right">구분</th>
+                      <th scope="col">남자</th>
+                      <th scope="col">여자</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">구분</span>
+                        <span class="tds">상면</span>
+                      </td>
+                      <td>
+                        <span class="add-head">남자</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">여자</span><span class="tds">227</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">구분</span>
+                        <span class="tds">설악면</span>
+                      </td>
+                      <td>
+                        <span class="add-head">남자</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">여자</span><span class="tds">227</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">구분</span>
+                        <span class="tds">북면</span>
+                      </td>
+                      <td>
+                        <span class="add-head">남자</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">여자</span><span class="tds">227</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">구분</span>
+                        <span class="tds">합계</span>
+                      </td>
+                      <td>
+                        <span class="add-head">남자</span><span class="tds">227</span>
+                      </td>
+                      <td>
+                        <span class="add-head">여자</span><span class="tds">227</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- //표 영역 -->
+
+            </div>
+            <!-- //샘플 : 거주인구 현황 -->
+
+          </div>
+          <!-- //분석 결과-->
+
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+  </div>
+
+  <!-- 레이어 : 검색 필터-->
+  <section id="popFilterId" class="krds-modal fade" data-type="bottom-sheet" role="dialog">
+    <!-- modal-dialog -->
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 class="modal-title">검색 필터</h2>
+        </div>
+        <!-- //modal title -->
+
+        <!-- modal contents -->
+        <div class="modal-conts krds-tab-area layer">
+          <!-- tab list -->
+          <div class="tab fill full mb-16">
+            <ul role="tablist">
+              <li id="tab_m_01" role="tab" aria-selected="true" aria-controls="panel_m_01" class="active">
+                <button type="button" class="btn-tab">행정구역<i class="sr-only created"> 선택됨</i></button>
+              </li>
+              <li id="tab_m_02" role="tab" aria-selected="false" aria-controls="panel_m_02">
+                <button type="button" class="btn-tab">임의영역</button>
+              </li>
+            </ul>
+          </div>
+          <!-- //tab list -->
+
+          <!-- tab contents -->
+          <div class="tab-conts-wrap">
+            <!-- 행정구역-->
+            <section id="panel_m_01" aria-labelledby="tab_m_01" class="tab-conts active" data-quick-nav="false">
+              <dd>
+                <ul class="filter-list krds-accordion type-line">
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active"
+                        id="acc_m_hd_01" aria-controls="acc_m_col_01">
+                        <div class="tit">시·군</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_m_col_01" aria-labelledby="acc_m_hd_01">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>가평군</option>
+                              <option value="">과천시</option>
+                              <option value="">광명시</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active"
+                        id="acc_m_hd_02" aria-controls="acc_m_col_02">
+                        <div class="tit">행정동</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_m_col_02" aria-labelledby="acc_m_hd_02">
+                      <div class="accordion-body">
+                        <div class="krds-check-area chk-column">
+                          <div class="krds-form-check">
+                            <input type="checkbox" name="chk_1" id="chk_m_1" class="krds-form-check-input">
+                            <label class="krds-form-check-label" for="chk_m_1">전체</label>
+                          </div>
+                          <div class="krds-form-check">
+                            <input type="checkbox" name="chk_2" id="chk_m_2" class="krds-form-check-input">
+                            <label class="krds-form-check-label" for="chk_m_2">가평읍</label>
+                          </div>
+                          <div class="krds-form-check">
+                            <input type="checkbox" name="chk_3" id="chk_m_3" class="krds-form-check-input">
+                            <label class="krds-form-check-label" for="chk_m_3">설악면</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active"
+                        id="acc_m_hd_03" aria-controls="acc_m_col_03">
+                        <div class="tit">기준연월</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_m_col_03" aria-labelledby="acc_m_hd_03">
+                      <div class="accordion-body grid-2">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>2025년</option>
+                              <option value="">2024년</option>
+                              <option value="">2023년</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>1월</option>
+                              <option value="">2월</option>
+                              <option value="">3월</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active"
+                        id="acc_m_hd_04" aria-controls="acc_m_col_04">
+                        <div class="tit">시각화</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_m_col_04" aria-labelledby="acc_m_hd_04">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>격자(50x50)</option>
+                              <option value="">밀도맵(HeatMap)</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active"
+                        id="acc_m_hd_05" aria-controls="acc_m_col_05">
+                        <div class="tit">분석조건</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_m_col_05" aria-labelledby="acc_m_hd_05">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>성연령별</option>
+                              <option value="">시간대별</option>
+                              <option value="">요일별</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="krds-check-area chk-column">
+                          <div class="krds-form-check">
+                            <input type="checkbox" name="chk_4" id="chk_m_4" class="krds-form-check-input">
+                            <label class="krds-form-check-label" for="chk_m_4">전체</label>
+                          </div>
+                          <div class="krds-form-check">
+                            <input type="checkbox" name="chk_5" id="chk_m_5" class="krds-form-check-input">
+                            <label class="krds-form-check-label" for="chk_m_5">10대 남</label>
+                          </div>
+                          <div class="krds-form-check">
+                            <input type="checkbox" name="chk_6" id="chk_m_6" class="krds-form-check-input">
+                            <label class="krds-form-check-label" for="chk_m_6">10대 여</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </dd>
+            </section>
+            <!-- //행정구역-->
+
+            <!-- 임의영역-->
+            <section id="panel_m_02" aria-labelledby="tab_m_02" class="tab-conts" data-quick-nav="false">
+              <dd>
+                <ul class="filter-list krds-accordion type-line">
+                  <li class="li">
+                    <div class="mb-16">
+                      <button type="button" class="krds-btn medium tertiary w-100">
+                        <i class="svg-icon ico-map"></i>
+                        그리기
+                      </button>
+                    </div>
+                  </li>
+
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active"
+                        id="acc_m_hd_06" aria-controls="acc_m_col_06">
+                        <div class="tit">기준연월</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_m_col_06" aria-labelledby="acc_m_hd_06">
+                      <div class="accordion-body grid-2">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>2025년</option>
+                              <option value="">2024년</option>
+                              <option value="">2023년</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>1월</option>
+                              <option value="">2월</option>
+                              <option value="">3월</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active"
+                        id="acc_m_hd_07" aria-controls="acc_m_col_07">
+                        <div class="tit">시각화</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_m_col_07" aria-labelledby="acc_m_hd_07">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>격자(50x50)</option>
+                              <option value="">밀도맵(HeatMap)</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active"
+                        id="acc_m_hd_08" aria-controls="acc_m_col_08">
+                        <div class="tit">분석조건</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_m_col_08" aria-labelledby="acc_m_hd_08">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>성연령별</option>
+                              <option value="">시간대별</option>
+                              <option value="">요일별</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="krds-check-area chk-column">
+                          <div class="krds-form-check">
+                            <input type="checkbox" name="chk_7" id="chk_m_7" class="krds-form-check-input">
+                            <label class="krds-form-check-label" for="chk_m_7">전체</label>
+                          </div>
+                          <div class="krds-form-check">
+                            <input type="checkbox" name="chk_8" id="chk_m_8" class="krds-form-check-input">
+                            <label class="krds-form-check-label" for="chk_m_8">10대 남</label>
+                          </div>
+                          <div class="krds-form-check">
+                            <input type="checkbox" name="chk_9" id="chk_m_9" class="krds-form-check-input">
+                            <label class="krds-form-check-label" for="chk_m_9">10대 여</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </dd>
+            </section>
+            <!-- //임의영역-->
+          </div>
+          <!-- //tab contents -->
+        </div>
+        <!-- //modal contents -->
+
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">초기화</button>
+          <button type="button" class="krds-btn medium primary close-modal">분석하기</button>
+        </div>
+        <!-- //modal btn -->
+
+        <!-- close button -->
+        <button type="button" class="krds-btn medium icon btn-close close-modal">
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <!-- //modal-dialog -->
+    <div class="modal-back in"></div>
+  </section>
+  <!-- //레이어 : 검색 필터-->
+
+  <!-- js -->
+  <script src="../resources/js/component/ui-script.js"></script>
+  <script src="../resources/js/component/common.js"></script>
+</body>
+
+</html>

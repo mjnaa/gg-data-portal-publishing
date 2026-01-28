@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>경기 데이터 분석 포털</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="경기 데이터 분석 포털" />
+  <!-- style sheets -->
+  <link href="../resources/css/token/krds_tokens.css" rel="stylesheet">
+  <link href="../resources/css/common/common.css" rel="stylesheet">
+  <link href="../resources/css/component/component.css" rel="stylesheet">
+  <link href="../resources/css/custom.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div>
+    <!-- header -->
+
+    <div class="container">
+      <div class="inner">
+        <!-- breadcrumb -->
+        <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="home"><a href="#" class="txt">홈</a></li>
+            <li><a href="#" class="txt">분석 모델</a></li>
+            <li><a href="#" class="txt">건설업 등록기준 미달업체</a></li>
+            <li><a href="#" class="txt on">우선조사 기업</a></li>
+          </ol>
+        </nav>
+        <!-- breadcrumb -->
+
+        <!-- 페이지 타이틀 영역 -->
+        <div class="page-title-wrap">
+          <h1 class="h-tit">우선조사 기업</h1>
+          <div class="btn-wrap">
+            <!-- 모바일용 필터-->
+            <button type="button" class="krds-btn medium text m-filter open-modal" data-target="popFilterId">
+              <i class="svg-icon ico-filter"></i>
+              <span class="span">검색 필터</span>
+            </button>
+            <!-- //모바일용 필터-->
+            <button type="button" class="krds-btn medium text">
+              <i class="svg-icon ico-down"></i>
+              다운로드
+            </button>
+            <button type="button" class="krds-btn medium text">
+              <i class="svg-icon ico-information"></i>
+              이용가이드
+            </button>
+          </div>
+        </div>
+        <!-- //페이지 타이틀 영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <div class="search-between-conts">
+          <!-- 왼쪽 검색 필터 영역-->
+          <div class="aside">
+            <dl class="filter-dl">
+              <dt>검색 필터</dt>
+              <dd>
+                <ul class="filter-list krds-accordion type-line">
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_01"
+                        aria-controls="acc_pc_col_01">
+                        <div class="tit">선택구분</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_01"
+                      aria-labelledby="acc_pc_hd_01">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>가평군</option>
+                              <option value="">고양시</option>
+                              <option value="">과천시</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_02"
+                        aria-controls="acc_pc_col_02">
+                        <div class="tit">기준연월일</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_02"
+                      aria-labelledby="acc_pc_hd_02">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <input type="text" class="krds-input medium" value="2025년 10월 22일" readonly>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_03"
+                        aria-controls="acc_pc_col_03">
+                        <div class="tit">업체명</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_03"
+                      aria-labelledby="acc_pc_hd_03">
+                      <div class="accordion-body grid-input-action">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <input type="text" class="krds-input medium" placeholder="검색버튼을 눌러주세요" readonly>
+                          </div>
+                        </div>
+                        <button type="button" class="krds-btn medium tertiary">검색</button>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_04"
+                        aria-controls="acc_pc_col_04">
+                        <div class="tit">법인등록번호</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_04"
+                      aria-labelledby="acc_pc_hd_04">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <input type="text" class="krds-input medium" placeholder="법인등록번호" readonly>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_05"
+                        aria-controls="acc_pc_col_05">
+                        <div class="tit">사업자등록번호</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_05"
+                      aria-labelledby="acc_pc_hd_05">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <input type="text" class="krds-input medium" placeholder="사업자등록번호" readonly>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_06"
+                        aria-controls="acc_pc_col_06">
+                        <div class="tit">주소</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_06"
+                      aria-labelledby="acc_pc_hd_06">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <input type="text" class="krds-input medium" placeholder="주소" readonly>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_07"
+                        aria-controls="acc_pc_col_07">
+                        <div class="tit">영역설정</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_07"
+                      aria-labelledby="acc_pc_hd_07">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>500m</option>
+                              <option value="">1km</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+
+            <div class="filter-btn">
+              <button type="button" class="krds-btn medium tertiary">초기화</button>
+              <button type="button" class="krds-btn medium primary">분석하기</button>
+            </div>
+          </div>
+          <!-- //왼쪽 검색 필터 영역-->
+
+          <!-- 분석 결과-->
+          <div class="contents">
+
+            <div class="section-5">
+              <!-- 지도 영역-->
+              <div class="data-area">
+                <div class="img-area" style="width: 100%">
+                  <img src="../resources/img/bg/dummy-map.png" alt="map 더미 이미지">
+                </div>
+              </div>
+              <!-- //지도 영역-->
+            </div>
+
+            <!-- 샘플 : 우선조사기업 지역분석 -->
+            <div class="section-5">
+              <div class="con-title-wrap">
+                <div class="con-title">
+                  <h1 class="txt">우선조사기업 지역분석</h1>
+                  <span class="krds-badge bg-light-primary">기준연월일 : 2025년 10월 22일</span>
+                </div>
+              </div>
+
+              <p class="l-small-txt">(단위금액 : 천 원)</p>
+
+              <!-- 표 영역 -->
+              <div class="krds-table-wrap">
+                <table class="tbl col data center-table no-pointer mobile">
+                  <caption>
+                    우선조사기업 지역분석 표
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">업체명</th>
+                      <th scope="col">대표자명</th>
+                      <th scope="col">도로명주소</th>
+                      <th scope="col">사업자등록번호</th>
+                      <th scope="col">법인등록번호</th>
+                      <th scope="col">업종분류</th>
+                      <th scope="col">업종설명</th>
+                      <th scope="col">자본금</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <span class="add-head">업체명</span><span class="tds">업체명</span>
+                      </td>
+                      <td>
+                        <span class="add-head">대표자명</span><span class="tds">대표자명</span>
+                      </td>
+                      <td>
+                        <span class="add-head">도로명주소</span><span class="tds">도로명주소</span>
+                      </td>
+                      <td>
+                        <span class="add-head">사업자등록번호</span><span class="tds">사업자등록번호</span>
+                      </td>
+                      <td>
+                        <span class="add-head">법인등록번호</span><span class="tds">법인등록번호</span>
+                      </td>
+                      <td>
+                        <span class="add-head">업종분류</span><span class="tds">업종분류</span>
+                      </td>
+                      <td>
+                        <span class="add-head">업종설명</span><span class="tds">업종설명</span>
+                      </td>
+                      <td>
+                        <span class="add-head">자본금</span><span class="tds">자본금</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- //표 영역 -->
+
+            </div>
+            <!-- //샘플 : 우선조사기업 지역분석 -->
+
+          </div>
+          <!-- //분석 결과-->
+
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+  </div>
+
+  <!-- 레이어 : 검색 필터-->
+  <section id="popFilterId" class="krds-modal fade" data-type="bottom-sheet" role="dialog">
+    <!-- modal-dialog -->
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 class="modal-title">검색 필터</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <ul class="filter-list krds-accordion type-line">
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_01"
+                  aria-controls="acc_m_col_01">
+                  <div class="tit">선택구분</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_01"
+                aria-labelledby="acc_m_hd_01">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>가평군</option>
+                        <option value="">고양시</option>
+                        <option value="">과천시</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_02"
+                  aria-controls="acc_m_col_02">
+                  <div class="tit">기준연월일</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_02"
+                aria-labelledby="acc_m_hd_02">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <input type="text" class="krds-input medium" value="2025년 10월 22일" readonly>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_03"
+                  aria-controls="acc_m_col_03">
+                  <div class="tit">업체명</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_03"
+                aria-labelledby="acc_m_hd_03">
+                <div class="accordion-body grid-input-action">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <input type="text" class="krds-input medium" placeholder="검색버튼을 눌러주세요" readonly>
+                    </div>
+                  </div>
+                  <button type="button" class="krds-btn medium tertiary">검색</button>
+                </div>
+              </div>
+            </li>
+
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_04"
+                  aria-controls="acc_m_col_04">
+                  <div class="tit">법인등록번호</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_04"
+                aria-labelledby="acc_m_hd_04">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <input type="text" class="krds-input medium" placeholder="법인등록번호" readonly>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_05"
+                  aria-controls="acc_m_col_05">
+                  <div class="tit">사업자등록번호</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_05"
+                aria-labelledby="acc_m_hd_05">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <input type="text" class="krds-input medium" placeholder="사업자등록번호" readonly>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_06"
+                  aria-controls="acc_m_col_06">
+                  <div class="tit">주소</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_06"
+                aria-labelledby="acc_m_hd_06">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <input type="text" class="krds-input medium" placeholder="주소" readonly>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_07"
+                  aria-controls="acc_m_col_07">
+                  <div class="tit">영역설정</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_07"
+                aria-labelledby="acc_m_hd_07">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>500m</option>
+                        <option value="">1km</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">초기화</button>
+          <button type="button" class="krds-btn medium primary close-modal">분석하기</button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button type="button" class="krds-btn medium icon btn-close close-modal">
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <!-- //modal-dialog -->
+    <div class="modal-back in"></div>
+  </section>
+  <!-- //레이어 : 검색 필터-->
+
+  <!-- js -->
+  <script src="../resources/js/component/ui-script.js"></script>
+  <script src="../resources/js/component/common.js"></script>
+</body>
+
+</html>
