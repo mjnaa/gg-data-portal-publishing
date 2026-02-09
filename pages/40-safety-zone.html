@@ -1,0 +1,2545 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>경기 데이터 분석 포털</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="경기 데이터 분석 포털" />
+  <!-- style sheets -->
+  <link href="../resources/css/token/krds_tokens.css" rel="stylesheet">
+  <link href="../resources/css/common/common.css" rel="stylesheet">
+  <link href="../resources/css/component/component.css" rel="stylesheet">
+  <link href="../resources/css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+  <div>
+    <!-- header -->
+
+    <div class="container">
+      <div class="inner">
+        <!-- breadcrumb -->
+        <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="home"><a href="#" class="txt">홈</a></li>
+            <li><a href="#" class="txt">분석 모델</a></li>
+            <li><a href="#" class="txt on">교통보호구역</a></li>
+          </ol>
+        </nav>
+        <!-- breadcrumb -->
+
+        <!-- 페이지 타이틀 영역 -->
+        <div class="page-title-wrap">
+          <h1 class="h-tit">교통보호구역</h1>
+          <div class="btn-wrap">
+            <!-- 모바일용 필터-->
+            <button type="button" class="krds-btn medium text m-filter open-modal" data-target="popFilterId">
+              <i class="svg-icon ico-filter"></i>
+              <span class="span">검색 필터</span>
+            </button>
+            <!-- //모바일용 필터-->
+            <button type="button" class="krds-btn medium text">
+              <i class="svg-icon ico-information"></i>
+              이용가이드
+            </button>
+          </div>
+        </div>
+        <!-- //페이지 타이틀 영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <div class="search-between-conts">
+          <!-- 왼쪽 검색 필터 영역-->
+          <div class="aside">
+            <dl class="filter-dl krds-tab-area layer">
+              <dt>검색 필터</dt>
+
+              <!-- tab list -->
+              <div class="tab fill full">
+                <ul role="tablist">
+                  <li id="tab_01" role="tab" aria-selected="true" aria-controls="panel_01" class="active">
+                    <button type="button" class="btn-tab">행정구역<i class="sr-only created"> 선택됨</i></button>
+                  </li>
+                  <li id="tab_02" role="tab" aria-selected="false" aria-controls="panel_02">
+                    <button type="button" class="btn-tab">관할경찰서</button>
+                  </li>
+                </ul>
+              </div>
+              <!-- //tab list -->
+
+              <!-- tab contents -->
+              <div class="tab-conts-wrap">
+                <!-- 행정구역-->
+                <section id="panel_01" aria-labelledby="tab_01" class="tab-conts active" data-quick-nav="false">
+                  
+                    <ul class="filter-list krds-accordion type-line accordion--selectable">
+                      <li class="li">
+                        <div class="mb-16">
+                          <div class="grid-2">
+                            <div class="form-group">
+                              <div class="form-conts">
+                                <select class="krds-form-select medium completed" title="선택">
+                                  <option value="" selected disabled>시/군</option>
+                                  <option value="">가평군</option>
+                                  <option value="">고양시</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="form-conts">
+                                <select class="krds-form-select medium completed" title="선택">
+                                  <option value="" selected disabled>구</option>
+                                  <option value="">전체</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="li">
+                        <div class="mb-16">
+                          <div class="grid-2">
+                            <div class="form-group">
+                              <div class="form-conts">
+                                <select class="krds-form-select medium completed" title="선택">
+                                  <option value="" selected disabled>동</option>
+                                  <option value="">전체</option>
+                                </select>
+                              </div>
+                            </div>
+                            <button type="button" class="krds-btn medium secondary">이동</button>
+                          </div>
+                        </div>
+                      </li>
+
+                      <!-- 교통사고 현황 (체크박스: 다중 선택)-->
+                      <li class="li accordion-item">
+                        <div class="accordion-header">
+                          <div class="chk-title-area">
+                            <div class="krds-form-check">
+                              <input type="checkbox" name="pc_chk_layer" id="pc_chk_accident_status"
+                                class="krds-form-check-input">
+                              <label class="krds-form-check-label" for="pc_chk_accident_status">교통사고 현황</label>
+                            </div>
+                          </div>
+                          <div class="accordion-tools">
+                            <i class="svg-icon ico-mapmarker ico-point01" aria-hidden="true"></i>
+                            <button type="button" class="btn-accordion" id="pc_acc_hd_accident_status"
+                              aria-controls="pc_acc_col_accident_status" aria-expanded="false">
+                              <span class="sr-only">열기/닫기</span>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="accordion-collapse collapse" id="pc_acc_col_accident_status"
+                          aria-labelledby="pc_acc_hd_accident_status">
+                          <div class="accordion-body">
+                            <!-- 세부 필터 -->
+                            <div class="filter-detail">
+
+                              <!-- 기간 -->
+                              <div class="filter-detail-group">
+                                <p class="filter-detail-tit">기간 (2017-01-01 ~ 2025-06-30)</p>
+                                <div class="form-group">
+                                  <div class="form-conts">
+                                    <div class="form-conts calendar-conts">
+                                      <div class="calendar-input">
+                                        <input type="number" class="krds-input medium datepicker cal"
+                                          placeholder="기간 선택" id="cal" />
+                                        <button type="button" class="krds-btn medium icon form-btn-datepicker">
+                                          <span class="sr-only">달력 열기</span>
+                                          <i class="svg-icon ico-calendar"></i>
+                                        </button>
+                                      </div>
+                                      <div class="krds-calendar-area">
+                                        <div class="calendar-wrap bottom" aria-label="달력">
+                                          <div class="calendar-head">
+                                            <button type="button" class="btn-cal-move prev"><span class="sr-only">이전
+                                                달</span></button>
+                                            <div class="calendar-switch-wrap">
+                                              <div class="calendar-drop-down">
+                                                <button type="button" class="btn-cal-switch year"
+                                                  aria-label="연도 선택">2024년</button>
+                                                <div class="calendar-select calendar-year-wrap">
+                                                  <ul class="sel year">
+                                                    <li>
+                                                      <button type="button">2001년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button" class="active">2002년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button" disabled>2003년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2004년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2005년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2006년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2007년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2008년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2009년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2010년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2011년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2012년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2013년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2014년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2015년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2016년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2017년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2018년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2019년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2020년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2021년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2022년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2023년</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">2024년</button>
+                                                    </li>
+                                                  </ul>
+                                                </div>
+                                              </div>
+                                              <div class="calendar-drop-down">
+                                                <button type="button" class="btn-cal-switch month"
+                                                  aria-label="월 선택">12월</button>
+                                                <div class="calendar-select calendar-mon-wrap">
+                                                  <ul class="sel month">
+                                                    <li>
+                                                      <button type="button" disabled>01월</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">02월</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">03월</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">04월</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">05월</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">06월</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">07월</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">08월</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">09월</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">10월</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button">11월</button>
+                                                    </li>
+                                                    <li>
+                                                      <button type="button" class="active">12월</button>
+                                                    </li>
+                                                  </ul>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <button type="button" class="btn-cal-move next"><span class="sr-only">다음
+                                                달</span></button>
+                                          </div>
+                                          <div class="calendar-body">
+                                            <div class="calendar-table-wrap">
+                                              <table class="calendar-tbl">
+                                                <caption>
+                                                  2024년 12월
+                                                </caption>
+                                                <thead>
+                                                  <tr>
+                                                    <th>일</th>
+                                                    <th>월</th>
+                                                    <th>화</th>
+                                                    <th>수</th>
+                                                    <th>목</th>
+                                                    <th>금</th>
+                                                    <th>토</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                  <tr>
+                                                    <td class="old day-off">
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>26</span></button>
+                                                    </td>
+                                                    <td class="old">
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>27</span></button>
+                                                    </td>
+                                                    <td class="old">
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>28</span></button>
+                                                    </td>
+                                                    <td class="old">
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>29</span></button>
+                                                    </td>
+                                                    <td class="old">
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>30</span></button>
+                                                    </td>
+                                                    <td>
+                                                      <button type="button" class="btn-set-date"><span>1</span></button>
+                                                    </td>
+                                                    <td>
+                                                      <button type="button" class="btn-set-date"><span>2</span></button>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="day-off">
+                                                      <button type="button" class="btn-set-date"><span>3</span></button>
+                                                    </td>
+                                                    <td>
+                                                      <button type="button" class="btn-set-date"><span>4</span></button>
+                                                    </td>
+                                                    <td>
+                                                      <button type="button" class="btn-set-date"><span>5</span></button>
+                                                    </td>
+                                                    <td>
+                                                      <button type="button" class="btn-set-date"><span>6</span></button>
+                                                    </td>
+                                                    <td class="period start">
+                                                      <button type="button" class="btn-set-date"><span>7</span></button>
+                                                    </td>
+                                                    <td class="period">
+                                                      <button type="button" class="btn-set-date"><span>8</span></button>
+                                                    </td>
+                                                    <td class="period">
+                                                      <button type="button" class="btn-set-date"><span>9</span></button>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="period day-off">
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>10</span></button>
+                                                    </td>
+                                                    <td class="period">
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>11</span></button>
+                                                    </td>
+                                                    <td class="period">
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>12</span></button>
+                                                    </td>
+                                                    <td class="period">
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>13</span></button>
+                                                    </td>
+                                                    <td class="period">
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>14</span></button>
+                                                    </td>
+                                                    <td class="period">
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>15</span></button>
+                                                    </td>
+                                                    <td class="period end">
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>16</span></button>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="day-off">
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>17</span></button>
+                                                    </td>
+                                                    <td>
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>18</span></button>
+                                                    </td>
+                                                    <td>
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>19</span></button>
+                                                    </td>
+                                                    <td>
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>20</span></button>
+                                                    </td>
+                                                    <td>
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>21</span></button>
+                                                    </td>
+                                                    <td>
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>22</span></button>
+                                                    </td>
+                                                    <td>
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>23</span></button>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="day-off">
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>24</span></button>
+                                                    </td>
+                                                    <td class="today">
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>25</span></button>
+                                                    </td>
+                                                    <td class="day-event">
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>26</span></button>
+                                                    </td>
+                                                    <td>
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>27</span></button>
+                                                    </td>
+                                                    <td>
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>28</span></button>
+                                                    </td>
+                                                    <td>
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>29</span></button>
+                                                    </td>
+                                                    <td>
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>30</span></button>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="day-off">
+                                                      <button type="button"
+                                                        class="btn-set-date"><span>31</span></button>
+                                                    </td>
+                                                    <td class="new">
+                                                      <button type="button" class="btn-set-date"><span>1</span></button>
+                                                    </td>
+                                                    <td class="new">
+                                                      <button type="button" class="btn-set-date"><span>2</span></button>
+                                                    </td>
+                                                    <td class="new">
+                                                      <button type="button" class="btn-set-date"><span>3</span></button>
+                                                    </td>
+                                                    <td class="new">
+                                                      <button type="button" class="btn-set-date"><span>4</span></button>
+                                                    </td>
+                                                    <td class="new">
+                                                      <button type="button" class="btn-set-date"><span>5</span></button>
+                                                    </td>
+                                                    <td class="new">
+                                                      <button type="button" class="btn-set-date"><span>6</span></button>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </div>
+                                          </div>
+                                          <div class="calendar-footer">
+                                            <div class="calendar-btn-wrap">
+                                              <button type="button" class="krds-btn small text"
+                                                id="get-today">오늘</button>
+                                              <button type="button" class="krds-btn small tertiary">취소</button>
+                                              <button type="button" class="krds-btn small primary">확인</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- //기간 -->
+
+                              <!-- 시간 -->
+                              <div class="filter-detail-group">
+                                <p class="filter-detail-tit">시간</p>
+
+                                <div class="grid-2">
+                                  <div class="form-group">
+                                    <div class="form-conts">
+                                      <select class="krds-form-select medium completed" id="pc_accident_time_start"
+                                        title="시작 시간 선택">
+                                        <option value="" selected>00:00</option>
+                                        <option value="01:00">01:00</option>
+                                        <option value="02:00">02:00</option>
+                                        <option value="03:00">03:00</option>
+                                        <option value="04:00">04:00</option>
+                                        <option value="05:00">05:00</option>
+                                        <option value="06:00">06:00</option>
+                                      </select>
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <div class="form-conts">
+                                      <select class="krds-form-select medium completed" id="pc_accident_time_end"
+                                        title="종료 시간 선택">
+                                        <option value="18:00">18:00</option>
+                                        <option value="19:00">19:00</option>
+                                        <option value="20:00">20:00</option>
+                                        <option value="21:00">21:00</option>
+                                        <option value="22:00">22:00</option>
+                                        <option value="23:00">23:00</option>
+                                        <option value="23:59" selected>23:59</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- //시간 -->
+
+                              <!-- 요일 -->
+                              <div class="filter-detail-group">
+                                <p class="filter-detail-tit">요일</p>
+
+                                <div class="krds-check-area chk-row">
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_accident_weekday" id="pc_accident_day_sun"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_accident_day_sun">일</label>
+                                  </div>
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_accident_weekday" id="pc_accident_day_mon"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_accident_day_mon">월</label>
+                                  </div>
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_accident_weekday" id="pc_accident_day_tue"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_accident_day_tue">화</label>
+                                  </div>
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_accident_weekday" id="pc_accident_day_wed"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_accident_day_wed">수</label>
+                                  </div>
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_accident_weekday" id="pc_accident_day_thu"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_accident_day_thu">목</label>
+                                  </div>
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_accident_weekday" id="pc_accident_day_fri"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_accident_day_fri">금</label>
+                                  </div>
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_accident_weekday" id="pc_accident_day_sat"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_accident_day_sat">토</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- //요일 -->
+
+                              <!-- 사고대상 -->
+                              <div class="filter-detail-group">
+                                <p class="filter-detail-tit">사고대상</p>
+
+                                <div class="krds-check-area chk-row">
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_accident_target" id="pc_accident_target_old"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_accident_target_old">노인</label>
+                                  </div>
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_accident_target" id="pc_accident_target_child"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_accident_target_child">어린이</label>
+                                  </div>
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_accident_target" id="pc_accident_target_general"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_accident_target_general">일반인</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- //사고대상 -->
+
+                              <!-- 사고유형 -->
+                              <div class="filter-detail-group">
+                                <p class="filter-detail-tit">사고유형</p>
+
+                                <div class="krds-check-area chk-row">
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_accident_type" id="pc_accident_type_crossing"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_accident_type_crossing">횡단중</label>
+                                  </div>
+
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_accident_type" id="pc_accident_type_edgewalk"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label"
+                                      for="pc_accident_type_edgewalk">길가장자리구역통행중</label>
+                                  </div>
+
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_accident_type" id="pc_accident_type_sidewalk"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_accident_type_sidewalk">보도통행중</label>
+                                  </div>
+
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_accident_type" id="pc_accident_type_road"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_accident_type_road">차도통행중</label>
+                                  </div>
+
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_accident_type" id="pc_accident_type_etc"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_accident_type_etc">기타</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- //사고유형 -->
+
+                            </div>
+                            <!-- //세부 필터 -->
+                          </div>
+                        </div>
+                      </li>
+                      <!-- //교통사고 현황-->
+
+                      <!-- 교통사고 다발구간 (라디오: 단일 선택)-->
+                      <li class="li accordion-item">
+                        <div class="accordion-header">
+                          <div class="chk-title-area">
+                            <div class="krds-form-check">
+                              <input type="radio" name="pc_radio_layer" id="pc_rad_accident_cluster"
+                                class="krds-form-check-input">
+                              <label class="krds-form-check-label" for="pc_rad_accident_cluster">교통사고 다발구간</label>
+                            </div>
+                          </div>
+                          <div class="accordion-tools">
+                            <i class="svg-icon ico-mapmarker ico-grid-purple01" aria-hidden="true"></i>
+                            <button type="button" class="btn-accordion" id="pc_acc_hd_accident_cluster"
+                              aria-controls="pc_acc_col_accident_cluster" aria-expanded="false">
+                              <span class="sr-only">열기/닫기</span>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="accordion-collapse collapse" id="pc_acc_col_accident_cluster"
+                          aria-labelledby="pc_acc_hd_accident_cluster">
+                          <div class="accordion-body">
+                            <!-- 세부 필터 -->
+                            <div class="filter-detail">
+
+                              <div class="krds-check-area chk-column">
+                                <div class="krds-form-check">
+                                  <input type="checkbox" name="pc_cluster_range" id="pc_cluster_top_5"
+                                    class="krds-form-check-input">
+                                  <label class="krds-form-check-label" for="pc_cluster_top_5">상위 5%
+                                    <i class="svg-icon ico-mapmarker ico-grid-purple01" aria-hidden="true"></i>
+                                  </label>
+                                </div>
+
+                                <div class="krds-form-check">
+                                  <input type="checkbox" name="pc_cluster_range" id="pc_cluster_top_5_10"
+                                    class="krds-form-check-input">
+                                  <label class="krds-form-check-label" for="pc_cluster_top_5_10">상위 5~10%
+                                    <i class="svg-icon ico-mapmarker ico-grid-purple02" aria-hidden="true"></i>
+                                  </label>
+                                </div>
+
+                                <div class="krds-form-check">
+                                  <input type="checkbox" name="pc_cluster_range" id="pc_cluster_top_10_15"
+                                    class="krds-form-check-input">
+                                  <label class="krds-form-check-label" for="pc_cluster_top_10_15">상위 10~15%
+                                    <i class="svg-icon ico-mapmarker ico-grid-purple03" aria-hidden="true"></i>
+                                  </label>
+                                </div>
+
+                                <div class="krds-form-check">
+                                  <input type="checkbox" name="pc_cluster_range" id="pc_cluster_top_15_20"
+                                    class="krds-form-check-input">
+                                  <label class="krds-form-check-label" for="pc_cluster_top_15_20">상위 15~20%
+                                    <i class="svg-icon ico-mapmarker ico-grid-purple04" aria-hidden="true"></i>
+                                  </label>
+                                </div>
+                              </div>
+
+                            </div>
+                            <!-- //세부 필터 -->
+                          </div>
+                        </div>
+                      </li>
+                      <!-- //교통사고 다발구간-->
+
+                      <!-- 주거인구 현황 (라디오: 단일 선택)-->
+                      <li class="li accordion-item">
+                        <div class="accordion-header">
+                          <div class="chk-title-area">
+                            <div class="krds-form-check">
+                              <input type="radio" name="pc_radio_layer" id="pc_rad_resident_pop"
+                                class="krds-form-check-input">
+                              <label class="krds-form-check-label" for="pc_rad_resident_pop">주거인구 현황</label>
+                            </div>
+                          </div>
+                          <div class="accordion-tools">
+                            <i class="svg-icon ico-mapmarker ico-grid01" aria-hidden="true"></i>
+                            <button type="button" class="btn-accordion" id="pc_acc_hd_resident_pop"
+                              aria-controls="pc_acc_col_resident_pop" aria-expanded="false">
+                              <span class="sr-only">열기/닫기</span>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="accordion-collapse collapse" id="pc_acc_col_resident_pop"
+                          aria-labelledby="pc_acc_hd_resident_pop">
+                          <div class="accordion-body">
+                            <!-- 세부 필터 -->
+                            <!-- //세부 필터 -->
+                          </div>
+                        </div>
+                      </li>
+                      <!-- //주거인구 현황-->
+
+                      <!-- 사고다발 위험구간 예측 (라디오: 단일 선택)-->
+                      <li class="li accordion-item">
+                        <div class="accordion-header">
+                          <div class="chk-title-area">
+                            <div class="krds-form-check">
+                              <input type="radio" name="pc_radio_layer" id="pc_rad_risk_predict"
+                                class="krds-form-check-input">
+                              <label class="krds-form-check-label" for="pc_rad_risk_predict">사고다발 위험구간 예측</label>
+                            </div>
+                          </div>
+                          <div class="accordion-tools">
+                            <i class="svg-icon ico-mapmarker ico-oldster01" aria-hidden="true"></i>
+                            <i class="svg-icon ico-mapmarker ico-children01" aria-hidden="true"></i>
+                            <button type="button" class="btn-accordion" id="pc_acc_hd_risk_predict"
+                              aria-controls="pc_acc_col_risk_predict" aria-expanded="false">
+                              <span class="sr-only">열기/닫기</span>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="accordion-collapse collapse" id="pc_acc_col_risk_predict"
+                          aria-labelledby="pc_acc_hd_risk_predict">
+                          <div class="accordion-body">
+                            <!-- 세부 필터 -->
+                            <div class="filter-detail">
+
+                              <!-- 노인 -->
+                              <div class="filter-detail-group">
+                                <div class="filter-detail-head">
+                                  <p class="filter-detail-tit">노인</p>
+                                  <i class="svg-icon ico-mapmarker ico-oldster01" aria-hidden="true"></i>
+                                </div>
+
+                                <div class="krds-check-area chk-row">
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_risk_old_rank" id="pc_risk_old_rank_01"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_risk_old_rank_01">1순위</label>
+                                  </div>
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_risk_old_rank" id="pc_risk_old_rank_02"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_risk_old_rank_02">2순위</label>
+                                  </div>
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_risk_old_rank" id="pc_risk_old_rank_03"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_risk_old_rank_03">3순위</label>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- 어린이 -->
+                              <div class="filter-detail-group">
+                                <div class="filter-detail-head">
+                                  <p class="filter-detail-tit">어린이</p>
+                                  <i class="svg-icon ico-mapmarker ico-children01" aria-hidden="true"></i>
+                                </div>
+
+                                <div class="krds-check-area chk-row">
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_risk_child_rank" id="pc_risk_child_rank_01"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_risk_child_rank_01">1순위</label>
+                                  </div>
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_risk_child_rank" id="pc_risk_child_rank_02"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_risk_child_rank_02">2순위</label>
+                                  </div>
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_risk_child_rank" id="pc_risk_child_rank_03"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_risk_child_rank_03">3순위</label>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                            <!-- //세부 필터 -->
+                          </div>
+                        </div>
+                      </li>
+                      <!-- //사고다발 위험구간 예측-->
+
+                      <!-- 유동인구 (라디오: 단일 선택)-->
+                      <li class="li accordion-item">
+                        <div class="accordion-header">
+                          <div class="chk-title-area">
+                            <div class="krds-form-check">
+                              <input type="radio" name="pc_radio_layer" id="pc_rad_floating_pop"
+                                class="krds-form-check-input">
+                              <label class="krds-form-check-label" for="pc_rad_floating_pop">유동인구</label>
+                            </div>
+                          </div>
+                          <div class="accordion-tools">
+                            <i class="svg-icon ico-mapmarker ico-gradation" aria-hidden="true"></i>
+                            <button type="button" class="btn-accordion" id="pc_acc_hd_floating_pop"
+                              aria-controls="pc_acc_col_floating_pop" aria-expanded="false">
+                              <span class="sr-only">열기/닫기</span>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="accordion-collapse collapse" id="pc_acc_col_floating_pop"
+                          aria-labelledby="pc_acc_hd_floating_pop">
+                          <div class="accordion-body">
+                            <!-- 세부 필터 -->
+                            <div class="filter-detail">
+
+                              <!-- 유동인구 범례 (다중 선택) -->
+                              <div class="filter-detail-group">
+                                <div class="pop-legend">
+                                  <div class="pop-legend-scale pop-legend-scale--check" aria-label="유동인구 범례 선택">
+
+                                    <label class="legend-chip lv01">
+                                      <input type="checkbox" name="pc_floating_level[]" value="1">
+                                      <span class="chip">
+                                        <i class="svg-icon ico-checkbox-w" aria-hidden="true"></i>
+                                      </span>
+                                      <span class="sr-only">1단계</span>
+                                    </label>
+
+                                    <label class="legend-chip lv02">
+                                      <input type="checkbox" name="pc_floating_level[]" value="2">
+                                      <span class="chip">
+                                        <i class="svg-icon ico-checkbox-w" aria-hidden="true"></i>
+                                      </span>
+                                      <span class="sr-only">2단계</span>
+                                    </label>
+
+                                    <label class="legend-chip lv03">
+                                      <input type="checkbox" name="pc_floating_level[]" value="3">
+                                      <span class="chip">
+                                        <i class="svg-icon ico-checkbox-w" aria-hidden="true"></i>
+                                      </span>
+                                      <span class="sr-only">3단계</span>
+                                    </label>
+
+                                    <label class="legend-chip lv04">
+                                      <input type="checkbox" name="pc_floating_level[]" value="4">
+                                      <span class="chip">
+                                        <i class="svg-icon ico-checkbox-w" aria-hidden="true"></i>
+                                      </span>
+                                      <span class="sr-only">4단계</span>
+                                    </label>
+
+                                    <label class="legend-chip lv05">
+                                      <input type="checkbox" name="pc_floating_level[]" value="5">
+                                      <span class="chip">
+                                        <i class="svg-icon ico-checkbox-w" aria-hidden="true"></i>
+                                      </span>
+                                      <span class="sr-only">5단계</span>
+                                    </label>
+
+                                    <label class="legend-chip lv06">
+                                      <input type="checkbox" name="pc_floating_level[]" value="6">
+                                      <span class="chip">
+                                        <i class="svg-icon ico-checkbox-w" aria-hidden="true"></i>
+                                      </span>
+                                      <span class="sr-only">6단계</span>
+                                    </label>
+
+                                    <label class="legend-chip lv07">
+                                      <input type="checkbox" name="pc_floating_level[]" value="7">
+                                      <span class="chip">
+                                        <i class="svg-icon ico-checkbox-w" aria-hidden="true"></i>
+                                      </span>
+                                      <span class="sr-only">7단계</span>
+                                    </label>
+
+                                    <label class="legend-chip lv08">
+                                      <input type="checkbox" name="pc_floating_level[]" value="8">
+                                      <span class="chip">
+                                        <i class="svg-icon ico-checkbox-w" aria-hidden="true"></i>
+                                      </span>
+                                      <span class="sr-only">8단계</span>
+                                    </label>
+
+                                    <label class="legend-chip lv09">
+                                      <input type="checkbox" name="pc_floating_level[]" value="9">
+                                      <span class="chip">
+                                        <i class="svg-icon ico-checkbox-w" aria-hidden="true"></i>
+                                      </span>
+                                      <span class="sr-only">9단계</span>
+                                    </label>
+
+                                    <label class="legend-chip lv10">
+                                      <input type="checkbox" name="pc_floating_level[]" value="10">
+                                      <span class="chip">
+                                        <i class="svg-icon ico-checkbox-w" aria-hidden="true"></i>
+                                      </span>
+                                      <span class="sr-only">10단계</span>
+                                    </label>
+
+                                  </div>
+
+                                  <div class="pop-legend-label">
+                                    <span>적음</span>
+                                    <span>많음</span>
+                                  </div>
+                                </div>
+                              </div>
+
+
+                              <!-- 대상 선택(라디오) -->
+                              <div class="filter-detail-group">
+                                <div class="krds-check-area chk-column">
+                                  <div class="krds-form-check">
+                                    <input type="radio" name="pc_floating_target" id="pc_floating_child"
+                                      class="krds-form-check-input" checked>
+                                    <label class="krds-form-check-label" for="pc_floating_child">어린이 유동인구 (만 13세
+                                      이상)</label>
+                                  </div>
+                                  <div class="krds-form-check">
+                                    <input type="radio" name="pc_floating_target" id="pc_floating_old"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_floating_old">노인 유동인구 (만 65세
+                                      이상)</label>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                            <!-- //세부 필터 -->
+                          </div>
+                        </div>
+                      </li>
+                      <!-- //유동인구-->
+
+                      <!-- 사고다발지점 (체크박스: 다중 선택)-->
+                      <li class="li accordion-item">
+                        <div class="accordion-header">
+                          <div class="chk-title-area">
+                            <div class="krds-form-check">
+                              <input type="checkbox" name="pc_chk_layer" id="pc_chk_accident_hotspot"
+                                class="krds-form-check-input">
+                              <label class="krds-form-check-label" for="pc_chk_accident_hotspot">사고다발지점</label>
+                            </div>
+                          </div>
+                          <div class="accordion-tools">
+                            <i class="svg-icon ico-mapmarker ico-oldster02" aria-hidden="true"></i>
+                            <i class="svg-icon ico-mapmarker ico-children02" aria-hidden="true"></i>
+                            <button type="button" class="btn-accordion" id="pc_acc_hd_accident_hotspot"
+                              aria-controls="pc_acc_col_accident_hotspot" aria-expanded="false">
+                              <span class="sr-only">열기/닫기</span>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="accordion-collapse collapse" id="pc_acc_col_accident_hotspot"
+                          aria-labelledby="pc_acc_hd_accident_hotspot">
+                          <div class="accordion-body">
+                            <!-- 세부 필터 -->
+                            <div class="filter-detail">
+
+                              <!-- 대상별 -->
+                              <div class="filter-detail-group">
+                                <p class="filter-detail-tit">대상별</p>
+
+                                <div class="krds-check-area chk-row">
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_hotspot_target" id="pc_hotspot_old"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label is-flex" for="pc_hotspot_old">
+                                      <span class="label-txt">노인</span>
+                                      <i class="svg-icon ico-mapmarker ico-oldster02" aria-hidden="true"></i>
+                                    </label>
+                                  </div>
+
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_hotspot_target" id="pc_hotspot_child"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label is-flex" for="pc_hotspot_child">
+                                      <span class="label-txt">어린이</span>
+                                      <i class="svg-icon ico-mapmarker ico-children02" aria-hidden="true"></i>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- 년도별 -->
+                              <div class="filter-detail-group">
+                                <p class="filter-detail-tit">년도별 (최근 3년)</p>
+
+                                <div class="krds-check-area chk-row">
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_hotspot_year" id="pc_hotspot_2023"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_hotspot_2023">2023</label>
+                                  </div>
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_hotspot_year" id="pc_hotspot_2022"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_hotspot_2022">2022</label>
+                                  </div>
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_hotspot_year" id="pc_hotspot_2021"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_hotspot_2021">2021</label>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                            <!-- //세부 필터 -->
+                          </div>
+                        </div>
+                      </li>
+                      <!-- //사고다발지점-->
+
+                      <!-- 보호구역 현황 (체크박스: 다중 선택)-->
+                      <li class="li accordion-item">
+                        <div class="accordion-header">
+                          <div class="chk-title-area">
+                            <div class="krds-form-check">
+                              <input type="checkbox" name="pc_chk_layer" id="pc_chk_protect_zone"
+                                class="krds-form-check-input">
+                              <label class="krds-form-check-label" for="pc_chk_protect_zone">보호구역 현황</label>
+                            </div>
+                          </div>
+                          <div class="accordion-tools">
+                            <i class="svg-icon ico-mapmarker ico-oldster03" aria-hidden="true"></i>
+                            <i class="svg-icon ico-mapmarker ico-children03" aria-hidden="true"></i>
+                            <button type="button" class="btn-accordion" id="pc_acc_hd_protect_zone"
+                              aria-controls="pc_acc_col_protect_zone" aria-expanded="false">
+                              <span class="sr-only">열기/닫기</span>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="accordion-collapse collapse" id="pc_acc_col_protect_zone"
+                          aria-labelledby="pc_acc_hd_protect_zone">
+                          <div class="accordion-body">
+                            <!-- 세부 필터 -->
+                            <div class="filter-detail">
+
+                              <div class="krds-check-area chk-column">
+                                <div class="krds-form-check">
+                                  <input type="checkbox" name="pc_protect_type" id="pc_protect_old"
+                                    class="krds-form-check-input">
+                                  <label class="krds-form-check-label is-flex" for="pc_protect_old">
+                                    <span class="label-txt">노인 보호구역</span>
+                                    <i class="svg-icon ico-mapmarker ico-oldster03" aria-hidden="true"></i>
+                                  </label>
+                                </div>
+
+                                <div class="krds-form-check">
+                                  <input type="checkbox" name="pc_protect_type" id="pc_protect_child"
+                                    class="krds-form-check-input">
+                                  <label class="krds-form-check-label is-flex" for="pc_protect_child">
+                                    <span class="label-txt">어린이 보호구역</span>
+                                    <i class="svg-icon ico-mapmarker ico-children03" aria-hidden="true"></i>
+                                  </label>
+                                </div>
+                              </div>
+
+                            </div>
+                            <!-- //세부 필터 -->
+                          </div>
+                        </div>
+                      </li>
+                      <!-- //보호구역 현황-->
+
+                      <!-- 관련시설 (체크박스: 다중 선택)-->
+                      <li class="li accordion-item">
+                        <div class="accordion-header">
+                          <div class="chk-title-area">
+                            <div class="krds-form-check">
+                              <input type="checkbox" name="pc_chk_layer" id="pc_chk_related_facility"
+                                class="krds-form-check-input">
+                              <label class="krds-form-check-label" for="pc_chk_related_facility">관련시설</label>
+                            </div>
+                          </div>
+                          <div class="accordion-tools">
+                            <i class="svg-icon ico-mapmarker ico-oldster04" aria-hidden="true"></i>
+                            <i class="svg-icon ico-mapmarker ico-children04" aria-hidden="true"></i>
+                            <button type="button" class="btn-accordion" id="pc_acc_hd_related_facility"
+                              aria-controls="pc_acc_col_related_facility" aria-expanded="false">
+                              <span class="sr-only">열기/닫기</span>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="accordion-collapse collapse" id="pc_acc_col_related_facility"
+                          aria-labelledby="pc_acc_hd_related_facility">
+                          <div class="accordion-body">
+                            <!-- 세부 필터 -->
+                            <div class="filter-detail">
+
+                              <!-- 어린이 관련 시설 -->
+                              <div class="filter-detail-group">
+                                <div class="filter-detail-head">
+                                  <p class="filter-detail-tit">어린이 관련 시설</p>
+                                  <i class="svg-icon ico-mapmarker ico-children04" aria-hidden="true"></i>
+                                </div>
+
+                                <div class="krds-check-area chk-row">
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_fac_child" id="pc_fac_child_kindergarten"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_fac_child_kindergarten">어린이집</label>
+                                  </div>
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_fac_child" id="pc_fac_child_school"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_fac_child_school">초등학교</label>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- 노인 관련 시설 -->
+                              <div class="filter-detail-group">
+                                <div class="filter-detail-head">
+                                  <p class="filter-detail-tit">노인 관련 시설</p>
+                                  <i class="svg-icon ico-mapmarker ico-oldster04" aria-hidden="true"></i>
+                                </div>
+
+                                <div class="krds-check-area chk-row">
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_fac_old" id="pc_fac_old_center"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_fac_old_center">노인복지관</label>
+                                  </div>
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_fac_old" id="pc_fac_old_senior"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_fac_old_senior">경로당</label>
+                                  </div>
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_fac_old" id="pc_fac_old_homecare"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_fac_old_homecare">재가노인복지시설</label>
+                                  </div>
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_fac_old" id="pc_fac_old_nursing"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_fac_old_nursing">양로시설</label>
+                                  </div>
+                                  <div class="krds-form-check">
+                                    <input type="checkbox" name="pc_fac_old" id="pc_fac_old_class"
+                                      class="krds-form-check-input">
+                                    <label class="krds-form-check-label" for="pc_fac_old_class">노인교실</label>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                            <!-- //세부 필터 -->
+                          </div>
+                        </div>
+                      </li>
+                      <!-- //관련시설-->
+
+                    </ul>
+                  
+                </section>
+                <!-- //행정구역-->
+
+                <!-- 관할경찰서-->
+                <section id="panel_02" aria-labelledby="tab_02" class="tab-conts" data-quick-nav="false">
+                  
+                    <ul class="filter-list krds-accordion type-line">
+                    </ul>
+                  
+                </section>
+                <!-- //관할경찰서-->
+              </div>
+              <!-- //tab contents -->
+            </dl>
+
+            <div class="filter-btn">
+              <button type="button" class="krds-btn medium tertiary">초기화</button>
+              <button type="button" class="krds-btn medium primary">분석하기</button>
+            </div>
+          </div>
+          <!-- //왼쪽 검색 필터 영역-->
+
+          <!-- 분석 결과-->
+          <div class="contents">
+
+            <div class="section-5">
+              <!-- 지도 영역-->
+              <div class="data-area">
+                <div class="img-area" style="width: 100%">
+                  <img src="../resources/img/bg/dummy-map2.png" alt="map 더미 이미지">
+                </div>
+
+                <!-- 지도 오버레이 UI-->
+                <div class="map-ui" aria-label="지도 오버레이 컨트롤">
+
+                  <!-- 요약 정보 패널 (좌측 상단) -->
+                  <section class="map-panel map-panel--info" data-anchor="tl" style="--x:16px; --y:16px;" data-map-panel aria-label="지역 요약 정보">
+                    <header class="map-panel-head">
+                      <h2 class="map-panel-title">경기도 수원시 팔달구 인계동</h2>
+                      <button type="button" class="krds-btn icon xsmall" data-map-panel-close>
+                        <span class="sr-only">닫기</span>
+                        <i class="svg-icon ico-close"></i>
+                      </button>
+                    </header>
+
+                    <div class="map-panel-body">
+                      <ul class="map-info-list">
+                        <li class="map-info-item">
+                          <span class="map-info-key">교통사고 발생 건수(최근 1년간) :</span>
+                          <ul class="map-info-sub">
+                            <li>
+                              <span>노인 722건, 어린이 722건, 일반인 0건</span>
+                            </li>
+                          </ul>
+                        </li>
+
+                        <li class="map-info-item">
+                          <span class="map-info-key">교통사고 다발구간 수 :</span>
+                          <ul class="map-info-sub">
+                            <li>
+                              <span>상위 5% 8개, 상위 5~10% 2개</span>
+                            </li>
+                            <li>
+                              <span>상위 10~15% 2개, 상위 15~20% 2개</span>
+                            </li>
+                          </ul>
+                        </li>
+
+                        <li class="map-info-item">
+                          <span class="map-info-key">사고다발 위험구간 예측 수 :</span>
+                          <ul class="map-info-sub">
+                            <li>
+                              <span>1개 지역</span>
+                            </li>
+                          </ul>
+                        </li>
+
+                        <li class="map-info-item">
+                          <span class="map-info-key">사고다발지점 수 :</span>
+                          <ul class="map-info-sub">
+                            <li>
+                              <span>노인 0개, 어린이 0개 지점</span>
+                            </li>
+                          </ul>
+                        </li>
+
+                        <li class="map-info-item">
+                          <span class="map-info-key">보호구역 수 :</span>
+                          <ul class="map-info-sub">
+                            <li>
+                              <span>노인 2개, 어린이 12개</span>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </section>
+
+                  <!-- 주거인구 현황 패널 (좌측 하단) -->
+                  <section class="map-panel map-panel--table" data-anchor="bl" style="--x:16px; --y:16px;" data-map-panel aria-label="주거인구 현황">
+                    <header class="map-panel-head">
+                      <h2 class="map-panel-title">주거인구 현황 (수원시 팔달구 인계동)</h2>
+                      <button type="button" class="krds-btn icon xsmall" data-map-panel-close>
+                        <span class="sr-only">닫기</span>
+                        <i class="svg-icon ico-close"></i>
+                      </button>
+                    </header>
+
+                    <div class="map-panel-body">
+                      <div class="map-table-wrap" role="region" aria-label="주거인구 현황 표">
+                        <table class="map-table">
+                          <caption class="sr-only">주거인구 현황 표</caption>
+                          <thead>
+                            <tr>
+                              <th scope="col">구분</th>
+                              <th scope="col">거주인구수</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">유소년(1~14세)</th>
+                              <td>2,897명</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">생산가능(15~64세)</th>
+                              <td>32,312명</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">고령자(65세 이상)</th>
+                              <td>5,594명</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">유아(1~7세)</th>
+                              <td>1,047명</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">초등학생(8~13세)</th>
+                              <td>1,401명</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">중학생(14~16세)</th>
+                              <td>692명</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">고등학생(17~19세)</th>
+                              <td>718명</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <p class="map-table-note">* 출처: 국토교통부</p>
+                    </div>
+                  </section>
+
+                  <!-- 범례: 유동인구 패널 (우측 하단) -->
+                  <section class="map-panel map-panel--legend" data-anchor="br" style="--x:16px; --y:16px;" data-map-panel aria-label="범례 유동인구">
+                    <header class="map-panel-head">
+                      <h2 class="map-panel-title">범례 : 유동인구</h2>
+                      <button type="button" class="krds-btn icon xsmall" data-map-panel-close>
+                        <span class="sr-only">닫기</span>
+                        <i class="svg-icon ico-close"></i>
+                      </button>
+                    </header>
+
+                    <div class="map-panel-body">
+                      <div class="map-table-wrap" role="region" aria-label="유동인구 범례 표">
+                        <table class="map-table map-table--legend">
+                          <caption class="sr-only">유동인구 범례 표</caption>
+                          <thead>
+                            <tr>
+                              <th scope="col" class="col-chip">구분</th>
+                              <th scope="col">유동인구</th>
+                              <th scope="col" class="col-chip">구분</th>
+                              <th scope="col">유동인구</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th class="chip lv10" aria-label="10단계"></th>
+                              <td>205,832 이상</td>
+                              <th class="chip lv05" aria-label="5단계"></th>
+                              <td>91,481 ~ 114,351</td>
+                            </tr>
+                            <tr>
+                              <th class="chip lv09" aria-label="9단계"></th>
+                              <td>182,962 ~ 205,832</td>
+                              <th class="chip lv04" aria-label="4단계"></th>
+                              <td>68,610 ~ 91,481</td>
+                            </tr>
+                            <tr>
+                              <th class="chip lv08" aria-label="8단계"></th>
+                              <td>160,092 ~ 182,962</td>
+                              <th class="chip lv03" aria-label="3단계"></th>
+                              <td>45,740 ~ 68,610</td>
+                            </tr>
+                            <tr>
+                              <th class="chip lv07" aria-label="7단계"></th>
+                              <td>137,221 ~ 160,092</td>
+                              <th class="chip lv02" aria-label="2단계"></th>
+                              <td>22,870 ~ 45,740</td>
+                            </tr>
+                            <tr>
+                              <th class="chip lv06" aria-label="6단계"></th>
+                              <td>114,351 ~ 137,221</td>
+                              <th class="chip lv01" aria-label="1단계"></th>
+                              <td>22,870 이하</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </section>
+
+              
+                  <!-- 우측 액션 버튼/슬라이더-->
+                  <aside class="map-controls" aria-label="지도 도구">
+                    <div class="map-controls-group" role="group" aria-label="지도 버튼">
+                      <button type="button" class="map-btn" data-map-zoom-in>
+                        <span class="sr-only">확대</span>
+                        <i class="svg-icon ico-plus"></i>
+                      </button>
+
+                      <!-- 슬라이더-->
+                      <div class="map-slider" data-map-slider aria-label="확대 축소 슬라이더">
+                        <div class="map-slider-track">
+                          <div class="map-slider-thumb" data-map-thumb aria-hidden="true"></div>
+                        </div>
+
+                        <!-- 실제 값 저장용-->
+                        <input type="range" class="map-slider-input" data-map-range min="0" max="100" value="70"
+                          step="10" aria-label="확대 축소 값">
+                      </div>
+
+                      <button type="button" class="map-btn" data-map-zoom-out>
+                        <span class="sr-only">축소</span>
+                        <i class="svg-icon ico-minus"></i>
+                      </button>
+                    </div>
+
+                  </aside>
+                  <!-- //우측 액션 버튼/슬라이더-->
+
+                </div>
+                <!-- //지도 오버레이 UI-->
+              </div>
+              <!-- //지도 영역-->
+            </div>
+
+          </div>
+          <!-- //분석 결과-->
+
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+  </div>
+
+  <!-- 레이어 : 검색 필터-->
+  <section id="popFilterId" class="krds-modal fade" data-type="bottom-sheet" role="dialog" aria-modal="true"
+    aria-labelledby="popFilterTitle">
+    <!-- modal-dialog -->
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 class="modal-title" id="popFilterTitle">검색 필터</h2>
+        </div>
+        <!-- //modal title -->
+
+        <!-- modal contents -->
+        <div class="modal-conts krds-tab-area layer">
+
+          <!-- tab list -->
+          <div class="tab fill full mb-16">
+            <ul role="tablist">
+              <li id="tab_m_01" role="tab" aria-selected="true" aria-controls="panel_m_01" class="active">
+                <button type="button" class="btn-tab">행정구역<i class="sr-only created"> 선택됨</i></button>
+              </li>
+              <li id="tab_m_02" role="tab" aria-selected="false" aria-controls="panel_m_02">
+                <button type="button" class="btn-tab">관할경찰서</button>
+              </li>
+            </ul>
+          </div>
+          <!-- //tab list -->
+
+          <!-- tab contents -->
+          <div class="tab-conts-wrap">
+            <!-- 행정구역 -->
+            <section id="panel_m_01" aria-labelledby="tab_m_01" class="tab-conts active" data-quick-nav="false">
+              
+                <ul class="filter-list krds-accordion type-line accordion--selectable">
+
+                  <!-- 시/군 + 구 -->
+                  <li class="li">
+                    <div class="mb-16">
+                      <div class="grid-2">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="시/군 선택">
+                              <option value="" selected disabled>시/군</option>
+                              <option value="">가평군</option>
+                              <option value="">고양시</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="구 선택">
+                              <option value="" selected disabled>구</option>
+                              <option value="">전체</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- 동 + 이동 -->
+                  <li class="li">
+                    <div class="mb-16">
+                      <div class="grid-2">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="동 선택">
+                              <option value="" selected disabled>동</option>
+                              <option value="">전체</option>
+                            </select>
+                          </div>
+                        </div>
+                        <button type="button" class="krds-btn medium secondary">이동</button>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- 교통사고 현황 (체크박스: 다중 선택) -->
+                  <li class="li accordion-item">
+                    <div class="accordion-header">
+                      <div class="chk-title-area">
+                        <div class="krds-form-check">
+                          <input type="checkbox" name="m_chk_layer" id="m_chk_accident_status"
+                            class="krds-form-check-input">
+                          <label class="krds-form-check-label" for="m_chk_accident_status">교통사고 현황</label>
+                        </div>
+                      </div>
+                      <div class="accordion-tools">
+                        <i class="svg-icon ico-mapmarker ico-point01" aria-hidden="true"></i>
+                        <button type="button" class="btn-accordion" id="m_acc_hd_accident_status"
+                          aria-controls="m_acc_col_accident_status" aria-expanded="false">
+                          <span class="sr-only">열기/닫기</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="accordion-collapse collapse" id="m_acc_col_accident_status"
+                      aria-labelledby="m_acc_hd_accident_status">
+                      <div class="accordion-body">
+                        <div class="filter-detail">
+
+                          <!-- 기간 -->
+                          <div class="filter-detail-group">
+                            <p class="filter-detail-tit">기간 (2017-01-01 ~ 2025-06-30)</p>
+                            <div class="form-group">
+                              <div class="form-conts">
+                                <div class="form-conts calendar-conts">
+                                  <div class="calendar-input">
+                                    <input type="number" class="krds-input medium datepicker cal" placeholder="기간 선택"
+                                      id="m_cal" />
+                                    <button type="button" class="krds-btn medium icon form-btn-datepicker">
+                                      <span class="sr-only">달력 열기</span>
+                                      <i class="svg-icon ico-calendar"></i>
+                                    </button>
+                                  </div>
+                                  <div class="krds-calendar-area">
+                                    <div class="calendar-wrap bottom" aria-label="달력">
+                                      <div class="calendar-head">
+                                        <button type="button" class="btn-cal-move prev"><span class="sr-only">이전
+                                            달</span></button>
+                                        <div class="calendar-switch-wrap">
+                                          <div class="calendar-drop-down">
+                                            <button type="button" class="btn-cal-switch year"
+                                              aria-label="연도 선택">2024년</button>
+                                            <div class="calendar-select calendar-year-wrap">
+                                              <ul class="sel year">
+                                                <li>
+                                                  <button type="button">2001년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button" class="active">2002년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button" disabled>2003년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2004년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2005년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2006년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2007년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2008년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2009년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2010년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2011년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2012년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2013년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2014년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2015년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2016년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2017년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2018년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2019년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2020년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2021년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2022년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2023년</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">2024년</button>
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </div>
+                                          <div class="calendar-drop-down">
+                                            <button type="button" class="btn-cal-switch month"
+                                              aria-label="월 선택">12월</button>
+                                            <div class="calendar-select calendar-mon-wrap">
+                                              <ul class="sel month">
+                                                <li>
+                                                  <button type="button" disabled>01월</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">02월</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">03월</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">04월</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">05월</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">06월</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">07월</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">08월</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">09월</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">10월</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button">11월</button>
+                                                </li>
+                                                <li>
+                                                  <button type="button" class="active">12월</button>
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <button type="button" class="btn-cal-move next"><span class="sr-only">다음
+                                            달</span></button>
+                                      </div>
+                                      <div class="calendar-body">
+                                        <div class="calendar-table-wrap">
+                                          <table class="calendar-tbl">
+                                            <caption>
+                                              2024년 12월
+                                            </caption>
+                                            <thead>
+                                              <tr>
+                                                <th>일</th>
+                                                <th>월</th>
+                                                <th>화</th>
+                                                <th>수</th>
+                                                <th>목</th>
+                                                <th>금</th>
+                                                <th>토</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <td class="old day-off">
+                                                  <button type="button" class="btn-set-date"><span>26</span></button>
+                                                </td>
+                                                <td class="old">
+                                                  <button type="button" class="btn-set-date"><span>27</span></button>
+                                                </td>
+                                                <td class="old">
+                                                  <button type="button" class="btn-set-date"><span>28</span></button>
+                                                </td>
+                                                <td class="old">
+                                                  <button type="button" class="btn-set-date"><span>29</span></button>
+                                                </td>
+                                                <td class="old">
+                                                  <button type="button" class="btn-set-date"><span>30</span></button>
+                                                </td>
+                                                <td>
+                                                  <button type="button" class="btn-set-date"><span>1</span></button>
+                                                </td>
+                                                <td>
+                                                  <button type="button" class="btn-set-date"><span>2</span></button>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td class="day-off">
+                                                  <button type="button" class="btn-set-date"><span>3</span></button>
+                                                </td>
+                                                <td>
+                                                  <button type="button" class="btn-set-date"><span>4</span></button>
+                                                </td>
+                                                <td>
+                                                  <button type="button" class="btn-set-date"><span>5</span></button>
+                                                </td>
+                                                <td>
+                                                  <button type="button" class="btn-set-date"><span>6</span></button>
+                                                </td>
+                                                <td class="period start">
+                                                  <button type="button" class="btn-set-date"><span>7</span></button>
+                                                </td>
+                                                <td class="period">
+                                                  <button type="button" class="btn-set-date"><span>8</span></button>
+                                                </td>
+                                                <td class="period">
+                                                  <button type="button" class="btn-set-date"><span>9</span></button>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td class="period day-off">
+                                                  <button type="button" class="btn-set-date"><span>10</span></button>
+                                                </td>
+                                                <td class="period">
+                                                  <button type="button" class="btn-set-date"><span>11</span></button>
+                                                </td>
+                                                <td class="period">
+                                                  <button type="button" class="btn-set-date"><span>12</span></button>
+                                                </td>
+                                                <td class="period">
+                                                  <button type="button" class="btn-set-date"><span>13</span></button>
+                                                </td>
+                                                <td class="period">
+                                                  <button type="button" class="btn-set-date"><span>14</span></button>
+                                                </td>
+                                                <td class="period">
+                                                  <button type="button" class="btn-set-date"><span>15</span></button>
+                                                </td>
+                                                <td class="period end">
+                                                  <button type="button" class="btn-set-date"><span>16</span></button>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td class="day-off">
+                                                  <button type="button" class="btn-set-date"><span>17</span></button>
+                                                </td>
+                                                <td>
+                                                  <button type="button" class="btn-set-date"><span>18</span></button>
+                                                </td>
+                                                <td>
+                                                  <button type="button" class="btn-set-date"><span>19</span></button>
+                                                </td>
+                                                <td>
+                                                  <button type="button" class="btn-set-date"><span>20</span></button>
+                                                </td>
+                                                <td>
+                                                  <button type="button" class="btn-set-date"><span>21</span></button>
+                                                </td>
+                                                <td>
+                                                  <button type="button" class="btn-set-date"><span>22</span></button>
+                                                </td>
+                                                <td>
+                                                  <button type="button" class="btn-set-date"><span>23</span></button>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td class="day-off">
+                                                  <button type="button" class="btn-set-date"><span>24</span></button>
+                                                </td>
+                                                <td class="today">
+                                                  <button type="button" class="btn-set-date"><span>25</span></button>
+                                                </td>
+                                                <td class="day-event">
+                                                  <button type="button" class="btn-set-date"><span>26</span></button>
+                                                </td>
+                                                <td>
+                                                  <button type="button" class="btn-set-date"><span>27</span></button>
+                                                </td>
+                                                <td>
+                                                  <button type="button" class="btn-set-date"><span>28</span></button>
+                                                </td>
+                                                <td>
+                                                  <button type="button" class="btn-set-date"><span>29</span></button>
+                                                </td>
+                                                <td>
+                                                  <button type="button" class="btn-set-date"><span>30</span></button>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td class="day-off">
+                                                  <button type="button" class="btn-set-date"><span>31</span></button>
+                                                </td>
+                                                <td class="new">
+                                                  <button type="button" class="btn-set-date"><span>1</span></button>
+                                                </td>
+                                                <td class="new">
+                                                  <button type="button" class="btn-set-date"><span>2</span></button>
+                                                </td>
+                                                <td class="new">
+                                                  <button type="button" class="btn-set-date"><span>3</span></button>
+                                                </td>
+                                                <td class="new">
+                                                  <button type="button" class="btn-set-date"><span>4</span></button>
+                                                </td>
+                                                <td class="new">
+                                                  <button type="button" class="btn-set-date"><span>5</span></button>
+                                                </td>
+                                                <td class="new">
+                                                  <button type="button" class="btn-set-date"><span>6</span></button>
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </div>
+                                      </div>
+                                      <div class="calendar-footer">
+                                        <div class="calendar-btn-wrap">
+                                          <button type="button" class="krds-btn small text" id="get-today">오늘</button>
+                                          <button type="button" class="krds-btn small tertiary">취소</button>
+                                          <button type="button" class="krds-btn small primary">확인</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 시간 -->
+                          <div class="filter-detail-group">
+                            <p class="filter-detail-tit">시간</p>
+                            <div class="grid-2">
+                              <div class="form-group">
+                                <div class="form-conts">
+                                  <select class="krds-form-select medium completed" id="m_accident_time_start"
+                                    title="시작 시간 선택">
+                                    <option value="" selected>00:00</option>
+                                    <option value="01:00">01:00</option>
+                                    <option value="02:00">02:00</option>
+                                    <option value="03:00">03:00</option>
+                                    <option value="04:00">04:00</option>
+                                    <option value="05:00">05:00</option>
+                                    <option value="06:00">06:00</option>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <div class="form-conts">
+                                  <select class="krds-form-select medium completed" id="m_accident_time_end"
+                                    title="종료 시간 선택">
+                                    <option value="18:00">18:00</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="20:00">20:00</option>
+                                    <option value="21:00">21:00</option>
+                                    <option value="22:00">22:00</option>
+                                    <option value="23:00">23:00</option>
+                                    <option value="23:59" selected>23:59</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 요일 -->
+                          <div class="filter-detail-group">
+                            <p class="filter-detail-tit">요일</p>
+                            <div class="krds-check-area chk-row">
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_accident_weekday" id="m_accident_day_sun"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_accident_day_sun">일</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_accident_weekday" id="m_accident_day_mon"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_accident_day_mon">월</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_accident_weekday" id="m_accident_day_tue"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_accident_day_tue">화</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_accident_weekday" id="m_accident_day_wed"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_accident_day_wed">수</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_accident_weekday" id="m_accident_day_thu"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_accident_day_thu">목</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_accident_weekday" id="m_accident_day_fri"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_accident_day_fri">금</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_accident_weekday" id="m_accident_day_sat"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_accident_day_sat">토</label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 사고대상 -->
+                          <div class="filter-detail-group">
+                            <p class="filter-detail-tit">사고대상</p>
+                            <div class="krds-check-area chk-row">
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_accident_target" id="m_accident_target_old"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_accident_target_old">노인</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_accident_target" id="m_accident_target_child"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_accident_target_child">어린이</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_accident_target" id="m_accident_target_general"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_accident_target_general">일반인</label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 사고유형 -->
+                          <div class="filter-detail-group">
+                            <p class="filter-detail-tit">사고유형</p>
+                            <div class="krds-check-area chk-row">
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_accident_type" id="m_accident_type_crossing"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_accident_type_crossing">횡단중</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_accident_type" id="m_accident_type_edgewalk"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_accident_type_edgewalk">길가장자리구역통행중</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_accident_type" id="m_accident_type_sidewalk"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_accident_type_sidewalk">보도통행중</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_accident_type" id="m_accident_type_road"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_accident_type_road">차도통행중</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_accident_type" id="m_accident_type_etc"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_accident_type_etc">기타</label>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- 교통사고 다발구간 (라디오: 단일 선택) -->
+                  <li class="li accordion-item">
+                    <div class="accordion-header">
+                      <div class="chk-title-area">
+                        <div class="krds-form-check">
+                          <input type="radio" name="m_radio_layer" id="m_rad_accident_cluster"
+                            class="krds-form-check-input">
+                          <label class="krds-form-check-label" for="m_rad_accident_cluster">교통사고 다발구간</label>
+                        </div>
+                      </div>
+                      <div class="accordion-tools">
+                        <i class="svg-icon ico-mapmarker ico-grid-purple01" aria-hidden="true"></i>
+                        <button type="button" class="btn-accordion" id="m_acc_hd_accident_cluster"
+                          aria-controls="m_acc_col_accident_cluster" aria-expanded="false">
+                          <span class="sr-only">열기/닫기</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="accordion-collapse collapse" id="m_acc_col_accident_cluster"
+                      aria-labelledby="m_acc_hd_accident_cluster">
+                      <div class="accordion-body">
+                        <div class="filter-detail">
+                          <div class="krds-check-area chk-column">
+                            <div class="krds-form-check">
+                              <input type="checkbox" name="m_cluster_range" id="m_cluster_top_5"
+                                class="krds-form-check-input">
+                              <label class="krds-form-check-label" for="m_cluster_top_5">상위 5%
+                                <i class="svg-icon ico-mapmarker ico-grid-purple01" aria-hidden="true"></i>
+                              </label>
+                            </div>
+                            <div class="krds-form-check">
+                              <input type="checkbox" name="m_cluster_range" id="m_cluster_top_5_10"
+                                class="krds-form-check-input">
+                              <label class="krds-form-check-label" for="m_cluster_top_5_10">상위 5~10%
+                                <i class="svg-icon ico-mapmarker ico-grid-purple02" aria-hidden="true"></i>
+                              </label>
+                            </div>
+                            <div class="krds-form-check">
+                              <input type="checkbox" name="m_cluster_range" id="m_cluster_top_10_15"
+                                class="krds-form-check-input">
+                              <label class="krds-form-check-label" for="m_cluster_top_10_15">상위 10~15%
+                                <i class="svg-icon ico-mapmarker ico-grid-purple03" aria-hidden="true"></i>
+                              </label>
+                            </div>
+                            <div class="krds-form-check">
+                              <input type="checkbox" name="m_cluster_range" id="m_cluster_top_15_20"
+                                class="krds-form-check-input">
+                              <label class="krds-form-check-label" for="m_cluster_top_15_20">상위 15~20%
+                                <i class="svg-icon ico-mapmarker ico-grid-purple04" aria-hidden="true"></i>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- 주거인구 현황 (라디오: 단일 선택 / 세부필터 없음) -->
+                  <li class="li accordion-item">
+                    <div class="accordion-header">
+                      <div class="chk-title-area">
+                        <div class="krds-form-check">
+                          <input type="radio" name="m_radio_layer" id="m_rad_resident_pop"
+                            class="krds-form-check-input">
+                          <label class="krds-form-check-label" for="m_rad_resident_pop">주거인구 현황</label>
+                        </div>
+                      </div>
+                      <div class="accordion-tools">
+                        <i class="svg-icon ico-mapmarker ico-grid01" aria-hidden="true"></i>
+                        <button type="button" class="btn-accordion" id="m_acc_hd_resident_pop"
+                          aria-controls="m_acc_col_resident_pop" aria-expanded="false">
+                          <span class="sr-only">열기/닫기</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="accordion-collapse collapse" id="m_acc_col_resident_pop"
+                      aria-labelledby="m_acc_hd_resident_pop">
+                      <div class="accordion-body">
+                        <!-- 세부 필터 없음 -->
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- 사고다발 위험구간 예측 (라디오: 단일 선택) -->
+                  <li class="li accordion-item">
+                    <div class="accordion-header">
+                      <div class="chk-title-area">
+                        <div class="krds-form-check">
+                          <input type="radio" name="m_radio_layer" id="m_rad_risk_predict"
+                            class="krds-form-check-input">
+                          <label class="krds-form-check-label" for="m_rad_risk_predict">사고다발 위험구간 예측</label>
+                        </div>
+                      </div>
+                      <div class="accordion-tools">
+                        <i class="svg-icon ico-mapmarker ico-oldster01" aria-hidden="true"></i>
+                        <i class="svg-icon ico-mapmarker ico-children01" aria-hidden="true"></i>
+                        <button type="button" class="btn-accordion" id="m_acc_hd_risk_predict"
+                          aria-controls="m_acc_col_risk_predict" aria-expanded="false">
+                          <span class="sr-only">열기/닫기</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="accordion-collapse collapse" id="m_acc_col_risk_predict"
+                      aria-labelledby="m_acc_hd_risk_predict">
+                      <div class="accordion-body">
+                        <div class="filter-detail">
+
+                          <!-- 노인 -->
+                          <div class="filter-detail-group">
+                            <div class="filter-detail-head">
+                              <p class="filter-detail-tit">노인</p>
+                              <i class="svg-icon ico-mapmarker ico-oldster01" aria-hidden="true"></i>
+                            </div>
+
+                            <div class="krds-check-area chk-row">
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_risk_old_rank" id="m_risk_old_rank_01"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_risk_old_rank_01">1순위</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_risk_old_rank" id="m_risk_old_rank_02"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_risk_old_rank_02">2순위</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_risk_old_rank" id="m_risk_old_rank_03"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_risk_old_rank_03">3순위</label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 어린이 -->
+                          <div class="filter-detail-group">
+                            <div class="filter-detail-head">
+                              <p class="filter-detail-tit">어린이</p>
+                              <i class="svg-icon ico-mapmarker ico-children01" aria-hidden="true"></i>
+                            </div>
+
+                            <div class="krds-check-area chk-row">
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_risk_child_rank" id="m_risk_child_rank_01"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_risk_child_rank_01">1순위</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_risk_child_rank" id="m_risk_child_rank_02"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_risk_child_rank_02">2순위</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_risk_child_rank" id="m_risk_child_rank_03"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_risk_child_rank_03">3순위</label>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- 유동인구 (라디오: 단일 선택) -->
+                  <li class="li accordion-item">
+                    <div class="accordion-header">
+                      <div class="chk-title-area">
+                        <div class="krds-form-check">
+                          <input type="radio" name="m_radio_layer" id="m_rad_floating_pop"
+                            class="krds-form-check-input">
+                          <label class="krds-form-check-label" for="m_rad_floating_pop">유동인구</label>
+                        </div>
+                      </div>
+                      <div class="accordion-tools">
+                        <i class="svg-icon ico-mapmarker ico-gradation" aria-hidden="true"></i>
+                        <button type="button" class="btn-accordion" id="m_acc_hd_floating_pop"
+                          aria-controls="m_acc_col_floating_pop" aria-expanded="false">
+                          <span class="sr-only">열기/닫기</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="accordion-collapse collapse" id="m_acc_col_floating_pop"
+                      aria-labelledby="m_acc_hd_floating_pop">
+                      <div class="accordion-body">
+                        <div class="filter-detail">
+
+                          <!-- 유동인구 범례 (다중 선택) -->
+                          <div class="filter-detail-group">
+                            <div class="pop-legend">
+                              <div class="pop-legend-scale pop-legend-scale--check" aria-label="유동인구 범례 선택">
+                                <label class="legend-chip lv01">
+                                  <input type="checkbox" name="m_floating_level[]" value="1">
+                                  <span class="chip"><i class="svg-icon ico-checkbox-w" aria-hidden="true"></i></span>
+                                  <span class="sr-only">1단계</span>
+                                </label>
+                                <label class="legend-chip lv02">
+                                  <input type="checkbox" name="m_floating_level[]" value="2">
+                                  <span class="chip"><i class="svg-icon ico-checkbox-w" aria-hidden="true"></i></span>
+                                  <span class="sr-only">2단계</span>
+                                </label>
+                                <label class="legend-chip lv03">
+                                  <input type="checkbox" name="m_floating_level[]" value="3">
+                                  <span class="chip"><i class="svg-icon ico-checkbox-w" aria-hidden="true"></i></span>
+                                  <span class="sr-only">3단계</span>
+                                </label>
+                                <label class="legend-chip lv04">
+                                  <input type="checkbox" name="m_floating_level[]" value="4">
+                                  <span class="chip"><i class="svg-icon ico-checkbox-w" aria-hidden="true"></i></span>
+                                  <span class="sr-only">4단계</span>
+                                </label>
+                                <label class="legend-chip lv05">
+                                  <input type="checkbox" name="m_floating_level[]" value="5">
+                                  <span class="chip"><i class="svg-icon ico-checkbox-w" aria-hidden="true"></i></span>
+                                  <span class="sr-only">5단계</span>
+                                </label>
+                                <label class="legend-chip lv06">
+                                  <input type="checkbox" name="m_floating_level[]" value="6">
+                                  <span class="chip"><i class="svg-icon ico-checkbox-w" aria-hidden="true"></i></span>
+                                  <span class="sr-only">6단계</span>
+                                </label>
+                                <label class="legend-chip lv07">
+                                  <input type="checkbox" name="m_floating_level[]" value="7">
+                                  <span class="chip"><i class="svg-icon ico-checkbox-w" aria-hidden="true"></i></span>
+                                  <span class="sr-only">7단계</span>
+                                </label>
+                                <label class="legend-chip lv08">
+                                  <input type="checkbox" name="m_floating_level[]" value="8">
+                                  <span class="chip"><i class="svg-icon ico-checkbox-w" aria-hidden="true"></i></span>
+                                  <span class="sr-only">8단계</span>
+                                </label>
+                                <label class="legend-chip lv09">
+                                  <input type="checkbox" name="m_floating_level[]" value="9">
+                                  <span class="chip"><i class="svg-icon ico-checkbox-w" aria-hidden="true"></i></span>
+                                  <span class="sr-only">9단계</span>
+                                </label>
+                                <label class="legend-chip lv10">
+                                  <input type="checkbox" name="m_floating_level[]" value="10">
+                                  <span class="chip"><i class="svg-icon ico-checkbox-w" aria-hidden="true"></i></span>
+                                  <span class="sr-only">10단계</span>
+                                </label>
+                              </div>
+
+                              <div class="pop-legend-label">
+                                <span>적음</span>
+                                <span>많음</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 대상 선택(라디오) -->
+                          <div class="filter-detail-group">
+                            <div class="krds-check-area chk-column">
+                              <div class="krds-form-check">
+                                <input type="radio" name="m_floating_target" id="m_floating_child"
+                                  class="krds-form-check-input" checked>
+                                <label class="krds-form-check-label" for="m_floating_child">어린이 유동인구 (만 13세 이상)</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="radio" name="m_floating_target" id="m_floating_old"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_floating_old">노인 유동인구 (만 65세 이상)</label>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- 사고다발지점 (체크박스: 다중 선택) -->
+                  <li class="li accordion-item">
+                    <div class="accordion-header">
+                      <div class="chk-title-area">
+                        <div class="krds-form-check">
+                          <input type="checkbox" name="m_chk_layer" id="m_chk_accident_hotspot"
+                            class="krds-form-check-input">
+                          <label class="krds-form-check-label" for="m_chk_accident_hotspot">사고다발지점</label>
+                        </div>
+                      </div>
+                      <div class="accordion-tools">
+                        <i class="svg-icon ico-mapmarker ico-oldster02" aria-hidden="true"></i>
+                        <i class="svg-icon ico-mapmarker ico-children02" aria-hidden="true"></i>
+                        <button type="button" class="btn-accordion" id="m_acc_hd_accident_hotspot"
+                          aria-controls="m_acc_col_accident_hotspot" aria-expanded="false">
+                          <span class="sr-only">열기/닫기</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="accordion-collapse collapse" id="m_acc_col_accident_hotspot"
+                      aria-labelledby="m_acc_hd_accident_hotspot">
+                      <div class="accordion-body">
+                        <div class="filter-detail">
+
+                          <!-- 대상별 -->
+                          <div class="filter-detail-group">
+                            <p class="filter-detail-tit">대상별</p>
+                            <div class="krds-check-area chk-row">
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_hotspot_target" id="m_hotspot_old"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label is-flex" for="m_hotspot_old">
+                                  <span class="label-txt">노인</span>
+                                  <i class="svg-icon ico-mapmarker ico-oldster02" aria-hidden="true"></i>
+                                </label>
+                              </div>
+
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_hotspot_target" id="m_hotspot_child"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label is-flex" for="m_hotspot_child">
+                                  <span class="label-txt">어린이</span>
+                                  <i class="svg-icon ico-mapmarker ico-children02" aria-hidden="true"></i>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 년도별 -->
+                          <div class="filter-detail-group">
+                            <p class="filter-detail-tit">년도별 (최근 3년)</p>
+                            <div class="krds-check-area chk-row">
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_hotspot_year" id="m_hotspot_2023"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_hotspot_2023">2023</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_hotspot_year" id="m_hotspot_2022"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_hotspot_2022">2022</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_hotspot_year" id="m_hotspot_2021"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_hotspot_2021">2021</label>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- 보호구역 현황 (체크박스: 다중 선택) -->
+                  <li class="li accordion-item">
+                    <div class="accordion-header">
+                      <div class="chk-title-area">
+                        <div class="krds-form-check">
+                          <input type="checkbox" name="m_chk_layer" id="m_chk_protect_zone"
+                            class="krds-form-check-input">
+                          <label class="krds-form-check-label" for="m_chk_protect_zone">보호구역 현황</label>
+                        </div>
+                      </div>
+                      <div class="accordion-tools">
+                        <i class="svg-icon ico-mapmarker ico-oldster03" aria-hidden="true"></i>
+                        <i class="svg-icon ico-mapmarker ico-children03" aria-hidden="true"></i>
+                        <button type="button" class="btn-accordion" id="m_acc_hd_protect_zone"
+                          aria-controls="m_acc_col_protect_zone" aria-expanded="false">
+                          <span class="sr-only">열기/닫기</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="accordion-collapse collapse" id="m_acc_col_protect_zone"
+                      aria-labelledby="m_acc_hd_protect_zone">
+                      <div class="accordion-body">
+                        <div class="filter-detail">
+                          <div class="krds-check-area chk-column">
+                            <div class="krds-form-check">
+                              <input type="checkbox" name="m_protect_type" id="m_protect_old"
+                                class="krds-form-check-input">
+                              <label class="krds-form-check-label is-flex" for="m_protect_old">
+                                <span class="label-txt">노인 보호구역</span>
+                                <i class="svg-icon ico-mapmarker ico-oldster03" aria-hidden="true"></i>
+                              </label>
+                            </div>
+
+                            <div class="krds-form-check">
+                              <input type="checkbox" name="m_protect_type" id="m_protect_child"
+                                class="krds-form-check-input">
+                              <label class="krds-form-check-label is-flex" for="m_protect_child">
+                                <span class="label-txt">어린이 보호구역</span>
+                                <i class="svg-icon ico-mapmarker ico-children03" aria-hidden="true"></i>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- 관련시설 (체크박스: 다중 선택) -->
+                  <li class="li accordion-item">
+                    <div class="accordion-header">
+                      <div class="chk-title-area">
+                        <div class="krds-form-check">
+                          <input type="checkbox" name="m_chk_layer" id="m_chk_related_facility"
+                            class="krds-form-check-input">
+                          <label class="krds-form-check-label" for="m_chk_related_facility">관련시설</label>
+                        </div>
+                      </div>
+                      <div class="accordion-tools">
+                        <i class="svg-icon ico-mapmarker ico-oldster04" aria-hidden="true"></i>
+                        <i class="svg-icon ico-mapmarker ico-children04" aria-hidden="true"></i>
+                        <button type="button" class="btn-accordion" id="m_acc_hd_related_facility"
+                          aria-controls="m_acc_col_related_facility" aria-expanded="false">
+                          <span class="sr-only">열기/닫기</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="accordion-collapse collapse" id="m_acc_col_related_facility"
+                      aria-labelledby="m_acc_hd_related_facility">
+                      <div class="accordion-body">
+                        <div class="filter-detail">
+
+                          <!-- 어린이 관련 시설 -->
+                          <div class="filter-detail-group">
+                            <div class="filter-detail-head">
+                              <p class="filter-detail-tit">어린이 관련 시설</p>
+                              <i class="svg-icon ico-mapmarker ico-children04" aria-hidden="true"></i>
+                            </div>
+
+                            <div class="krds-check-area chk-row">
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_fac_child" id="m_fac_child_kindergarten"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_fac_child_kindergarten">어린이집</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_fac_child" id="m_fac_child_school"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_fac_child_school">초등학교</label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 노인 관련 시설 -->
+                          <div class="filter-detail-group">
+                            <div class="filter-detail-head">
+                              <p class="filter-detail-tit">노인 관련 시설</p>
+                              <i class="svg-icon ico-mapmarker ico-oldster04" aria-hidden="true"></i>
+                            </div>
+
+                            <div class="krds-check-area chk-row">
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_fac_old" id="m_fac_old_center"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_fac_old_center">노인복지관</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_fac_old" id="m_fac_old_senior"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_fac_old_senior">경로당</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_fac_old" id="m_fac_old_homecare"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_fac_old_homecare">재가노인복지시설</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_fac_old" id="m_fac_old_nursing"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_fac_old_nursing">양로시설</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" name="m_fac_old" id="m_fac_old_class"
+                                  class="krds-form-check-input">
+                                <label class="krds-form-check-label" for="m_fac_old_class">노인교실</label>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                </ul>
+              
+            </section>
+            <!-- //행정구역 -->
+
+            <!-- 관할경찰서 -->
+            <section id="panel_m_02" aria-labelledby="tab_m_02" class="tab-conts" data-quick-nav="false">
+              
+                <ul class="filter-list krds-accordion type-line">
+                </ul>
+              
+            </section>
+            <!-- //관할경찰서 -->
+          </div>
+          <!-- //tab contents -->
+
+        </div>
+        <!-- //modal contents -->
+
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">초기화</button>
+          <button type="button" class="krds-btn medium primary close-modal">분석하기</button>
+        </div>
+        <!-- //modal btn -->
+
+        <!-- close button -->
+        <button type="button" class="krds-btn medium icon btn-close close-modal">
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <!-- //modal-dialog -->
+    <div class="modal-back in"></div>
+  </section>
+  <!-- //레이어 : 검색 필터-->
+
+
+  <!-- js -->
+  <script src="../resources/js/component/ui-script.js"></script>
+  <script src="../resources/js/component/common.js"></script>
+
+</body>
+
+</html>

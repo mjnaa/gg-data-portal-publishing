@@ -893,6 +893,7 @@
   mask-image: url(../../img/component/icon/ico_minus.svg);
 }
 
+
 [data-krds-mode=high-contrast] .svg-icon.ico-help {
   background-image: url(../../img/component/icon/ico_help_fill.svg);
 }
