@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>경기 데이터 분석 포털</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="경기 데이터 분석 포털" />
+  <!-- style sheets -->
+  <link href="../resources/css/token/krds_tokens.css" rel="stylesheet">
+  <link href="../resources/css/common/common.css" rel="stylesheet">
+  <link href="../resources/css/component/component.css" rel="stylesheet">
+  <link href="../resources/css/custom.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div>
+    <!-- header -->
+
+    <div class="container">
+      <div class="inner in-between">
+        <!-- side navigation -->
+        <nav class="krds-side-navigation">
+          <h2 class="lnb-tit">관리자페이지</h2>
+          <!-- lnb-list -->
+          <ul class="lnb-list" role="menubar">
+            <li class="lnb-item" role="none">
+              <button type="button" class="lnb-btn lnb-toggle" role="menuitem" aria-controls="lnbmenu-1" aria-expanded="false">
+                분석운영
+              </button>
+              <!-- lnb-submenu -->
+              <div class="lnb-submenu">
+                <ul id="lnbmenu-1" role="menu">
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link" role="menuitem">
+                      모델권한신청관리
+                    </a>
+                  </li>
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-lin" role="menuitem">
+                      분석환경신청관리
+                    </a>
+                  </li>
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link" role="menuitem">
+                      분석반입신청관리
+                    </a>
+                  </li>
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-linkk" role="menuitem">
+                      분석반출신청관리
+                    </a>
+                  </li>
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link" role="menuitem">
+                      분석코드관리
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- //lnb-submenu -->
+            </li>
+            <li class="lnb-item" role="none">
+              <button type="button" class="lnb-btn lnb-toggle" role="menuitem" aria-controls="lnbmenu-2" aria-expanded="false">
+                분석서비스관리
+              </button>
+              <!-- lnb-submenu -->
+              <div class="lnb-submenu">
+                <ul id="lnbmenu-2" role="menu">
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link" role="menuitem">
+                      분석데이터관리
+                    </a>
+                  </li>
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link" role="menuitem">
+                      분석데이터분류
+                    </a>
+                  </li>
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link" role="menuitem">
+                      분석교육관리
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- //lnb-submenu -->
+            </li>
+            <li class="lnb-item active" role="none">
+              <button type="button" class="lnb-btn lnb-toggle active" role="menuitem" aria-controls="lnbmenu-3" aria-expanded="true">
+                분석커뮤니티
+              </button>
+              <!-- lnb-submenu -->
+              <div class="lnb-submenu">
+                <ul id="lnbmenu-3" role="menu">
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link" role="menuitem">
+                      커뮤니티 코드관리
+                    </a>
+                  </li>
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link selected" role="menuitem">
+                      분석커뮤니티 신청관리
+                    </a>
+                  </li>
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link" role="menuitem">
+                      분석커뮤니티 게시판관리
+                    </a>
+                  </li>
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link" role="menuitem">
+                      분석커뮤니티 게시물관리
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- //lnb-submenu -->
+            </li>
+          </ul>
+          <!-- //lnb-list -->
+        </nav>
+        <!-- side navigation -->
+
+        <div class="contents">
+          <!-- breadcrumb -->
+          <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="home"><a href="#" class="txt">홈</a></li>
+              <li><a href="#" class="txt">관리자페이지</a></li>
+              <li><a href="#" class="txt">분석커뮤니티</a></li>
+              <li><a href="#" class="txt on">분석커뮤니티 신청관리</a></li>
+            </ol>
+          </nav>
+          <!-- breadcrumb -->
+
+          <!-- 페이지 타이틀 영역 -->
+          <div class="page-title-wrap">
+            <h1 class="h-tit">분석커뮤니티 신청관리</h1>
+          </div>
+          <!-- //페이지 타이틀 영역 -->
+
+          <!-- 권한 목록 영역 -->
+          <div class="conts-area">
+            <!-- 검색결과 : 리스트 상단 -->
+            <div class="search-list-top mt-0">
+              <ul class="sch-info" aria-live="polite">
+                <h2 class="sec-tit mb-0">권한 목록</h2>
+              </ul>
+              <ul class="sch-sort">
+                <li>
+                  <button type="button" class="krds-btn primary small">저장</button>
+                </li>
+              </ul>
+            </div>
+            <!-- //검색 결과 : 리스트 상단 -->
+            <!-- table -->
+            <div class="krds-table-wrap">
+              <table class="tbl col data mobile">
+                <caption>코드관리</caption>
+                <colgroup>
+                  <col>
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">권한 코드</th>
+                    <th scope="col">권한 그룹명</th>
+                    <th scope="col">사용여부</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="add-head">권한 코드</span><span class="tds">99</span></td>
+                    <td><span class="add-head">권한 그룹명</span><span class="tds">용역업체</span></td>
+                    <td><span class="add-head">사용여부</span><span class="tds">미사용</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="add-head">권한 코드</span><span class="tds">60</span></td>
+                    <td><span class="add-head">권한 그룹명</span><span class="tds">테스트</span></td>
+                    <td><span class="add-head">사용여부</span><span class="tds">미사용</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="add-head">권한 코드</span><span class="tds">40</span></td>
+                    <td><span class="add-head">권한 그룹명</span><span class="tds">북부센터 관리자</span></td>
+                    <td><span class="add-head">사용여부</span><span class="tds">미사용</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="add-head">권한 코드</span><span class="tds">30</span></td>
+                    <td><span class="add-head">권한 그룹명</span><span class="tds">관리자</span></td>
+                    <td><span class="add-head">사용여부</span><span class="tds">사용</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="add-head">권한 코드</span><span class="tds">22</span></td>
+                    <td><span class="add-head">권한 그룹명</span><span class="tds">센터 관리자</span></td>
+                    <td><span class="add-head">사용여부</span><span class="tds">사용</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="add-head">권한 코드</span><span class="tds">20</span></td>
+                    <td><span class="add-head">권한 그룹명</span><span class="tds">내부 사용자</span></td>
+                    <td><span class="add-head">사용여부</span><span class="tds">사용</span></td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+            <!-- //table -->
+
+          </div>
+          <!-- //코드관리 영역-->
+
+
+
+          <!-- 권한 설정 영역 -->
+          <div class="conts-area mt-40">
+            <!-- 검색결과 : 리스트 상단 -->
+            <div class="search-list-top mt-0">
+              <ul class="sch-info" aria-live="polite">
+                <h2 class="sec-tit mb-0">권한 설정</h2>
+              </ul>
+              <ul class="sch-sort">
+              </ul>
+            </div>
+            <!-- //검색 결과 : 리스트 상단 -->
+            <!-- table -->
+            <div class="krds-table-wrap">
+              <table class="tbl col data center-table mobile">
+                <caption>코드관리</caption>
+                <colgroup>
+                  <col style="width: 8%;">
+                  <col>
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">메뉴명</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-center">
+                      <span class="add-head">선택</span>
+                      <div class="krds-form-check ico-only tds">
+                        <input type="checkbox" name="save_id" id="chk_1-1" checked>
+                        <label for="chk_1-1">
+                          <span class="sr-only">선택</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="add-head">메뉴명</span>
+                      <span class="tds">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <input type="text" class="krds-input small" value="공지사항" >
+                          </div>
+                        </div>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <span class="add-head">선택</span>
+                      <div class="krds-form-check ico-only tds">
+                        <input type="checkbox" name="save_id" id="chk_1-2" checked>
+                        <label for="chk_1-2">
+                          <span class="sr-only">선택</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="add-head">메뉴명</span>
+                      <span class="tds">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <input type="text" class="krds-input small" value="게시판1" >
+                          </div>
+                        </div>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <span class="add-head">선택</span>
+                      <div class="krds-form-check ico-only tds">
+                        <input type="checkbox" name="save_id" id="chk_1-3" checked>
+                        <label for="chk_1-3">
+                          <span class="sr-only">선택</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="add-head">메뉴명</span>
+                      <span class="tds">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <input type="text" class="krds-input small" value="게시판2" >
+                          </div>
+                        </div>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <span class="add-head">선택</span>
+                      <div class="krds-form-check ico-only tds">
+                        <input type="checkbox" name="save_id" id="chk_1-4" checked>
+                        <label for="chk_1-4">
+                          <span class="sr-only">선택</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="add-head">메뉴명</span>
+                      <span class="tds">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <input type="text" class="krds-input small" value="게시판3" >
+                          </div>
+                        </div>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- //table -->
+
+          </div>
+          <!-- //권한 설정 영역-->
+
+          
+        </div>
+      </div>
+    </div>
+
+
+    <!-- footer -->
+  </div>
+
+
+  <!-- js -->
+  <script src="../resources/js/component/ui-script.js"></script>
+  <script src="../resources/js/component/common.js"></script>
+</body>
+
+</html>

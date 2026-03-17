@@ -104,3 +104,44 @@ const mapUI = {
 document.addEventListener("DOMContentLoaded", () => {
   mapUI.init();
 });
+
+
+/* 풀스크린 스피너 UI 샘플
+==========================================================================*/
+const spinnerUI = {
+  config: {
+    selector: '#fullScreenSpinner',
+    activeClass: 'is-active',
+  },
+
+  init() {
+    const spinner = document.querySelector(this.config.selector);
+    if (!spinner) return;
+
+    // 빈 영역(레이어 전체) 클릭 시 닫기 이벤트
+    spinner.addEventListener('click', () => {
+      this.hide();
+    });
+  },
+
+  show() {
+    const spinner = document.querySelector(this.config.selector);
+    if (spinner) {
+      spinner.classList.add(this.config.activeClass);
+      document.body.style.overflow = 'hidden'; // 스크롤 방지
+    }
+  },
+
+  hide() {
+    const spinner = document.querySelector(this.config.selector);
+    if (spinner) {
+      spinner.classList.remove(this.config.activeClass);
+      document.body.style.overflow = ''; // 스크롤 복구
+    }
+  }
+};
+
+// 페이지 로드 시 초기화 실행
+document.addEventListener('DOMContentLoaded', () => {
+  spinnerUI.init();
+});

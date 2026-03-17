@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>경기 데이터 분석 포털</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="경기 데이터 분석 포털" />
+  <!-- style sheets -->
+  <link href="../resources/css/token/krds_tokens.css" rel="stylesheet">
+  <link href="../resources/css/common/common.css" rel="stylesheet">
+  <link href="../resources/css/component/component.css" rel="stylesheet">
+  <link href="../resources/css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+  <div>
+    <!-- header -->
+
+    <div style="padding:24px; display:flex; justify-content:center; gap:12px;">
+      <!-- 풀스크린 스피너 -->
+      <button type="button" class="krds-btn large primary" onclick="spinnerUI.show()">
+        풀스크린 스피너 실행
+      </button>
+
+      <div id="fullScreenSpinner" class="krds-spinner-wrap is-fullscreen" role="alert" aria-busy="true">
+      <div class="krds-spinner" role="status">
+        <span class="sr-only">로딩 중</span>
+        Loading data..
+      </div>
+      </div>
+      <!-- //풀스크린 스피너 -->
+    </div>
+
+    <div style="padding:24px; display:flex; justify-content:center; gap:12px;">
+      <!-- 버튼 내 스피너 -->
+      <button type="button" class="krds-btn xlarge primary">
+        <div class="krds-spinner" role="status">
+          <span class="sr-only">로딩 중</span>
+        </div>
+      </button>
+
+      <button type="button" class="krds-btn large secondary">
+        <div class="krds-spinner" role="status">
+          <span class="sr-only">로딩 중</span>
+        </div>
+      </button>
+
+      <button type="button" class="krds-btn medium tertiary">
+        <div class="krds-spinner" role="status">
+          <span class="sr-only">로딩 중</span>
+        </div>
+      </button>
+      <!-- //버튼 내 스피너 -->
+    </div>
+
+    <div style="padding:24px; display:flex; justify-content:center; gap:12px;">
+      <!-- 스피너 -->
+      <div class="krds-spinner" role="status">
+        <span class="sr-only">로딩 중</span>
+        Loading data..
+      </div>
+      <!-- //스피너 -->
+    </div>
+
+
+    <!-- footer -->
+  </div>
+
+  <!-- js -->
+  <script src="../resources/js/component/ui-script.js"></script>
+  <script src="../resources/js/component/common.js"></script>
+</body>
+
+</html>

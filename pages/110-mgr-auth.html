@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>경기 데이터 분석 포털</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="경기 데이터 분석 포털" />
+  <!-- style sheets -->
+  <link href="../resources/css/token/krds_tokens.css" rel="stylesheet">
+  <link href="../resources/css/common/common.css" rel="stylesheet">
+  <link href="../resources/css/component/component.css" rel="stylesheet">
+  <link href="../resources/css/custom.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div>
+    <!-- header -->
+
+    <div class="container">
+      <div class="inner in-between">
+        <!-- side navigation -->
+        <nav class="krds-side-navigation">
+          <h2 class="lnb-tit">관리자페이지</h2>
+          <!-- lnb-list -->
+          <ul class="lnb-list" role="menubar">
+            <li class="lnb-item active" role="none">
+              <button type="button" class="lnb-btn lnb-toggle active" role="menuitem" aria-controls="lnbmenu-1" aria-expanded="true">
+                분석운영
+              </button>
+              <!-- lnb-submenu -->
+              <div class="lnb-submenu">
+                <ul id="lnbmenu-1" role="menu">
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link selected" role="menuitem">
+                      모델권한신청관리
+                    </a>
+                  </li>
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link" role="menuitem">
+                      분석환경신청관리
+                    </a>
+                  </li>
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link" role="menuitem">
+                      분석반입신청관리
+                    </a>
+                  </li>
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link" role="menuitem">
+                      분석반출신청관리
+                    </a>
+                  </li>
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link" role="menuitem">
+                      분석코드관리
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- //lnb-submenu -->
+            </li>
+            <li class="lnb-item" role="none">
+              <button type="button" class="lnb-btn lnb-toggle" role="menuitem" aria-controls="lnbmenu-2" aria-expanded="false">
+                분석서비스관리
+              </button>
+              <!-- lnb-submenu -->
+              <div class="lnb-submenu">
+                <ul id="lnbmenu-2" role="menu">
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link" role="menuitem">
+                      분석데이터관리
+                    </a>
+                  </li>
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link" role="menuitem">
+                      분석데이터분류
+                    </a>
+                  </li>
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link" role="menuitem">
+                      분석교육관리
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- //lnb-submenu -->
+            </li>
+            <li class="lnb-item" role="none">
+              <button type="button" class="lnb-btn lnb-toggle" role="menuitem" aria-controls="lnbmenu-3" aria-expanded="false">
+                분석커뮤니티
+              </button>
+              <!-- lnb-submenu -->
+              <div class="lnb-submenu">
+                <ul id="lnbmenu-3" role="menu">
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link" role="menuitem">
+                      커뮤니티 코드관리
+                    </a>
+                  </li>
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link" role="menuitem">
+                      분석커뮤니티 신청관리
+                    </a>
+                  </li>
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link" role="menuitem">
+                      분석커뮤니티 게시판관리
+                    </a>
+                  </li>
+                  <li class="lnb-subitem" role="none">
+                    <a href="#" class="lnb-btn lnb-link" role="menuitem">
+                      분석커뮤니티 게시물관리
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- //lnb-submenu -->
+            </li>
+          </ul>
+          <!-- //lnb-list -->
+        </nav>
+        <!-- side navigation -->
+
+        <div class="contents">
+          <!-- breadcrumb -->
+          <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="home"><a href="#" class="txt">홈</a></li>
+              <li><a href="#" class="txt">관리자페이지</a></li>
+              <li><a href="#" class="txt">분석운영</a></li>
+              <li><a href="#" class="txt on">모델권한신청관리</a></li>
+            </ol>
+          </nav>
+          <!-- breadcrumb -->
+
+          <!-- 페이지 타이틀 영역 -->
+          <div class="page-title-wrap">
+            <h1 class="h-tit">모델권한신청관리</h1>
+          </div>
+          <!-- //페이지 타이틀 영역 -->
+
+          <!-- 검색 입력폼 영역 -->
+          <div class="search-top-box">
+            <div class="sch-filter-box">
+              <div class="filter-form">
+                <div>
+                  <label class="label" for="appl-sch-sel1">검색</label>
+                  <select id="appl-sch-sel1" class="krds-form-select medium completed">
+                    <option value="" selected>전체</option>
+                    <option value="">항목</option>
+                    <option value="">항목</option>
+                  </select>
+                  <button type="button" class="krds-btn medium primary">적용하기</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //검색 입력폼 영역 -->
+
+          <!-- 컨텐츠 영역 -->
+          <div class="conts-area">
+            <!-- 검색결과 : 리스트 상단 -->
+            <div class="search-list-top mt-0">
+              <ul class="sch-info" aria-live="polite">
+                <li>총 <span class="point">12</span>건</li>
+              </ul>
+              <ul class="sch-sort">
+                <li>
+                  <button type="button" class="krds-btn secondary small">반려</button>
+                </li>
+                <li>
+                  <button type="button" class="krds-btn secondary small">승인</button>
+                </li>
+              </ul>
+            </div>
+            <!-- //검색 결과 : 리스트 상단 -->
+            <!-- table -->
+            <div class="krds-table-wrap">
+              <table class="tbl col data mobile">
+                <caption>모델권한신청관리</caption>
+                <colgroup>
+                  <col style="width: 8%;">
+                  <col>
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col" class="text-center">
+                      <div class="krds-form-check ico-only">
+                        <input type="checkbox" name="save_id" id="chk_all">
+                        <label for="chk_all">
+                          <span class="sr-only">선택</span>
+                        </label>
+                      </div>
+                    </th>
+                    <th scope="col">신청번호</th>
+                    <th scope="col">센터번호</th>
+                    <th scope="col">신청자</th>
+                    <th scope="col">분석일자</th>
+                    <th scope="col">검토자</th>
+                    <th scope="col">검토일자</th>
+                    <th scope="col">상태</th>
+                    <th scope="col">처리자</th>
+                    <th scope="col">처리일자</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-center">
+                      <span class="add-head">선택</span>
+                      <div class="krds-form-check ico-only tds">
+                        <input type="checkbox" name="save_id" id="chk_1-1">
+                        <label for="chk_1-1">
+                          <span class="sr-only">선택</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td><span class="add-head">신청번호</span><span class="tds">722</span></td>
+                    <td><span class="add-head">센터번호</span><span class="tds">광교센터</span></td>
+                    <td><span class="add-head">신청자</span><span class="tds">이은진</span></td>
+                    <td><span class="add-head">분석일자</span><span class="tds">2025.10.01</span></td>
+                    <td><span class="add-head">검토자</span><span class="tds">이지나</span></td>
+                    <td><span class="add-head">검토일자</span><span class="tds">2025.10.13</span></td>
+                    <td><span class="add-head">상태</span><span class="tds">승인</span></td>
+                    <td><span class="add-head">처리자</span><span class="tds">남보라</span></td>
+                    <td><span class="add-head">처리일자</span><span class="tds">2025.10.16 09:30:54</span></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <span class="add-head">선택</span>
+                      <div class="krds-form-check ico-only tds">
+                        <input type="checkbox" name="save_id" id="chk_1-2">
+                        <label for="chk_1-2">
+                          <span class="sr-only">선택</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td><span class="add-head">신청번호</span><span class="tds">721</span></td>
+                    <td><span class="add-head">센터번호</span><span class="tds">광교센터</span></td>
+                    <td><span class="add-head">신청자</span><span class="tds">이은진</span></td>
+                    <td><span class="add-head">분석일자</span><span class="tds">2025.10.01</span></td>
+                    <td><span class="add-head">검토자</span><span class="tds">이지나</span></td>
+                    <td><span class="add-head">검토일자</span><span class="tds">2025.10.13</span></td>
+                    <td><span class="add-head">상태</span><span class="tds">승인</span></td>
+                    <td><span class="add-head">처리자</span><span class="tds">남보라</span></td>
+                    <td><span class="add-head">처리일자</span><span class="tds">2025.10.16 09:30:54</span></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <span class="add-head">선택</span>
+                      <div class="krds-form-check ico-only tds">
+                        <input type="checkbox" name="save_id" id="chk_1-3">
+                        <label for="chk_1-3">
+                          <span class="sr-only">선택</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td><span class="add-head">신청번호</span><span class="tds">720</span></td>
+                    <td><span class="add-head">센터번호</span><span class="tds">광교센터</span></td>
+                    <td><span class="add-head">신청자</span><span class="tds">이은진</span></td>
+                    <td><span class="add-head">분석일자</span><span class="tds">2025.10.01</span></td>
+                    <td><span class="add-head">검토자</span><span class="tds">이지나</span></td>
+                    <td><span class="add-head">검토일자</span><span class="tds">2025.10.13</span></td>
+                    <td><span class="add-head">상태</span><span class="tds">승인</span></td>
+                    <td><span class="add-head">처리자</span><span class="tds">남보라</span></td>
+                    <td><span class="add-head">처리일자</span><span class="tds">2025.10.16 09:30:54</span></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <span class="add-head">선택</span>
+                      <div class="krds-form-check ico-only tds">
+                        <input type="checkbox" name="save_id" id="chk_1-4">
+                        <label for="chk_1-4">
+                          <span class="sr-only">선택</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td><span class="add-head">신청번호</span><span class="tds">719</span></td>
+                    <td><span class="add-head">센터번호</span><span class="tds">광교센터</span></td>
+                    <td><span class="add-head">신청자</span><span class="tds">이은진</span></td>
+                    <td><span class="add-head">분석일자</span><span class="tds">2025.10.01</span></td>
+                    <td><span class="add-head">검토자</span><span class="tds">이지나</span></td>
+                    <td><span class="add-head">검토일자</span><span class="tds">2025.10.13</span></td>
+                    <td><span class="add-head">상태</span><span class="tds">승인</span></td>
+                    <td><span class="add-head">처리자</span><span class="tds">남보라</span></td>
+                    <td><span class="add-head">처리일자</span><span class="tds">2025.10.16 09:30:54</span></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <span class="add-head">선택</span>
+                      <div class="krds-form-check ico-only tds">
+                        <input type="checkbox" name="save_id" id="chk_1-5">
+                        <label for="chk_1-5">
+                          <span class="sr-only">선택</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td><span class="add-head">신청번호</span><span class="tds">718</span></td>
+                    <td><span class="add-head">센터번호</span><span class="tds">광교센터</span></td>
+                    <td><span class="add-head">신청자</span><span class="tds">이은진</span></td>
+                    <td><span class="add-head">분석일자</span><span class="tds">2025.10.01</span></td>
+                    <td><span class="add-head">검토자</span><span class="tds">이지나</span></td>
+                    <td><span class="add-head">검토일자</span><span class="tds">2025.10.13</span></td>
+                    <td><span class="add-head">상태</span><span class="tds">승인</span></td>
+                    <td><span class="add-head">처리자</span><span class="tds">남보라</span></td>
+                    <td><span class="add-head">처리일자</span><span class="tds">2025.10.16 09:30:54</span></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <span class="add-head">선택</span>
+                      <div class="krds-form-check ico-only tds">
+                        <input type="checkbox" name="save_id" id="chk_1-6">
+                        <label for="chk_1-6">
+                          <span class="sr-only">선택</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td><span class="add-head">신청번호</span><span class="tds">717</span></td>
+                    <td><span class="add-head">센터번호</span><span class="tds">광교센터</span></td>
+                    <td><span class="add-head">신청자</span><span class="tds">이은진</span></td>
+                    <td><span class="add-head">분석일자</span><span class="tds">2025.10.01</span></td>
+                    <td><span class="add-head">검토자</span><span class="tds">이지나</span></td>
+                    <td><span class="add-head">검토일자</span><span class="tds">2025.10.13</span></td>
+                    <td><span class="add-head">상태</span><span class="tds">승인</span></td>
+                    <td><span class="add-head">처리자</span><span class="tds">남보라</span></td>
+                    <td><span class="add-head">처리일자</span><span class="tds">2025.10.16 09:30:54</span></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <span class="add-head">선택</span>
+                      <div class="krds-form-check ico-only tds">
+                        <input type="checkbox" name="save_id" id="chk_1-7">
+                        <label for="chk_1-7">
+                          <span class="sr-only">선택</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td><span class="add-head">신청번호</span><span class="tds">716</span></td>
+                    <td><span class="add-head">센터번호</span><span class="tds">광교센터</span></td>
+                    <td><span class="add-head">신청자</span><span class="tds">이은진</span></td>
+                    <td><span class="add-head">분석일자</span><span class="tds">2025.10.01</span></td>
+                    <td><span class="add-head">검토자</span><span class="tds">이지나</span></td>
+                    <td><span class="add-head">검토일자</span><span class="tds">2025.10.13</span></td>
+                    <td><span class="add-head">상태</span><span class="tds">승인</span></td>
+                    <td><span class="add-head">처리자</span><span class="tds">남보라</span></td>
+                    <td><span class="add-head">처리일자</span><span class="tds">2025.10.16 09:30:54</span></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <span class="add-head">선택</span>
+                      <div class="krds-form-check ico-only tds">
+                        <input type="checkbox" name="save_id" id="chk_1-8">
+                        <label for="chk_1-8">
+                          <span class="sr-only">선택</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td><span class="add-head">신청번호</span><span class="tds">715</span></td>
+                    <td><span class="add-head">센터번호</span><span class="tds">광교센터</span></td>
+                    <td><span class="add-head">신청자</span><span class="tds">이은진</span></td>
+                    <td><span class="add-head">분석일자</span><span class="tds">2025.10.01</span></td>
+                    <td><span class="add-head">검토자</span><span class="tds">이지나</span></td>
+                    <td><span class="add-head">검토일자</span><span class="tds">2025.10.13</span></td>
+                    <td><span class="add-head">상태</span><span class="tds">승인</span></td>
+                    <td><span class="add-head">처리자</span><span class="tds">남보라</span></td>
+                    <td><span class="add-head">처리일자</span><span class="tds">2025.10.16 09:30:54</span></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <span class="add-head">선택</span>
+                      <div class="krds-form-check ico-only tds">
+                        <input type="checkbox" name="save_id" id="chk_1-9">
+                        <label for="chk_1-9">
+                          <span class="sr-only">선택</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td><span class="add-head">신청번호</span><span class="tds">714</span></td>
+                    <td><span class="add-head">센터번호</span><span class="tds">광교센터</span></td>
+                    <td><span class="add-head">신청자</span><span class="tds">이은진</span></td>
+                    <td><span class="add-head">분석일자</span><span class="tds">2025.10.01</span></td>
+                    <td><span class="add-head">검토자</span><span class="tds">이지나</span></td>
+                    <td><span class="add-head">검토일자</span><span class="tds">2025.10.13</span></td>
+                    <td><span class="add-head">상태</span><span class="tds">승인</span></td>
+                    <td><span class="add-head">처리자</span><span class="tds">남보라</span></td>
+                    <td><span class="add-head">처리일자</span><span class="tds">2025.10.16 09:30:54</span></td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <span class="add-head">선택</span>
+                      <div class="krds-form-check ico-only tds">
+                        <input type="checkbox" name="save_id" id="chk_1-10">
+                        <label for="chk_1-10">
+                          <span class="sr-only">선택</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td><span class="add-head">신청번호</span><span class="tds">713</span></td>
+                    <td><span class="add-head">센터번호</span><span class="tds">광교센터</span></td>
+                    <td><span class="add-head">신청자</span><span class="tds">이은진</span></td>
+                    <td><span class="add-head">분석일자</span><span class="tds">2025.10.01</span></td>
+                    <td><span class="add-head">검토자</span><span class="tds">이지나</span></td>
+                    <td><span class="add-head">검토일자</span><span class="tds">2025.10.13</span></td>
+                    <td><span class="add-head">상태</span><span class="tds">승인</span></td>
+                    <td><span class="add-head">처리자</span><span class="tds">남보라</span></td>
+                    <td><span class="add-head">처리일자</span><span class="tds">2025.10.16 09:30:54</span></td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+            <!-- //table -->
+
+            <!-- pagination -->
+            <div class="pagination-wrap">
+              <div class="krds-pagination">
+                <a class="page-navi prev" href="#">이전</a>
+                <div class="page-links">
+                  <a class="page-link" href="#">1</a>
+                  <a class="page-link" href="#">2</a>
+                  <a class="page-link" href="#">3</a>
+                  <a class="page-link active" href="#"
+                    ><span class="sr-only">현재페이지 </span>4</a
+                  >
+                  <a class="page-link" href="#">5</a>
+                  <a class="page-link" href="#">6</a>
+                  <a class="page-link" href="#">7</a>
+                  <a class="page-link" href="#">8</a>
+                  <a class="page-link" href="#">9</a>
+                  <span class="page-link link-dot"></span>
+                  <a class="page-link" href="#">99</a>
+                </div>
+                <a class="page-navi next" href="#">다음</a>
+              </div>
+
+              <!-- 직접 이동 -->
+              <div class="page-jump-area">
+                <input
+                  type="number"
+                  min="1"
+                  max="99"
+                  class="krds-input small text-center"
+                />
+                <p>/ <span>99</span></p>
+                <button type="button" class="krds-btn secondary small">이동</button>
+              </div>
+              <!-- //직접 이동 -->
+            </div>
+            <!-- //pagination -->
+
+            <!-- 페이지 버튼 영역 -->
+            <div class="page-btn-wrap both m-column justify-end">
+              <div class="btn-wrap">
+              </div>
+            </div>
+            <!-- //페이지 버튼 영역 -->
+          </div>
+          <!-- //컨텐츠 영역-->
+        </div>
+      </div>
+    </div>
+
+
+    <!-- footer -->
+  </div>
+
+
+  <!-- js -->
+  <script src="../resources/js/component/ui-script.js"></script>
+  <script src="../resources/js/component/common.js"></script>
+</body>
+
+</html>

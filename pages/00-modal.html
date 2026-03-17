@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>경기 데이터 분석 포털</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="경기 데이터 분석 포털" />
+  <!-- style sheets -->
+  <link href="../resources/css/token/krds_tokens.css" rel="stylesheet">
+  <link href="../resources/css/common/common.css" rel="stylesheet">
+  <link href="../resources/css/component/component.css" rel="stylesheet">
+  <link href="../resources/css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+  <div>
+    <!-- header -->
+
+    <div style="padding:24px; display:flex; justify-content:center; gap:12px;">
+      <button type="button" class="krds-btn large open-modal" data-target="modal_sample_01">알림형</button>
+      <button type="button" class="krds-btn large open-modal" data-target="modal_sample_02">검색형</button> 
+      <button type="button" class="krds-btn large open-modal" data-target="modal_sample_03">선택형</button> 
+      <button type="button" class="krds-btn large open-modal" data-target="modal_sample_04">이용가이드</button> 
+    </div>
+
+    <!-- modal : 알림형 -->
+    <section id="modal_sample_01" class="krds-modal fade" role="dialog" aria-labelledby="tit_modal_sample_01">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <!-- modal title -->
+          <div class="modal-header">
+            <h2 id="tit_modal_sample_01" class="modal-title">
+            </h2>
+          </div>
+          <!-- //modal title -->
+          <!-- modal contents -->
+          <div class="modal-conts">
+            <div class="conts-area">
+              가중치의 합은 반드시 100%가 되어야 합니다.<br>
+              현재 가중치의 합은 0%입니다.
+            </div>
+          </div>
+          <!-- //modal contents -->
+          <!-- modal btn -->
+          <div class="modal-btn btn-wrap">
+            <button type="button" class="krds-btn medium primary close-modal">확인</button>
+          </div>
+          <!-- //modal btn -->
+          <!-- close button -->
+          <button type="button" class="krds-btn medium icon btn-close close-modal">
+            <span class="sr-only">닫기</span>
+            <i class="svg-icon ico-popup-close"></i>
+          </button>
+          <!-- //close button -->
+        </div>
+      </div>
+      <div class="modal-back"></div>
+    </section>
+    <!-- //modal : 알림형 -->
+
+
+    <!-- modal : 검색형 -->
+    <section id="modal_sample_02" class="krds-modal fade" role="dialog" aria-labelledby="tit_modal_sample_02">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <!-- modal title -->
+          <div class="modal-header">
+            <h2 id="tit_modal_sample_02" class="modal-title">
+              업체정보
+            </h2>
+          </div>
+          <!-- //modal title -->
+          <!-- modal contents -->
+          <div class="modal-conts">
+            <div class="conts-area">
+
+              <div class="search-filter-group">
+                <div class="filter-item">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select small completed" title="선택">
+                        <option value="" selected>업체명</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="search-item">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <input type="text" class="krds-input small" placeholder="검색어를 입력하세요">
+                    </div>
+                  </div>
+                  <button type="button" class="krds-btn small tertiary">검색</button>
+                </div>
+              </div>
+
+              <!-- table -->
+              <div class="krds-table-wrap">
+                <table class="tbl col data">
+                  <caption>업체정보 테이블</caption>
+                  <colgroup>
+                    <col style="width: 20%;">
+                    <col>
+                    <col style="width: 20%;">
+                    <col>
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th class="bg">사업자등록번호</th>
+                      <td>
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select small completed" title="선택">
+                              <option value="" selected>없음</option>
+                            </select>
+                          </div>
+                        </div>
+                      </td>
+                      <th class="bg">법인등록번호</th>
+                      <td>1358110208166</td>
+                    </tr>
+                    <tr>
+                      <th class="bg">업체명</th>
+                      <td>
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select small completed" title="선택">
+                              <option value="" selected>(주)법인명</option>
+                            </select>
+                          </div>
+                        </div>
+                      </td>
+                      <th class="bg">대표자</th>
+                      <td>홍길동</td>
+                    </tr>
+                    <tr>
+                      <th class="bg">업체주소</th>
+                      <td colspan="3">경기도 수원시 팔달구 장다리로 306번길 26 평은빌딩 408호</td>
+                    </tr>
+                    <tr>
+                      <th class="bg">연락처</th>
+                      <td colspan="3">031-1234-5678</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- //table -->
+
+            </div>
+          </div>
+          <!-- //modal contents -->
+          <!-- modal btn -->
+          <div class="modal-btn btn-wrap">
+            <button type="button" class="krds-btn medium tertiary close-modal">닫기</button>
+            <button type="button" class="krds-btn medium primary close-modal">선택 완료</button>
+          </div>
+          <!-- //modal btn -->
+          <!-- close button -->
+          <button type="button" class="krds-btn medium icon btn-close close-modal">
+            <span class="sr-only">닫기</span>
+            <i class="svg-icon ico-popup-close"></i>
+          </button>
+          <!-- //close button -->
+        </div>
+      </div>
+      <div class="modal-back"></div>
+    </section>
+    <!-- //modal : 검색형 -->
+
+
+    <!-- modal : 선택형 -->
+    <section id="modal_sample_03" class="krds-modal fade" role="dialog" aria-labelledby="tit_modal_sample_03">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <!-- modal title -->
+          <div class="modal-header">
+            <h2 id="tit_modal_sample_03" class="modal-title">
+              경기도 시/군 선택
+            </h2>
+            <p class="modal-subtitle">
+              ※ 지역 선택은 최대 5개까지 가능
+            </p>
+          </div>
+          <!-- //modal title -->
+          <!-- modal contents -->
+          <div class="modal-conts">
+            <div class="conts-area">
+              <div class="krds-check-area chk-grid-4">
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_01" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_01">가평군</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_02" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_02">고양시</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_03" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_03">고양시 덕양구</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_04" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_04">고양시 일산동구</label>
+                </div>
+
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_05" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_05">고양시 일산서구</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_06" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_06">과천시</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_07" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_07">광명시</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_08" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_08">광주시</label>
+                </div>
+
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_09" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_09">구리시</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_10" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_10">군포시</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_11" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_11">김포시</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_12" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_12">남양주시</label>
+                </div>
+
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_13" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_13">동두천시</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_14" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_14">부천시</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_15" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_15">성남시</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_16" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_16">성남시 분당구</label>
+                </div>
+
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_17" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_17">성남시 수정구</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_18" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_18">성남시 중원구</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_19" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_19">수원시</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_20" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_20">수원시 권선구</label>
+                </div>
+
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_21" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_21">수원시 영통구</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_22" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_22">수원시 장안구</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_23" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_23">수원시 팔달구</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_24" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_24">시흥시</label>
+                </div>
+
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_25" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_25">안산시</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_26" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_26">안산시 단원구</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_27" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_27">안산시 상록수</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_28" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_28">안성시</label>
+                </div>
+
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_29" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_29">안양시</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_30" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_30">안양시 동안구</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_31" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_31">안양시 만안구</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_32" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_32">양주시</label>
+                </div>
+
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_33" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_33">양평군</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_34" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_34">여주시</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_35" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_35">연천군</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_36" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_36">오산시</label>
+                </div>
+
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_37" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_37">용인시</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_38" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_38">용인시 기흥구</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_39" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_39">용인시 수지구</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_40" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_40">용신시 처인구</label>
+                </div>
+
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_41" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_41">의왕시</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_42" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_42">의정부시</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_43" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_43">이천시</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_44" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_44">파주시</label>
+                </div>
+
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_45" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_45">평택시</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_46" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_46">포천시</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_47" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_47">하남시</label>
+                </div>
+                <div class="krds-form-check">
+                  <input type="checkbox" name="pc_accident_type" id="chk_sample_48" class="krds-form-check-input">
+                  <label class="krds-form-check-label" for="chk_sample_48">화성시</label>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- //modal contents -->
+          <!-- modal btn -->
+          <div class="modal-btn btn-wrap">
+            <button type="button" class="krds-btn medium tertiary close-modal">선택 해제</button>
+            <button type="button" class="krds-btn medium primary close-modal">선택 완료</button>
+          </div>
+          <!-- //modal btn -->
+          <!-- close button -->
+          <button type="button" class="krds-btn medium icon btn-close close-modal">
+            <span class="sr-only">닫기</span>
+            <i class="svg-icon ico-popup-close"></i>
+          </button>
+          <!-- //close button -->
+        </div>
+      </div>
+      <div class="modal-back"></div>
+    </section>
+    <!-- //modal : 선택형 -->
+
+
+    <!-- modal : 이용가이드 -->
+    <section id="modal_sample_04" class="krds-modal fade" role="dialog" aria-labelledby="tit_modal_sample_04">
+      <div class="modal-dialog modal-xlg modal-guide">
+        <div class="modal-content">
+          <!-- modal title -->
+          <div class="modal-header">
+            <h2 id="tit_modal_sample_04" class="modal-title">
+              이용 가이드
+            </h2>
+          </div>
+          <!-- //modal title -->
+          <!-- modal contents -->
+          <div class="modal-conts">
+            <div class="conts-area">
+              <!-- tab -->
+              <div class="krds-tab-area layer is-wrap">
+                <!-- tab list -->
+                <div class="tab fill full">
+                  <ul role="tablist">
+                    <li id="tab_login_01" role="tab" aria-selected="true" aria-controls="panel_login_01" class="active">
+                      <button type="button" class="btn-tab">분석개요<i class="sr-only created"> 선택됨</i></button>
+                    </li>
+                    <li id="tab_login_02" role="tab" aria-selected="false" aria-controls="panel_login_02">
+                      <button type="button" class="btn-tab">아파트 거래 분석(현황 분석)</button>
+                    </li>
+                    <li id="tab_login_03" role="tab" aria-selected="false" aria-controls="panel_login_03">
+                      <button type="button" class="btn-tab">아파트 거래 분석(년도별 현황)</button>
+                    </li>
+                    <li id="tab_login_04" role="tab" aria-selected="false" aria-controls="panel_login_04">
+                      <button type="button" class="btn-tab">외지인 매매 현황 분석(지역별 비교)</button>
+                    </li>
+                    <li id="tab_login_05" role="tab" aria-selected="false" aria-controls="panel_login_05">
+                      <button type="button" class="btn-tab">외지인 매매 현황 분석(기간별 비교)</button>
+                    </li>
+                    <li id="tab_login_06" role="tab" aria-selected="false" aria-controls="panel_login_06">
+                      <button type="button" class="btn-tab">아파트 시세 영향 요인 분석</button>
+                    </li>
+                    <li id="tab_login_07" role="tab" aria-selected="false" aria-controls="panel_login_07">
+                      <button type="button" class="btn-tab">지역 활성도 모니터링</button>
+                    </li>
+                    <li id="tab_login_08" role="tab" aria-selected="false" aria-controls="panel_login_08">
+                      <button type="button" class="btn-tab">유동인구 및 매출현황</button>
+                    </li>
+                    <li id="tab_login_09" role="tab" aria-selected="false" aria-controls="panel_login_09">
+                      <button type="button" class="btn-tab">아파트 배후 환경분석</button>
+                    </li>
+                  </ul>
+                </div>
+                <!-- //tab list -->
+                
+                <!-- tab contents -->
+                <div class="tab-conts-wrap">
+                  <section id="panel_login_01" aria-labelledby="tab_login_01" class="tab-conts active" data-quick-nav="false">
+                    <h3 class="sr-only">분석개요</h3>
+                    <div class="img-area mb-16" style="width: 100%">
+                      <img src="../resources/img/bg/dummy-image2.png" alt="더미 이미지">
+                    </div>
+
+                    <!-- tab -->
+                    <div class="krds-tab-area layer">
+                      <!-- tab list -->
+                      <div class="tab line">
+                        <ul role="tablist">
+                          <li id="tab_login_01-01" role="tab" aria-selected="true" aria-controls="panel_login_01-01" class="active">
+                            <button type="button" class="btn-tab">1<i class="sr-only created"> 선택됨</i></button>
+                          </li>
+                          <li id="tab_login_01-02" role="tab" aria-selected="false" aria-controls="panel_login_01-02">
+                            <button type="button" class="btn-tab">2</button>
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- //tab list -->
+                      
+                      <!-- tab contents -->
+                      <div class="tab-conts-wrap">
+                        <section id="panel_login_01-01" aria-labelledby="tab_login_01-01" class="tab-conts active" data-quick-nav="false">
+                          <h3 class="sr-only">1</h3>
+                          <div class="helper-box refer">
+                            <p class="helper-txt">분석할 지역(행정동)을 선택합니다.</p>
+                          </div>
+                        </section>
+                        <section id="panel_login_01-02" aria-labelledby="tab_login_01-02" class="tab-conts" data-quick-nav="false">
+                          <h3 class="sr-only">2</h3>
+                          탭 2 영역
+                        </section>
+                      </div>
+                      <!-- //tab contents -->
+                    </div>
+                    <!-- //tab -->
+
+                  </section>
+                  <section id="panel_login_02" aria-labelledby="tab_login_02" class="tab-conts" data-quick-nav="false">
+                    <h3 class="sr-only">아파트 거래 분석(현황 분석)</h3>
+                    탭 2 영역
+                  </section>
+                  <section id="panel_login_03" aria-labelledby="tab_login_03" class="tab-conts" data-quick-nav="false">
+                    <h3 class="sr-only">아파트 거래 분석(년도별 현황)</h3>
+                    탭 3 영역
+                  </section>
+                  <section id="panel_login_04" aria-labelledby="tab_login_04" class="tab-conts" data-quick-nav="false">
+                    <h3 class="sr-only">외지인 매매 현황 분석(지역별 비교)</h3>
+                    탭 4 영역
+                  </section>
+                  <section id="panel_login_05" aria-labelledby="tab_login_05" class="tab-conts" data-quick-nav="false">
+                    <h3 class="sr-only">외지인 매매 현황 분석(기간별 비교)</h3>
+                    탭 5 영역
+                  </section>
+                  <section id="panel_login_06" aria-labelledby="tab_login_06" class="tab-conts" data-quick-nav="false">
+                    <h3 class="sr-only">아파트 시세 영향 요인 분석</h3>
+                    탭 6 영역
+                  </section>
+                  <section id="panel_login_07" aria-labelledby="tab_login_07" class="tab-conts" data-quick-nav="false">
+                    <h3 class="sr-only">아파트 배후 환경분석</h3>
+                    탭 7 영역
+                  </section>
+                  <section id="panel_login_08" aria-labelledby="tab_login_08" class="tab-conts" data-quick-nav="false">
+                    <h3 class="sr-only">아파트 시세 영향 요인 분석</h3>
+                    탭 8 영역
+                  </section>
+                  <section id="panel_login_09" aria-labelledby="tab_login_09" class="tab-conts" data-quick-nav="false">
+                    <h3 class="sr-only">아파트 배후 환경분석</h3>
+                    탭 9 영역
+                  </section>
+                </div>
+                <!-- //tab contents -->
+              </div>
+              <!-- //tab -->
+
+            </div>
+          </div>
+          <!-- //modal contents -->
+          <!-- close button -->
+          <button type="button" class="krds-btn medium icon btn-close close-modal">
+            <span class="sr-only">닫기</span>
+            <i class="svg-icon ico-popup-close"></i>
+          </button>
+          <!-- //close button -->
+        </div>
+      </div>
+      <div class="modal-back"></div>
+    </section>
+    <!-- //modal : 이용가이드 -->
+
+
+    <!-- footer -->
+  </div>
+
+  <!-- js -->
+  <script src="../resources/js/component/ui-script.js"></script>
+  <script src="../resources/js/component/common.js"></script>
+</body>
+
+</html>
