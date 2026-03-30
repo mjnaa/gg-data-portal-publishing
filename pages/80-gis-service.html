@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>경기 데이터 분석 포털</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="경기 데이터 분석 포털" />
+  <!-- style sheets -->
+  <link href="../resources/css/token/krds_tokens.css" rel="stylesheet">
+  <link href="../resources/css/common/common.css" rel="stylesheet">
+  <link href="../resources/css/component/component.css" rel="stylesheet">
+  <link href="../resources/css/custom.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div>
+    <!-- header -->
+
+    <div class="container">
+      <div class="inner">
+        <!-- breadcrumb -->
+        <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="home"><a href="#" class="txt">홈</a></li>
+            <li><a href="#" class="txt">분석 활용</a></li>
+            <li><a href="#" class="txt on">GIS 시각화 서비스</a></li>
+          </ol>
+        </nav>
+        <!-- breadcrumb -->
+
+        <!-- 페이지 타이틀 영역 -->
+        <div class="page-title-wrap">
+          <h1 class="h-tit">GIS 시각화 서비스</h1>
+          <div class="btn-wrap">
+            <!-- 모바일용 필터-->
+            <button type="button" class="krds-btn medium text m-filter open-modal" data-target="popFilterId">
+              <i class="svg-icon ico-filter"></i>
+              <span class="span">검색 필터</span>
+            </button>
+            <!-- //모바일용 필터-->
+          </div>
+        </div>
+        <!-- //페이지 타이틀 영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <div class="search-between-conts">
+          <!-- 왼쪽 검색 필터 영역-->
+          <div class="aside">
+            <dl class="filter-dl">
+              <dt>검색 필터</dt>
+              <dd>
+                <ul class="filter-list krds-accordion type-line">
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_01"
+                        aria-controls="acc_pc_col_01">
+                        <div class="tit">파일 템플릿 다운로드</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_01" aria-labelledby="acc_pc_hd_01">
+                      <div class="accordion-body">
+                        <div>
+                          <button type="button" class="krds-btn medium text">
+                            <i class="svg-icon ico-down"></i> 구역분포_템플릿</button>
+                          <button type="button" class="krds-btn medium text mt-16">
+                            <i class="svg-icon ico-down"></i> 주소_개별위치_템플릿</button>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_02"
+                        aria-controls="acc_pc_col_02">
+                        <div class="tit">파일 선택</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_02" aria-labelledby="acc_pc_hd_02">
+                      <div class="accordion-body grid-input-action">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <input type="text" class="krds-input medium" placeholder="선택버튼을 눌러주세요" readonly>
+                          </div>
+                        </div>
+                        <button type="button" class="krds-btn medium tertiary">선택</button>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_03"
+                        aria-controls="acc_pc_col_03">
+                        <div class="tit">지도 형태</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_03" aria-labelledby="acc_pc_hd_03">
+                      <div class="accordion-body">
+                        <div class="filter-detail">
+                          <div class="filter-detail-group">
+                            <div class="krds-check-area chk-row">
+                              <div class="krds-form-check">
+                                <input type="radio" name="rdo_1" id="rdo_1-1" checked>
+                                <label for="rdo_1-1">구역분포</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="radio" name="rdo_1" id="rdo_1-2">
+                                <label for="rdo_1-2">주소위치</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="radio" name="rdo_1" id="rdo_1-3">
+                                <label for="rdo_1-3">개별위치</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_04"
+                        aria-controls="acc_pc_col_04">
+                        <div class="tit">지도 설정</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_04" aria-labelledby="acc_pc_hd_04">
+                      <div class="accordion-body">
+                        <div class="filter-detail">
+                          <div class="filter-detail-group">
+                            <div class="filter-detail-head">
+                              <p class="filter-detail-tit">색상</p>
+                            </div>
+                            <div class="form-group">
+                              <div class="form-conts">
+                                <select class="krds-form-select medium completed" title="선택">
+                                  <option value="" selected>1</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="filter-detail-group">
+                            <div class="filter-detail-head">
+                              <p class="filter-detail-tit">지도 색상 선택</p>
+                            </div>
+                            <div class="grid-input-action">
+                              <div class="form-group">
+                                <div class="form-conts">
+                                  <div class="color-preview-box" style="background-color: #255bc2;"
+                                    aria-label="선택된 지도 색상"></div>
+                                  <input type="hidden" name="map_color" id="mapColorValue" value="#255bc2">
+                                </div>
+                              </div>
+                              <button type="button" class="krds-btn medium tertiary">선택</button>
+                            </div>
+                          </div>
+
+                          <div class="filter-detail-group">
+                            <div class="filter-detail-head">
+                              <p class="filter-detail-tit">마커</p>
+                            </div>
+
+                            <div class="krds-check-area chk-row">
+                              <div class="krds-form-check">
+                                <input type="radio" name="rdo_2" id="rdo_2-1" checked>
+                                <label for="rdo_2-1">원</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="radio" name="rdo_2" id="rdo_2-2">
+                                <label for="rdo_2-2">포인트</label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="filter-detail-group">
+                            <div class="filter-detail-head">
+                              <p class="filter-detail-tit">명칭</p>
+                            </div>
+
+                            <div class="krds-check-area chk-row">
+                              <div class="krds-form-check">
+                                <input type="radio" name="rdo_3" id="rdo_3-1" checked>
+                                <label for="rdo_3-1">켜기</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="radio" name="rdo_3" id="rdo_3-2">
+                                <label for="rdo_3-2">끄기</label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="filter-detail-group">
+                            <div class="filter-detail-head">
+                              <p class="filter-detail-tit">배경</p>
+                            </div>
+
+                            <div class="krds-check-area chk-row">
+                              <div class="krds-form-check">
+                                <input type="radio" name="rdo_4" id="rdo_4-1" checked>
+                                <label for="rdo_4-1">켜기</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="radio" name="rdo_4" id="rdo_4-2">
+                                <label for="rdo_4-2">끄기</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+
+            <div class="filter-btn">
+              <button type="button" class="krds-btn medium tertiary">초기화</button>
+              <button type="button" class="krds-btn medium primary">분석하기</button>
+            </div>
+          </div>
+          <!-- //왼쪽 검색 필터 영역-->
+
+          <!-- 분석 결과-->
+          <div class="contents">
+
+            <div class="section-5">
+              <!-- 지도 영역-->
+              <div class="data-area">
+                <div class="img-area" style="width: 100%">
+                  <img src="../resources/img/bg/dummy-map2.png" alt="map 더미 이미지">
+                </div>
+
+                <!-- 지도 오버레이 UI-->
+                <div class="map-ui" aria-label="지도 오버레이 컨트롤">
+
+                  <!-- 우측 액션 버튼/슬라이더-->
+                  <aside class="map-controls" aria-label="지도 도구">
+                    <div class="map-controls-group" role="group" aria-label="지도 버튼">
+                      <button type="button" class="map-btn" data-map-zoom-in>
+                        <span class="sr-only">확대</span>
+                        <i class="svg-icon ico-plus"></i>
+                      </button>
+
+                      <!-- 슬라이더-->
+                      <div class="map-slider" data-map-slider aria-label="확대 축소 슬라이더">
+                        <div class="map-slider-track">
+                          <div class="map-slider-thumb" data-map-thumb aria-hidden="true"></div>
+                        </div>
+
+                        <!-- 실제 값 저장용-->
+                        <input type="range" class="map-slider-input" data-map-range min="0" max="100" value="70"
+                          step="10" aria-label="확대 축소 값">
+                      </div>
+
+                      <button type="button" class="map-btn" data-map-zoom-out>
+                        <span class="sr-only">축소</span>
+                        <i class="svg-icon ico-minus"></i>
+                      </button>
+                    </div>
+
+                    <div class="map-controls-group" role="group" aria-label="기타 도구">
+                      <button type="button" class="map-btn">
+                        <span class="sr-only">새로고침</span>
+                        <i class="svg-icon ico-reset"></i>
+                      </button>
+                      <button type="button" class="map-btn">
+                        <span class="sr-only">전체보기</span>
+                        <i class="svg-icon ico-token_gap"></i>
+                      </button>
+                      <button type="button" class="map-btn">
+                        <span class="sr-only">거리측정</span>
+                        <i class="svg-icon ico-elevation"></i>
+                      </button>
+                      <button type="button" class="map-btn">
+                        <span class="sr-only">면적측정</span>
+                        <i class="svg-icon ico-map"></i>
+                      </button>
+                      <button type="button" class="map-btn">
+                        <span class="sr-only">이미지저장</span>
+                        <i class="svg-icon ico-down"></i>
+                      </button>
+                    </div>
+                  </aside>
+                  <!-- //우측 액션 버튼/슬라이더-->
+
+                </div>
+                <!-- //지도 오버레이 UI-->
+              </div>
+              <!-- //지도 영역-->
+            </div>
+
+          </div>
+          <!-- //분석 결과-->
+
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+  </div>
+
+  <!-- 레이어 : 검색 필터-->
+  <section id="popFilterId" class="krds-modal fade" data-type="bottom-sheet" role="dialog">
+    <!-- modal-dialog -->
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 class="modal-title">검색 필터</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <ul class="filter-list krds-accordion type-line">
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_01" aria-controls="acc_m_col_01">
+                  <div class="tit">파일 템플릿 다운로드</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_01" aria-labelledby="acc_m_hd_01">
+                <div class="accordion-body">
+                  <div>
+                    <button type="button" class="krds-btn medium text">
+                      <i class="svg-icon ico-down"></i> 구역분포_템플릿</button>
+                    <button type="button" class="krds-btn medium text mt-16">
+                      <i class="svg-icon ico-down"></i> 주소_개별위치_템플릿</button>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_02" aria-controls="acc_m_col_02">
+                  <div class="tit">파일 선택</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_02" aria-labelledby="acc_m_hd_02">
+                <div class="accordion-body grid-input-action">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <input type="text" class="krds-input medium" placeholder="선택버튼을 눌러주세요" readonly>
+                    </div>
+                  </div>
+                  <button type="button" class="krds-btn medium tertiary">선택</button>
+                </div>
+              </div>
+            </li>
+
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_03" aria-controls="acc_m_col_03">
+                  <div class="tit">지도 형태</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_03" aria-labelledby="acc_m_hd_03">
+                <div class="accordion-body">
+                  <div class="filter-detail">
+                    <div class="filter-detail-group">
+                      <div class="krds-check-area chk-row">
+                        <div class="krds-form-check">
+                          <input type="radio" name="rdo_1" id="rdo_1-1" checked>
+                          <label for="rdo_1-1">구역분포</label>
+                        </div>
+                        <div class="krds-form-check">
+                          <input type="radio" name="rdo_1" id="rdo_1-2">
+                          <label for="rdo_1-2">주소위치</label>
+                        </div>
+                        <div class="krds-form-check">
+                          <input type="radio" name="rdo_1" id="rdo_1-3">
+                          <label for="rdo_1-3">개별위치</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_04" aria-controls="acc_m_col_04">
+                  <div class="tit">지도 설정</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_04" aria-labelledby="acc_m_hd_04">
+                <div class="accordion-body">
+                  <div class="filter-detail">
+                    <div class="filter-detail-group">
+                      <div class="filter-detail-head">
+                        <p class="filter-detail-tit">색상</p>
+                      </div>
+                      <div class="form-group">
+                        <div class="form-conts">
+                          <select class="krds-form-select medium completed" title="선택">
+                            <option value="" selected>1</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="filter-detail-group">
+                      <div class="filter-detail-head">
+                        <p class="filter-detail-tit">지도 색상 선택</p>
+                      </div>
+                      <div class="grid-input-action">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <div class="color-preview-box" style="background-color: #255bc2;" aria-label="선택된 지도 색상">
+                            </div>
+                            <input type="hidden" name="map_color" id="mapColorValue" value="#255bc2">
+                          </div>
+                        </div>
+                        <button type="button" class="krds-btn medium tertiary">선택</button>
+                      </div>
+                    </div>
+
+                    <div class="filter-detail-group">
+                      <div class="filter-detail-head">
+                        <p class="filter-detail-tit">마커</p>
+                      </div>
+
+                      <div class="krds-check-area chk-row">
+                        <div class="krds-form-check">
+                          <input type="radio" name="rdo_2" id="rdo_2-1" checked>
+                          <label for="rdo_2-1">원</label>
+                        </div>
+                        <div class="krds-form-check">
+                          <input type="radio" name="rdo_2" id="rdo_2-2">
+                          <label for="rdo_2-2">포인트</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="filter-detail-group">
+                      <div class="filter-detail-head">
+                        <p class="filter-detail-tit">명칭</p>
+                      </div>
+
+                      <div class="krds-check-area chk-row">
+                        <div class="krds-form-check">
+                          <input type="radio" name="rdo_3" id="rdo_3-1" checked>
+                          <label for="rdo_3-1">켜기</label>
+                        </div>
+                        <div class="krds-form-check">
+                          <input type="radio" name="rdo_3" id="rdo_3-2">
+                          <label for="rdo_3-2">끄기</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="filter-detail-group">
+                      <div class="filter-detail-head">
+                        <p class="filter-detail-tit">배경</p>
+                      </div>
+
+                      <div class="krds-check-area chk-row">
+                        <div class="krds-form-check">
+                          <input type="radio" name="rdo_4" id="rdo_4-1" checked>
+                          <label for="rdo_4-1">켜기</label>
+                        </div>
+                        <div class="krds-form-check">
+                          <input type="radio" name="rdo_4" id="rdo_4-2">
+                          <label for="rdo_4-2">끄기</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">초기화</button>
+          <button type="button" class="krds-btn medium primary close-modal">분석하기</button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button type="button" class="krds-btn medium icon btn-close close-modal">
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <!-- //modal-dialog -->
+    <div class="modal-back in"></div>
+  </section>
+  <!-- //레이어 : 검색 필터-->
+
+  <!-- js -->
+  <script src="../resources/js/component/ui-script.js"></script>
+  <script src="../resources/js/component/common.js"></script>
+</body>
+
+</html>

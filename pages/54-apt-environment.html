@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>경기 데이터 분석 포털</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="경기 데이터 분석 포털" />
+  <!-- style sheets -->
+  <link href="../resources/css/token/krds_tokens.css" rel="stylesheet">
+  <link href="../resources/css/common/common.css" rel="stylesheet">
+  <link href="../resources/css/component/component.css" rel="stylesheet">
+  <link href="../resources/css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+  <div>
+    <!-- header -->
+
+    <div class="container">
+      <div class="inner">
+        <!-- breadcrumb -->
+        <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="home"><a href="#" class="txt">홈</a></li>
+            <li><a href="#" class="txt">분석 모델</a></li>
+            <li><a href="#" class="txt">부동산모니터링</a></li>
+            <li><a href="#" class="txt on">아파트 배후 환경분석</a></li>
+          </ol>
+        </nav>
+        <!-- breadcrumb -->
+
+        <!-- 페이지 타이틀 영역 -->
+        <div class="page-title-wrap">
+          <h1 class="h-tit">아파트 배후 환경분석</h1>
+          <div class="btn-wrap">
+            <!-- 모바일용 필터-->
+            <button type="button" class="krds-btn medium text m-filter open-modal" data-target="popFilterId">
+              <i class="svg-icon ico-filter"></i>
+              <span class="span">검색 필터</span>
+            </button>
+            <!-- //모바일용 필터-->
+            <button type="button" class="krds-btn medium text">
+              <i class="svg-icon ico-down"></i>
+              다운로드
+            </button>
+            <button type="button" class="krds-btn medium text">
+              <i class="svg-icon ico-information"></i>
+              이용가이드
+            </button>
+          </div>
+        </div>
+        <!-- //페이지 타이틀 영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <div class="search-between-conts">
+          <!-- 왼쪽 검색 필터 영역-->
+          <div class="aside">
+            <dl class="filter-dl">
+              <dt>검색 필터</dt>
+              <dd>
+                <ul class="filter-list krds-accordion type-line">
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_01"
+                        aria-controls="acc_pc_col_01">
+                        <div class="tit">지역선택</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_01" aria-labelledby="acc_pc_hd_01">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>수원시 팔달구</option>
+                              <option value="">항목</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>인계동</option>
+                              <option value="">항목</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_02"
+                        aria-controls="acc_pc_col_02">
+                        <div class="tit">반경 설정</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_02" aria-labelledby="acc_pc_hd_02">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>500m</option>
+                              <option value="">항목</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_03"
+                        aria-controls="acc_pc_col_03">
+                        <div class="tit">아파트 단지 선택</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_03" aria-labelledby="acc_pc_hd_03">
+                      <div class="accordion-body grid-input-action">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <input type="text" class="krds-input medium" placeholder="선택버튼을 눌러주세요" readonly>
+                          </div>
+                        </div>
+                        <button type="button" class="krds-btn medium tertiary">선택</button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+
+            <div class="filter-btn">
+              <button type="button" class="krds-btn medium tertiary">초기화</button>
+              <button type="button" class="krds-btn medium primary">분석하기</button>
+            </div>
+          </div>
+          <!-- //왼쪽 검색 필터 영역-->
+
+
+          <!-- 분석 결과-->
+          <div class="contents">
+
+
+            <div class="section-5">
+              <!-- 지도 영역-->
+              <div class="data-area">
+                <div class="img-area" style="width: 100%">
+                  <img src="../resources/img/bg/dummy-map2.png" alt="map 더미 이미지">
+                </div>
+
+                <!-- 지도 오버레이 UI-->
+                <div class="map-ui" aria-label="지도 오버레이 컨트롤">
+
+                  <!-- 요약 정보 패널 (좌측 상단) -->
+                  <section class="map-panel map-panel--info" data-anchor="tl" style="--x:16px; --y:16px;" data-map-panel
+                    aria-label="아파트 요약 정보">
+                    <header class="map-panel-head">
+                      <h2 class="map-panel-title">래미안노블클래스2단지</h2>
+                      <button type="button" class="krds-btn icon xsmall" data-map-panel-close>
+                        <span class="sr-only">닫기</span>
+                        <i class="svg-icon ico-close"></i>
+                      </button>
+                    </header>
+
+                    <div class="map-panel-body">
+                      <ul class="map-info-list">
+                        <li class="map-info-item">
+                          <span class="map-info-key">도로명 주소</span>
+                          <ul class="map-info-sub">
+                            <li>
+                              <span>경기도 수원시 팔달구 권광로 243</span>
+                            </li>
+                          </ul>
+                        </li>
+
+                        <li class="map-info-item">
+                          <span class="map-info-key">배후 환경 정보</span>
+                          <div class="map-table-wrap" role="region" aria-label="배후 환경 정보 표">
+                            <table class="map-table">
+                              <caption class="sr-only">배후 환경 정보 표</caption>
+                              <thead>
+                                <tr>
+                                  <th scope="col">구분</th>
+                                  <th scope="col">개소</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row">생활인프라</th>
+                                  <td>530개소</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">문화/여가시설</th>
+                                  <td>9개소</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">교통시설</th>
+                                  <td>1개소</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </section>
+
+                  <!-- 범례: 주변 시설 (우측 하단) -->
+                  <section class="map-panel map-panel--legend" data-anchor="br" style="--x:16px; --y:16px;"
+                    data-map-panel aria-label="범례 주변 시설">
+                    <header class="map-panel-head">
+                      <h2 class="map-panel-title">범례: 주변 시설</h2>
+                      <button type="button" class="krds-btn icon xsmall" data-map-panel-close>
+                        <span class="sr-only">닫기</span>
+                        <i class="svg-icon ico-close"></i>
+                      </button>
+                    </header>
+
+                    <div class="map-panel-body">
+                      <ul class="map-info-list">
+                        <li class="map-info-item">
+                          <span class="map-info-key type-traffic">교통시설</span>
+                          <ul class="map-info-sub basic">
+                            <li>
+                              <span>대중교통시설 : 버스정류장, 지하철역 등</span>
+                            </li>
+                            <li>
+                              <span>도로안전시설 : 노인보호구역, 어린이보호구역 등</span>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="map-info-item">
+                          <span class="map-info-key type-culture">문화/여가시설</span>
+                          <ul class="map-info-sub basic">
+                            <li>
+                              <span>관광시설 : 대형마트, 관광지구 등</span>
+                            </li>
+                            <li>
+                              <span>문화시설 : 공연장, 도서관 등</span>
+                            </li>
+                            <li>
+                              <span>여가시설 : 공원</span>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="map-info-item">
+                          <span class="map-info-key type-infra">생활인프라</span>
+                          <ul class="map-info-sub basic">
+                            <li>
+                              <span>공공기관 : 지방행정기관</span>
+                            </li>
+                            <li>
+                              <span>교육시설 : 고등학교, 대학교 등</span>
+                            </li>
+                            <li>
+                              <span>금융기관 : 은행</span>
+                            </li>
+                            <li>
+                              <span>보육시설 : 어린이집</span>
+                            </li>
+                            <li>
+                              <span>복지시설 : 경로당, 기타비거주복지서비스업 등</span>
+                            </li>
+                            <li>
+                              <span>상업시설 : 대형마트, 동물병원 등</span>
+                            </li>
+                            <li>
+                              <span>생활편의시설 : BF인증시설</span>
+                            </li>
+                            <li>
+                              <span>스포츠시설 : 생활스포츠시설, 수상오락서비스업 등</span>
+                            </li>
+                            <li>
+                              <span>의료시설 : 보건소, 산부인과의원 등</span>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="map-info-item">
+                          <span class="map-info-key type-safety">안전/치안시설</span>
+                          <ul class="map-info-sub basic">
+                            <li>
+                              <span>공공안전시설 : 경찰서, 소방서</span>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="map-info-item">
+                          <span class="map-info-key type-dislike">비선호시설</span>
+                          <ul class="map-info-sub basic">
+                            <li>
+                              <span>교정시설</span>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </section>
+
+                </div>
+                <!-- //지도 오버레이 UI-->
+              </div>
+              <!-- //지도 영역-->
+            </div>
+
+            <div class="section-5">
+              <div class="con-title-wrap">
+                <div class="con-title">
+                  <p class="l-small-txt">* 각 시설에 대한 상세 종류는 우측 상단 범례 표시를 클릭하여 확인할 수 있습니다.</p>
+                </div>
+                <div class="legend-wrap">
+                  <ul class="legend-list">
+                    <li class="legend-item target">
+                      <i class="svg-icon ico-mapmarker ico-mapmarker06" aria-hidden="true"></i>
+                      선택한 아파트
+                    </li>
+                    <li class="legend-item nearby">
+                      <i class="svg-icon ico-mapmarker ico-mapmarker07" aria-hidden="true"></i>
+                      설정한 반경 내 아파트
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- 표 영역 -->
+              <div class="krds-table-wrap">
+                <table class="tbl col data center-table no-pointer mobile">
+                  <caption>
+                    아파트 배후 환경분석 표
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="border-right">아파트 단지명</th>
+                      <th scope="col">생활인프라</th>
+                      <th scope="col">문화/여가시설</th>
+                      <th scope="col">교통시설</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- 선택한 아파트 -->
+                    <tr class="row-selected">
+                      <td class="border-right">
+                        <span class="add-head">아파트 단지명</span><span class="tds">래미안노블클래스2단지</span>
+                      </td>
+                      <td>
+                        <span class="add-head">생활인프라</span><span class="tds">530개소</span>
+                      </td>
+                      <td>
+                        <span class="add-head">문화/여가시설</span><span class="tds">9개소</span>
+                      </td>
+                      <td>
+                        <span class="add-head">교통시설</span><span class="tds">1개소</span>
+                      </td>
+                    </tr>
+
+                    <!-- 설정한 반경 내 아파트 -->
+                    <tr class="row-nearby">
+                      <td class="border-right">
+                        <span class="add-head">아파트 단지명</span><span class="tds">래미안노블클래스1단지</span>
+                      </td>
+                      <td>
+                        <span class="add-head">생활인프라</span><span class="tds">168개소</span>
+                      </td>
+                      <td>
+                        <span class="add-head">문화/여가시설</span><span class="tds">3개소</span>
+                      </td>
+                      <td>
+                        <span class="add-head">교통시설</span><span class="tds">1개소</span>
+                      </td>
+                    </tr>
+                    <tr class="row-nearby">
+                      <td class="border-right">
+                        <span class="add-head">아파트 단지명</span><span class="tds">문영</span>
+                      </td>
+                      <td>
+                        <span class="add-head">생활인프라</span><span class="tds">450개소</span>
+                      </td>
+                      <td>
+                        <span class="add-head">문화/여가시설</span><span class="tds">7개소</span>
+                      </td>
+                      <td>
+                        <span class="add-head">교통시설</span><span class="tds">1개소</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- //표 영역 -->
+
+            </div>
+
+          </div>
+          <!-- //분석 결과-->
+
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+  </div>
+
+  <!-- 레이어 : 검색 필터-->
+  <section id="popFilterId" class="krds-modal fade" data-type="bottom-sheet" role="dialog">
+    <!-- modal-dialog -->
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 class="modal-title">검색 필터</h2>
+        </div>
+        <!-- //modal title -->
+
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <ul class="filter-list krds-accordion type-line">
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_01" aria-controls="acc_m_col_01">
+                  <div class="tit">지역선택</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_01" aria-labelledby="acc_m_hd_01">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>수원시 팔달구</option>
+                        <option value="">항목</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>인계동</option>
+                        <option value="">항목</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_02" aria-controls="acc_m_col_02">
+                  <div class="tit">반경 설정</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_02" aria-labelledby="acc_m_hd_02">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>500m</option>
+                        <option value="">항목</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_03" aria-controls="acc_m_col_03">
+                  <div class="tit">아파트 단지 선택</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_03" aria-labelledby="acc_m_hd_03">
+                <div class="accordion-body grid-input-action">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <input type="text" class="krds-input medium" placeholder="선택버튼을 눌러주세요" readonly>
+                    </div>
+                  </div>
+                  <button type="button" class="krds-btn medium tertiary">선택</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- //modal contents -->
+
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">초기화</button>
+          <button type="button" class="krds-btn medium primary close-modal">분석하기</button>
+        </div>
+        <!-- //modal btn -->
+
+        <!-- close button -->
+        <button type="button" class="krds-btn medium icon btn-close close-modal">
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <!-- //modal-dialog -->
+    <div class="modal-back in"></div>
+  </section>
+  <!-- //레이어 : 검색 필터-->
+
+  <!-- js -->
+  <script src="../resources/js/component/ui-script.js"></script>
+  <script src="../resources/js/component/common.js"></script>
+</body>
+
+</html>

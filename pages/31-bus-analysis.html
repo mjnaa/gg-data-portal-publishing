@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>경기 데이터 분석 포털</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="경기 데이터 분석 포털" />
+  <!-- style sheets -->
+  <link href="../resources/css/token/krds_tokens.css" rel="stylesheet">
+  <link href="../resources/css/common/common.css" rel="stylesheet">
+  <link href="../resources/css/component/component.css" rel="stylesheet">
+  <link href="../resources/css/custom.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div>
+    <!-- header -->
+
+    <div class="container">
+      <div class="inner">
+        <!-- breadcrumb -->
+        <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="home"><a href="#" class="txt">홈</a></li>
+            <li><a href="#" class="txt">분석 모델</a></li>
+            <li><a href="#" class="txt">공공버스</a></li>
+            <li><a href="#" class="txt on">신규 공공버스 분석</a></li>
+          </ol>
+        </nav>
+        <!-- breadcrumb -->
+
+        <!-- 페이지 타이틀 영역 -->
+        <div class="page-title-wrap">
+          <h1 class="h-tit">신규 공공버스 분석</h1>
+          <div class="btn-wrap">
+            <!-- 모바일용 필터-->
+            <button type="button" class="krds-btn medium text m-filter open-modal" data-target="popFilterId">
+              <i class="svg-icon ico-filter"></i>
+              <span class="span">검색 필터</span>
+            </button>
+            <!-- //모바일용 필터-->
+            <button type="button" class="krds-btn medium text">
+              <i class="svg-icon ico-information"></i>
+              이용가이드
+            </button>
+          </div>
+        </div>
+        <!-- //페이지 타이틀 영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <div class="search-between-conts">
+          <!-- 왼쪽 검색 필터 영역-->
+          <div class="aside">
+            <dl class="filter-dl">
+              <dt>검색 필터</dt>
+              <dd>
+                <ul class="filter-list krds-accordion type-line">
+                  <li class="li accordion-item">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion" id="acc_pc_hd_01" aria-controls="acc_pc_col_01">
+                        <div class="tit">검색</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_01" aria-labelledby="acc_pc_hd_01">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>경기도</option>
+                              <option value="">항목</option>
+                            </select>
+                          </div>
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>전체</option>
+                              <option value="">항목</option>
+                            </select>
+                          </div>
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>전체</option>
+                              <option value="">항목</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="li accordion-item">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion" id="acc_pc_hd_02" aria-controls="acc_pc_col_02">
+                        <div class="tit">즐겨찾기</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_02" aria-labelledby="acc_pc_hd_02">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>지역(읍면동)</option>
+                              <option value="">항목</option>
+                            </select>
+                          </div>
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>생성일자 내림차순</option>
+                              <option value="">항목</option>
+                            </select>
+                          </div>
+                          <button type="button" class="krds-btn medium tertiary">초기화</button>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="li accordion-item">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion" id="acc_pc_hd_03" aria-controls="acc_pc_col_03">
+                        <div class="tit">노선분석</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_03" aria-labelledby="acc_pc_hd_03">
+                      <div class="accordion-body">
+
+                        <ul class="nested-acc-wrap depth-2">
+
+                          <li class="nested-acc-item">
+                            <h4 class="nested-acc-header">
+                              <button type="button" class="nested-acc-btn" aria-expanded="false">인구증가 예상지역 선택</button>
+                            </h4>
+                            <div class="nested-acc-body">
+                              <div class="grid-2">
+                                <div class="form-group">
+                                  <div class="form-conts">
+                                    <select class="krds-form-select medium completed" title="선택">
+                                      <option value="" selected>경기도</option>
+                                      <option value="">옵션</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <div class="form-conts">
+                                    <select class="krds-form-select medium completed" title="선택">
+                                      <option value="" selected>전체</option>
+                                      <option value="">옵션</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="nested-btn">
+                                <button type="button" class="krds-btn medium primary">분석</button>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li class="nested-acc-item">
+                            <h4 class="nested-acc-header">
+                              <button type="button" class="nested-acc-btn" aria-expanded="false">기종점(OD) 구간 선택</button>
+                            </h4>
+                            <div class="nested-acc-body">
+                              <div class="form-group">
+                                <div class="form-conts">
+                                  <select class="krds-form-select medium completed" title="선택">
+                                    <option value="" selected>선택안함</option>
+                                    <option value="">옵션</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="nested-btn">
+                                <button type="button" class="krds-btn medium primary">분석</button>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li class="nested-acc-item">
+                            <h4 class="nested-acc-header">
+                              <button type="button" class="nested-acc-btn" aria-expanded="false">기존노선분석</button>
+                            </h4>
+                            <div class="nested-acc-body">
+                              <div class="route-analysis-content">
+
+                                <div class="location-info">
+                                  <div class="location-row">
+                                    <span class="label-badge">기점</span>
+                                    <span class="location-name">예시 A001블록</span>
+                                  </div>
+                                  <div class="location-row">
+                                    <span class="label-badge">종점</span>
+                                    <span class="location-name">예시 A001블록</span>
+                                  </div>
+                                </div>
+
+                                <ul class="data-list">
+                                  <li>- 유출인구 : <strong class="highlight-text">예시명</strong></li>
+                                  <li>- 교통카드 이용객수 : <strong class="highlight-text">예시명</strong></li>
+                                </ul>
+
+                              </div>
+                            </div>
+                          </li>
+
+                          <li class="nested-acc-item">
+                            <h4 class="nested-acc-header">
+                              <button type="button" class="nested-acc-btn" aria-expanded="false">신규노선분석</button>
+                            </h4>
+                            <div class="nested-acc-body">
+
+                              <ul class="nested-acc-wrap depth-3">
+
+                                <li class="nested-acc-item">
+                                  <h5 class="nested-acc-header">
+                                    <button type="button" class="nested-acc-btn" aria-expanded="false">노선 자동 생성</button>
+                                  </h5>
+                                  <div class="nested-acc-body">
+                                    <div class="grid-2">
+                                      <button type="button" class="krds-btn xsmall secondary">거점 입력</button>
+                                      <button type="button" class="krds-btn xsmall tertiary">종점 입력</button>
+                                      <button type="button" class="krds-btn xsmall tertiary">경유지 입력</button>
+                                      <button type="button" class="krds-btn xsmall tertiary">경유지 초기화</button>
+                                      <button type="button" class="krds-btn xsmall tertiary">기점 블록 확대</button>
+                                      <button type="button" class="krds-btn xsmall tertiary">종점 블록 확대</button>
+                                      <button type="button" class="krds-btn xsmall tertiary">최단경로 생성</button>
+                                      <button type="button" class="krds-btn xsmall tertiary">최적경로 생성</button>
+                                    </div>
+                                    <p class="caption">- 최단 : 거리 0km, 소요시간 0시간 0분</p>
+                                  </div>
+                                </li>
+
+                                <li class="nested-acc-item">
+                                  <h5 class="nested-acc-header">
+                                    <button type="button" class="nested-acc-btn" aria-expanded="false">노선 수동 생성</button>
+                                  </h5>
+                                  <div class="nested-acc-body">
+                                    <div class="flex-row">
+                                      <button type="button" class="krds-btn large icon border secondary">
+                                        <span class="sr-only">아이콘1</span>
+                                        <i class="svg-icon ico-list01"></i>
+                                      </button>
+                                      <button type="button" class="krds-btn large icon border tertiary">
+                                        <span class="sr-only">아이콘2</span>
+                                        <i class="svg-icon ico-list02"></i>
+                                      </button>
+                                      <button type="button" class="krds-btn large icon border tertiary">
+                                        <span class="sr-only">아이콘3</span>
+                                        <i class="svg-icon ico-list03"></i>
+                                      </button>
+                                      <button type="button" class="krds-btn xsmall tertiary">도로정보(맵매칭)</button>
+                                    </div>
+                                    <p class="caption">- 최단 : 거리 0km, 소요시간 0시간 0분</p>
+                                  </div>
+                                </li>
+
+                                <li class="nested-acc-item">
+                                  <h5 class="nested-acc-header">
+                                    <button type="button" class="nested-acc-btn" aria-expanded="false">정류소 생성</button>
+                                  </h5>
+                                  <div class="nested-acc-body">
+                                    <div class="flex-row">
+                                      <button type="button" class="krds-btn large icon border secondary">
+                                        <span class="sr-only">아이콘4</span>
+                                        <i class="svg-icon ico-list04"></i>
+                                      </button>
+                                      <button type="button" class="krds-btn large icon border tertiary">
+                                        <span class="sr-only">아이콘5</span>
+                                        <i class="svg-icon ico-list05"></i>
+                                      </button>
+                                      <button type="button" class="krds-btn large icon border tertiary">
+                                        <span class="sr-only">아이콘3</span>
+                                        <i class="svg-icon ico-list03"></i>
+                                      </button>
+                                      <button type="button" class="krds-btn large icon border tertiary">
+                                        <span class="sr-only">아이콘6</span>
+                                        <i class="svg-icon ico-list06"></i>
+                                      </button>
+                                      <button type="button" class="krds-btn large icon border tertiary">
+                                        <span class="sr-only">아이콘7</span>
+                                        <i class="svg-icon ico-list07"></i>
+                                      </button>
+                                    </div>
+                                    <p class="caption">- 현재정류소 수 : 0개</p>
+                                  </div>
+                                </li>
+
+                              </ul>
+
+                              <div class="nested-btn mt-16">
+                                <button type="button" class="krds-btn medium tertiary">초기화</button>
+                                <button type="button" class="krds-btn medium primary">분석</button>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="li accordion-item">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion" id="acc_pc_hd_04" aria-expanded="true"
+                        aria-controls="acc_pc_col_04">
+                        <div class="tit">레이어</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse show" id="acc_pc_col_04" aria-labelledby="acc_pc_hd_04">
+                      <div class="accordion-body">
+                        <ul class="layer-list-area">
+
+                          <li class="layer-list-item">
+                            <div class="krds-form-check medium"> <input type="checkbox" id="layer_chk_1">
+                              <label for="layer_chk_1">상가업소정보</label>
+                            </div>
+                            <div class="layer-item-ctrl">
+                              <div class="order-control">
+                                <button type="button" class="btn-order up"><span class="sr-only">위로</span></button>
+                                <button type="button" class="btn-order down"><span class="sr-only">아래로</span></button>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li class="layer-list-item">
+                            <div class="krds-form-check medium">
+                              <input type="checkbox" id="layer_chk_2">
+                              <label for="layer_chk_2">계획철도망</label>
+                            </div>
+                            <div class="layer-item-ctrl">
+                              <div class="order-control">
+                                <button type="button" class="btn-order up"><span class="sr-only">위로</span></button>
+                                <button type="button" class="btn-order down"><span class="sr-only">아래로</span></button>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li class="layer-list-item">
+                            <div class="krds-form-check medium">
+                              <input type="checkbox" id="layer_chk_3">
+                              <label for="layer_chk_3">간선도로</label>
+                            </div>
+                            <div class="layer-item-ctrl">
+                              <div class="order-control">
+                                <button type="button" class="btn-order up"><span class="sr-only">위로</span></button>
+                                <button type="button" class="btn-order down"><span class="sr-only">아래로</span></button>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li class="layer-list-item">
+                            <div class="krds-form-check medium">
+                              <input type="checkbox" id="layer_chk_4">
+                              <label for="layer_chk_4">택지개발지구</label>
+                            </div>
+                            <div class="layer-item-ctrl">
+                              <div class="order-control">
+                                <button type="button" class="btn-order up"><span class="sr-only">위로</span></button>
+                                <button type="button" class="btn-order down"><span class="sr-only">아래로</span></button>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li class="layer-list-item">
+                            <div class="krds-form-check medium">
+                              <input type="checkbox" id="layer_chk_5">
+                              <label for="layer_chk_5">산업단지</label>
+                            </div>
+                            <div class="layer-item-ctrl">
+                              <div class="order-control">
+                                <button type="button" class="btn-order up"><span class="sr-only">위로</span></button>
+                                <button type="button" class="btn-order down"><span class="sr-only">아래로</span></button>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li class="layer-list-item">
+                            <div class="krds-form-check medium">
+                              <input type="checkbox" id="layer_chk_6">
+                              <label for="layer_chk_6">유출인구/승차인원</label>
+                            </div>
+                            <div class="layer-item-ctrl">
+                              <button type="button" class="btn-layer-action">위치선택</button>
+                              <div class="order-control">
+                                <button type="button" class="btn-order up"><span class="sr-only">위로</span></button>
+                                <button type="button" class="btn-order down"><span class="sr-only">아래로</span></button>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li class="layer-list-item">
+                            <div class="krds-form-check medium">
+                              <input type="checkbox" id="layer_chk_7">
+                              <label for="layer_chk_7">유출인구</label>
+                            </div>
+                            <div class="layer-item-ctrl">
+                              <button type="button" class="btn-layer-action">기점선택</button>
+                              <div class="order-control">
+                                <button type="button" class="btn-order up"><span class="sr-only">위로</span></button>
+                                <button type="button" class="btn-order down"><span class="sr-only">아래로</span></button>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li class="layer-list-item">
+                            <div class="krds-form-check medium">
+                              <input type="checkbox" id="layer_chk_8">
+                              <label for="layer_chk_8">유입인구</label>
+                            </div>
+                            <div class="layer-item-ctrl">
+                              <button type="button" class="btn-layer-action">종점선택</button>
+                              <div class="order-control">
+                                <button type="button" class="btn-order up"><span class="sr-only">위로</span></button>
+                                <button type="button" class="btn-order down"><span class="sr-only">아래로</span></button>
+                              </div>
+                            </div>
+                          </li>
+
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </div>
+          <!-- //왼쪽 검색 필터 영역-->
+
+          <!-- 분석 결과-->
+          <div class="contents">
+
+            <div class="section-5">
+              <!-- 지도 영역-->
+              <div class="data-area">
+                <div class="img-area" style="width: 100%">
+                  <img src="../resources/img/bg/dummy-map2.png" alt="map 더미 이미지">
+                </div>
+              </div>
+              <!-- //지도 영역-->
+            </div>
+
+          </div>
+          <!-- //분석 결과-->
+
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+  </div>
+
+  <!-- 레이어 : 검색 필터-->
+  <section id="popFilterId" class="krds-modal fade" data-type="bottom-sheet" role="dialog">
+    <!-- modal-dialog -->
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 class="modal-title">검색 필터</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <ul class="filter-list krds-accordion type-line">
+            <li class="li accordion-item">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion" id="acc_m_hd_01" aria-controls="acc_m_col_01">
+                  <div class="tit">검색</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_01" aria-labelledby="acc_m_hd_01">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>경기도</option>
+                        <option value="">항목</option>
+                      </select>
+                    </div>
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>전체</option>
+                        <option value="">항목</option>
+                      </select>
+                    </div>
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>전체</option>
+                        <option value="">항목</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="li accordion-item">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion" id="acc_m_hd_02" aria-controls="acc_m_col_02">
+                  <div class="tit">즐겨찾기</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_02" aria-labelledby="acc_m_hd_02">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>지역(읍면동)</option>
+                        <option value="">항목</option>
+                      </select>
+                    </div>
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>생성일자 내림차순</option>
+                        <option value="">항목</option>
+                      </select>
+                    </div>
+                    <button type="button" class="krds-btn medium tertiary">초기화</button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="li accordion-item">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion" id="acc_m_hd_03" aria-controls="acc_m_col_03">
+                  <div class="tit">노선분석</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_03" aria-labelledby="acc_m_hd_03">
+                <div class="accordion-body">
+
+                  <ul class="nested-acc-wrap depth-2">
+
+                    <li class="nested-acc-item">
+                      <h4 class="nested-acc-header">
+                        <button type="button" class="nested-acc-btn" aria-expanded="false">인구증가 예상지역 선택</button>
+                      </h4>
+                      <div class="nested-acc-body">
+                        <div class="grid-2">
+                          <div class="form-group">
+                            <div class="form-conts">
+                              <select class="krds-form-select medium completed" title="선택">
+                                <option value="" selected>경기도</option>
+                                <option value="">옵션</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="form-conts">
+                              <select class="krds-form-select medium completed" title="선택">
+                                <option value="" selected>전체</option>
+                                <option value="">옵션</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="nested-btn">
+                          <button type="button" class="krds-btn medium primary">분석</button>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="nested-acc-item">
+                      <h4 class="nested-acc-header">
+                        <button type="button" class="nested-acc-btn" aria-expanded="false">기종점(OD) 구간 선택</button>
+                      </h4>
+                      <div class="nested-acc-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>선택안함</option>
+                              <option value="">옵션</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="nested-btn">
+                          <button type="button" class="krds-btn medium primary">분석</button>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="nested-acc-item">
+                      <h4 class="nested-acc-header">
+                        <button type="button" class="nested-acc-btn" aria-expanded="false">기존노선분석</button>
+                      </h4>
+                      <div class="nested-acc-body">
+                        <div class="route-analysis-content">
+
+                          <div class="location-info">
+                            <div class="location-row">
+                              <span class="label-badge">기점</span>
+                              <span class="location-name">예시 A001블록</span>
+                            </div>
+                            <div class="location-row">
+                              <span class="label-badge">종점</span>
+                              <span class="location-name">예시 A001블록</span>
+                            </div>
+                          </div>
+
+                          <ul class="data-list">
+                            <li>- 유출인구 : <strong class="highlight-text">예시명</strong></li>
+                            <li>- 교통카드 이용객수 : <strong class="highlight-text">예시명</strong></li>
+                          </ul>
+
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="nested-acc-item">
+                      <h4 class="nested-acc-header">
+                        <button type="button" class="nested-acc-btn" aria-expanded="false">신규노선분석</button>
+                      </h4>
+                      <div class="nested-acc-body">
+
+                        <ul class="nested-acc-wrap depth-3">
+
+                          <li class="nested-acc-item">
+                            <h5 class="nested-acc-header">
+                              <button type="button" class="nested-acc-btn" aria-expanded="false">노선 자동 생성</button>
+                            </h5>
+                            <div class="nested-acc-body">
+                              <div class="grid-2">
+                                <button type="button" class="krds-btn xsmall secondary">거점 입력</button>
+                                <button type="button" class="krds-btn xsmall tertiary">종점 입력</button>
+                                <button type="button" class="krds-btn xsmall tertiary">경유지 입력</button>
+                                <button type="button" class="krds-btn xsmall tertiary">경유지 초기화</button>
+                                <button type="button" class="krds-btn xsmall tertiary">기점 블록 확대</button>
+                                <button type="button" class="krds-btn xsmall tertiary">종점 블록 확대</button>
+                                <button type="button" class="krds-btn xsmall tertiary">최단경로 생성</button>
+                                <button type="button" class="krds-btn xsmall tertiary">최적경로 생성</button>
+                              </div>
+                              <p class="caption">- 최단 : 거리 0km, 소요시간 0시간 0분</p>
+                            </div>
+                          </li>
+
+                          <li class="nested-acc-item">
+                            <h5 class="nested-acc-header">
+                              <button type="button" class="nested-acc-btn" aria-expanded="false">노선 수동 생성</button>
+                            </h5>
+                            <div class="nested-acc-body">
+                              <div class="flex-row">
+                                <button type="button" class="krds-btn large icon border secondary">
+                                  <span class="sr-only">아이콘1</span>
+                                  <i class="svg-icon ico-list01"></i>
+                                </button>
+                                <button type="button" class="krds-btn large icon border tertiary">
+                                  <span class="sr-only">아이콘2</span>
+                                  <i class="svg-icon ico-list02"></i>
+                                </button>
+                                <button type="button" class="krds-btn large icon border tertiary">
+                                  <span class="sr-only">아이콘3</span>
+                                  <i class="svg-icon ico-list03"></i>
+                                </button>
+                                <button type="button" class="krds-btn xsmall tertiary">도로정보(맵매칭)</button>
+                              </div>
+                              <p class="caption">- 최단 : 거리 0km, 소요시간 0시간 0분</p>
+                            </div>
+                          </li>
+
+                          <li class="nested-acc-item">
+                            <h5 class="nested-acc-header">
+                              <button type="button" class="nested-acc-btn" aria-expanded="false">정류소 생성</button>
+                            </h5>
+                            <div class="nested-acc-body">
+                              <div class="flex-row">
+                                <button type="button" class="krds-btn large icon border secondary">
+                                  <span class="sr-only">아이콘4</span>
+                                  <i class="svg-icon ico-list04"></i>
+                                </button>
+                                <button type="button" class="krds-btn large icon border tertiary">
+                                  <span class="sr-only">아이콘5</span>
+                                  <i class="svg-icon ico-list05"></i>
+                                </button>
+                                <button type="button" class="krds-btn large icon border tertiary">
+                                  <span class="sr-only">아이콘3</span>
+                                  <i class="svg-icon ico-list03"></i>
+                                </button>
+                                <button type="button" class="krds-btn large icon border tertiary">
+                                  <span class="sr-only">아이콘6</span>
+                                  <i class="svg-icon ico-list06"></i>
+                                </button>
+                                <button type="button" class="krds-btn large icon border tertiary">
+                                  <span class="sr-only">아이콘7</span>
+                                  <i class="svg-icon ico-list07"></i>
+                                </button>
+                              </div>
+                              <p class="caption">- 현재정류소 수 : 0개</p>
+                            </div>
+                          </li>
+
+                        </ul>
+
+                        <div class="nested-btn mt-16">
+                          <button type="button" class="krds-btn medium tertiary">초기화</button>
+                          <button type="button" class="krds-btn medium primary">분석</button>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="li accordion-item">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion" id="acc_m_hd_04" aria-expanded="true"
+                  aria-controls="acc_m_col_04">
+                  <div class="tit">레이어</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse show" id="acc_m_col_04" aria-labelledby="acc_m_hd_04">
+                <div class="accordion-body">
+                  <ul class="layer-list-area">
+
+                    <li class="layer-list-item">
+                      <div class="krds-form-check medium"> <input type="checkbox" id="layer_chk_1">
+                        <label for="layer_chk_1">상가업소정보</label>
+                      </div>
+                      <div class="layer-item-ctrl">
+                        <div class="order-control">
+                          <button type="button" class="btn-order up"><span class="sr-only">위로</span></button>
+                          <button type="button" class="btn-order down"><span class="sr-only">아래로</span></button>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="layer-list-item">
+                      <div class="krds-form-check medium">
+                        <input type="checkbox" id="layer_chk_2">
+                        <label for="layer_chk_2">계획철도망</label>
+                      </div>
+                      <div class="layer-item-ctrl">
+                        <div class="order-control">
+                          <button type="button" class="btn-order up"><span class="sr-only">위로</span></button>
+                          <button type="button" class="btn-order down"><span class="sr-only">아래로</span></button>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="layer-list-item">
+                      <div class="krds-form-check medium">
+                        <input type="checkbox" id="layer_chk_3">
+                        <label for="layer_chk_3">간선도로</label>
+                      </div>
+                      <div class="layer-item-ctrl">
+                        <div class="order-control">
+                          <button type="button" class="btn-order up"><span class="sr-only">위로</span></button>
+                          <button type="button" class="btn-order down"><span class="sr-only">아래로</span></button>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="layer-list-item">
+                      <div class="krds-form-check medium">
+                        <input type="checkbox" id="layer_chk_4">
+                        <label for="layer_chk_4">택지개발지구</label>
+                      </div>
+                      <div class="layer-item-ctrl">
+                        <div class="order-control">
+                          <button type="button" class="btn-order up"><span class="sr-only">위로</span></button>
+                          <button type="button" class="btn-order down"><span class="sr-only">아래로</span></button>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="layer-list-item">
+                      <div class="krds-form-check medium">
+                        <input type="checkbox" id="layer_chk_5">
+                        <label for="layer_chk_5">산업단지</label>
+                      </div>
+                      <div class="layer-item-ctrl">
+                        <div class="order-control">
+                          <button type="button" class="btn-order up"><span class="sr-only">위로</span></button>
+                          <button type="button" class="btn-order down"><span class="sr-only">아래로</span></button>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="layer-list-item">
+                      <div class="krds-form-check medium">
+                        <input type="checkbox" id="layer_chk_6">
+                        <label for="layer_chk_6">유출인구/승차인원</label>
+                      </div>
+                      <div class="layer-item-ctrl">
+                        <button type="button" class="btn-layer-action">위치선택</button>
+                        <div class="order-control">
+                          <button type="button" class="btn-order up"><span class="sr-only">위로</span></button>
+                          <button type="button" class="btn-order down"><span class="sr-only">아래로</span></button>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="layer-list-item">
+                      <div class="krds-form-check medium">
+                        <input type="checkbox" id="layer_chk_7">
+                        <label for="layer_chk_7">유출인구</label>
+                      </div>
+                      <div class="layer-item-ctrl">
+                        <button type="button" class="btn-layer-action">기점선택</button>
+                        <div class="order-control">
+                          <button type="button" class="btn-order up"><span class="sr-only">위로</span></button>
+                          <button type="button" class="btn-order down"><span class="sr-only">아래로</span></button>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="layer-list-item">
+                      <div class="krds-form-check medium">
+                        <input type="checkbox" id="layer_chk_8">
+                        <label for="layer_chk_8">유입인구</label>
+                      </div>
+                      <div class="layer-item-ctrl">
+                        <button type="button" class="btn-layer-action">종점선택</button>
+                        <div class="order-control">
+                          <button type="button" class="btn-order up"><span class="sr-only">위로</span></button>
+                          <button type="button" class="btn-order down"><span class="sr-only">아래로</span></button>
+                        </div>
+                      </div>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- //modal contents -->
+        <!-- close button -->
+        <button type="button" class="krds-btn medium icon btn-close close-modal">
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <!-- //modal-dialog -->
+    <div class="modal-back in"></div>
+  </section>
+  <!-- //레이어 : 검색 필터-->
+
+  <!-- js -->
+  <script src="../resources/js/component/ui-script.js"></script>
+  <script src="../resources/js/component/common.js"></script>
+</body>
+
+</html>

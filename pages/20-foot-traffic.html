@@ -68,8 +68,7 @@
                         <div class="tit">분석종류</div>
                       </button>
                     </h3>
-                    <div class="accordion-collapse collapse" id="acc_pc_col_01"
-                      aria-labelledby="acc_pc_hd_01">
+                    <div class="accordion-collapse collapse" id="acc_pc_col_01" aria-labelledby="acc_pc_hd_01">
                       <div class="accordion-body">
                         <div class="form-group">
                           <div class="form-conts">
@@ -91,8 +90,7 @@
                         <div class="tit">분석영역</div>
                       </button>
                     </h3>
-                    <div class="accordion-collapse collapse" id="acc_pc_col_02"
-                      aria-labelledby="acc_pc_hd_02">
+                    <div class="accordion-collapse collapse" id="acc_pc_col_02" aria-labelledby="acc_pc_hd_02">
                       <div class="accordion-body">
                         <div class="form-group">
                           <div class="form-conts">
@@ -122,8 +120,7 @@
                         <div class="tit">기준연월</div>
                       </button>
                     </h3>
-                    <div class="accordion-collapse collapse" id="acc_pc_col_03"
-                      aria-labelledby="acc_pc_hd_03">
+                    <div class="accordion-collapse collapse" id="acc_pc_col_03" aria-labelledby="acc_pc_hd_03">
                       <div class="accordion-body">
                         <div class="form-group">
                           <div class="form-conts">
@@ -142,25 +139,57 @@
                         <div class="tit">분석기간</div>
                       </button>
                     </h3>
-                    <div class="accordion-collapse collapse" id="acc_pc_col_04"
-                      aria-labelledby="acc_pc_hd_04">
-                      <div class="accordion-body grid-2">
+                    <div class="accordion-collapse collapse" id="acc_pc_col_04" aria-labelledby="acc_pc_hd_04">
+                      <div class="accordion-body">
                         <div class="form-group">
                           <div class="form-conts">
-                            <select class="krds-form-select medium completed" title="선택">
-                              <option value="" selected>2025년</option>
-                              <option value="">2024년</option>
-                              <option value="">2023년</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <div class="form-conts">
-                            <select class="krds-form-select medium completed" title="선택">
-                              <option value="" selected>1월</option>
-                              <option value="">2월</option>
-                              <option value="">3월</option>
-                            </select>
+                            <!-- 커스텀 데이트픽커 (년/월 선택용)-->
+                            <div class="form-conts calendar-conts month-picker-conts">
+                              <div class="calendar-input">
+                                <input type="number"
+                                  class="krds-input medium form-control datepicker cal month-picker-input"
+                                  placeholder="년/월 선택">
+                                <button type="button" class="krds-btn medium icon form-btn-monthpicker">
+                                  <span class="sr-only">달력 열기</span>
+                                  <i class="svg-icon ico-calendar"></i>
+                                </button>
+                              </div>
+                              <div class="krds-month-picker-area">
+                                <div class="calendar-wrap bottom" aria-label="달력">
+                                  <div class="picker-head">
+                                    <button type="button" class="btn-prev-year btn-cal-move prev krds-btn icon"><span
+                                        class="sr-only">이전 년도</span></button>
+                                    <strong class="current-year">2026년</strong>
+                                    <button type="button" class="btn-next-year btn-cal-move next krds-btn icon"><span
+                                        class="sr-only">다음 년도</span></button>
+                                  </div>
+                                  <div class="picker-body">
+                                    <ul class="month-list">
+                                      <li><button type="button" class="btn-month" data-month="1">1월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="2">2월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="3">3월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="4">4월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="5">5월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="6">6월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="7">7월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="8">8월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="9">9월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="10">10월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="11">11월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="12">12월</button></li>
+                                    </ul>
+                                  </div>
+                                  <div class="picker-footer">
+                                    <div class="picker-btn-wrap">
+                                      <button type="button" class="krds-btn small tertiary btn-cancel">취소</button>
+                                      <button type="button" class="krds-btn small primary btn-confirm">선택</button>
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                            <!-- //커스텀 데이트픽커 (년/월 선택용)-->
                           </div>
                         </div>
                       </div>
@@ -173,8 +202,7 @@
                         <div class="tit">성별/연령</div>
                       </button>
                     </h3>
-                    <div class="accordion-collapse collapse" id="acc_pc_col_05"
-                      aria-labelledby="acc_pc_hd_05">
+                    <div class="accordion-collapse collapse" id="acc_pc_col_05" aria-labelledby="acc_pc_hd_05">
                       <div class="accordion-body">
                         <div class="form-group">
                           <div class="form-conts">
@@ -213,7 +241,8 @@
                 <div class="map-ui" aria-label="지도 오버레이 컨트롤">
 
                   <!-- 레이어 패널 (좌측 상단) -->
-                  <section class="map-panel" data-anchor="tl" style="--x:16px; --y:16px;" data-map-panel aria-label="주제도 유형">
+                  <section class="map-panel" data-anchor="tl" style="--x:16px; --y:16px;" data-map-panel
+                    aria-label="주제도 유형">
                     <header class="map-panel-head">
                       <h2 class="map-panel-title">주제도 유형</h2>
                       <button type="button" class="krds-btn icon xsmall" data-map-panel-close>
@@ -742,13 +771,11 @@
           <ul class="filter-list krds-accordion type-line">
             <li class="li accordion-item active">
               <h3 class="accordion-header">
-                <button type="button" class="btn-accordion active" id="acc_m_hd_01"
-                  aria-controls="acc_m_col_01">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_01" aria-controls="acc_m_col_01">
                   <div class="tit">분석종류</div>
                 </button>
               </h3>
-              <div class="accordion-collapse collapse" id="acc_m_col_01"
-                aria-labelledby="acc_m_hd_01">
+              <div class="accordion-collapse collapse" id="acc_m_col_01" aria-labelledby="acc_m_hd_01">
                 <div class="accordion-body">
                   <div class="form-group">
                     <div class="form-conts">
@@ -765,13 +792,11 @@
             </li>
             <li class="li accordion-item active">
               <h3 class="accordion-header">
-                <button type="button" class="btn-accordion active" id="acc_m_hd_02"
-                  aria-controls="acc_m_col_02">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_02" aria-controls="acc_m_col_02">
                   <div class="tit">분석영역</div>
                 </button>
               </h3>
-              <div class="accordion-collapse collapse" id="acc_m_col_02"
-                aria-labelledby="acc_m_hd_02">
+              <div class="accordion-collapse collapse" id="acc_m_col_02" aria-labelledby="acc_m_hd_02">
                 <div class="accordion-body">
                   <div class="form-group">
                     <div class="form-conts">
@@ -796,13 +821,11 @@
             </li>
             <li class="li accordion-item active">
               <h3 class="accordion-header">
-                <button type="button" class="btn-accordion active" id="acc_m_hd_03"
-                  aria-controls="acc_m_col_03">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_03" aria-controls="acc_m_col_03">
                   <div class="tit">기준연월</div>
                 </button>
               </h3>
-              <div class="accordion-collapse collapse" id="acc_m_col_03"
-                aria-labelledby="acc_m_hd_03">
+              <div class="accordion-collapse collapse" id="acc_m_col_03" aria-labelledby="acc_m_hd_03">
                 <div class="accordion-body">
                   <div class="form-group">
                     <div class="form-conts">
@@ -816,30 +839,60 @@
             </li>
             <li class="li accordion-item active">
               <h3 class="accordion-header">
-                <button type="button" class="btn-accordion active" id="acc_m_hd_04"
-                  aria-controls="acc_m_col_04">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_04" aria-controls="acc_m_col_04">
                   <div class="tit">분석기간</div>
                 </button>
               </h3>
-              <div class="accordion-collapse collapse" id="acc_m_col_04"
-                aria-labelledby="acc_m_hd_04">
-                <div class="accordion-body grid-2">
+              <div class="accordion-collapse collapse" id="acc_m_col_04" aria-labelledby="acc_m_hd_04">
+                <div class="accordion-body">
                   <div class="form-group">
                     <div class="form-conts">
-                      <select class="krds-form-select medium completed" title="선택">
-                        <option value="" selected>2025년</option>
-                        <option value="">2024년</option>
-                        <option value="">2023년</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="form-conts">
-                      <select class="krds-form-select medium completed" title="선택">
-                        <option value="" selected>1월</option>
-                        <option value="">2월</option>
-                        <option value="">3월</option>
-                      </select>
+                      <!-- 커스텀 데이트픽커 (년/월 선택용)-->
+                      <div class="form-conts calendar-conts month-picker-conts">
+                        <div class="calendar-input">
+                          <input type="number" class="krds-input medium form-control datepicker cal month-picker-input"
+                            placeholder="년/월 선택">
+                          <button type="button" class="krds-btn medium icon form-btn-monthpicker">
+                            <span class="sr-only">달력 열기</span>
+                            <i class="svg-icon ico-calendar"></i>
+                          </button>
+                        </div>
+                        <div class="krds-month-picker-area">
+                          <div class="calendar-wrap bottom" aria-label="달력">
+                            <div class="picker-head">
+                              <button type="button" class="btn-prev-year btn-cal-move prev krds-btn icon"><span
+                                  class="sr-only">이전 년도</span></button>
+                              <strong class="current-year">2026년</strong>
+                              <button type="button" class="btn-next-year btn-cal-move next krds-btn icon"><span
+                                  class="sr-only">다음 년도</span></button>
+                            </div>
+                            <div class="picker-body">
+                              <ul class="month-list">
+                                <li><button type="button" class="btn-month" data-month="1">1월</button></li>
+                                <li><button type="button" class="btn-month" data-month="2">2월</button></li>
+                                <li><button type="button" class="btn-month" data-month="3">3월</button></li>
+                                <li><button type="button" class="btn-month" data-month="4">4월</button></li>
+                                <li><button type="button" class="btn-month" data-month="5">5월</button></li>
+                                <li><button type="button" class="btn-month" data-month="6">6월</button></li>
+                                <li><button type="button" class="btn-month" data-month="7">7월</button></li>
+                                <li><button type="button" class="btn-month" data-month="8">8월</button></li>
+                                <li><button type="button" class="btn-month" data-month="9">9월</button></li>
+                                <li><button type="button" class="btn-month" data-month="10">10월</button></li>
+                                <li><button type="button" class="btn-month" data-month="11">11월</button></li>
+                                <li><button type="button" class="btn-month" data-month="12">12월</button></li>
+                              </ul>
+                            </div>
+                            <div class="picker-footer">
+                              <div class="picker-btn-wrap">
+                                <button type="button" class="krds-btn small tertiary btn-cancel">취소</button>
+                                <button type="button" class="krds-btn small primary btn-confirm">선택</button>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //커스텀 데이트픽커 (년/월 선택용)-->
                     </div>
                   </div>
                 </div>
@@ -847,13 +900,11 @@
             </li>
             <li class="li accordion-item active">
               <h3 class="accordion-header">
-                <button type="button" class="btn-accordion active" id="acc_m_hd_05"
-                  aria-controls="acc_m_col_05">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_05" aria-controls="acc_m_col_05">
                   <div class="tit">성별/연령</div>
                 </button>
               </h3>
-              <div class="accordion-collapse collapse" id="acc_m_col_05"
-                aria-labelledby="acc_m_hd_05">
+              <div class="accordion-collapse collapse" id="acc_m_col_05" aria-labelledby="acc_m_hd_05">
                 <div class="accordion-body">
                   <div class="form-group">
                     <div class="form-conts">

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>경기 데이터 분석 포털</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="경기 데이터 분석 포털" />
+  <!-- style sheets -->
+  <link href="../resources/css/token/krds_tokens.css" rel="stylesheet">
+  <link href="../resources/css/common/common.css" rel="stylesheet">
+  <link href="../resources/css/component/component.css" rel="stylesheet">
+  <link href="../resources/css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+  <div>
+    <!-- header -->
+
+    <div class="container">
+      <div class="inner">
+        <!-- breadcrumb -->
+        <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="home"><a href="#" class="txt">홈</a></li>
+            <li><a href="#" class="txt">분석 모델</a></li>
+            <li><a href="#" class="txt">부동산모니터링</a></li>
+            <li><a href="#" class="txt on">외지인 매매 현황 분석</a></li>
+          </ol>
+        </nav>
+        <!-- breadcrumb -->
+
+        <!-- 페이지 타이틀 영역 -->
+        <div class="page-title-wrap">
+          <h1 class="h-tit">외지인 매매 현황 분석</h1>
+          <div class="btn-wrap">
+            <!-- 모바일용 필터-->
+            <button type="button" class="krds-btn medium text m-filter open-modal" data-target="popFilterId">
+              <i class="svg-icon ico-filter"></i>
+              <span class="span">검색 필터</span>
+            </button>
+            <!-- //모바일용 필터-->
+            <button type="button" class="krds-btn medium text">
+              <i class="svg-icon ico-down"></i>
+              다운로드
+            </button>
+            <button type="button" class="krds-btn medium text">
+              <i class="svg-icon ico-information"></i>
+              이용가이드
+            </button>
+          </div>
+        </div>
+        <!-- //페이지 타이틀 영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <div class="search-between-conts">
+          <!-- 왼쪽 검색 필터 영역-->
+          <div class="aside">
+            <dl class="filter-dl krds-tab-area layer">
+              <dt>검색 필터</dt>
+
+              <!-- tab list -->
+              <div class="tab fill full">
+                <ul role="tablist">
+                  <li id="tab_01" role="tab" aria-selected="true" aria-controls="panel_01" class="active">
+                    <button type="button" class="btn-tab">지역별 비교<i class="sr-only created"> 선택됨</i></button>
+                  </li>
+                  <li id="tab_02" role="tab" aria-selected="false" aria-controls="panel_02">
+                    <button type="button" class="btn-tab">기간별 보기</button>
+                  </li>
+                </ul>
+              </div>
+              <!-- //tab list -->
+
+              <!-- tab contents -->
+              <div class="tab-conts-wrap">
+                <!-- 지역별 비교-->
+                <section id="panel_01" aria-labelledby="tab_01" class="tab-conts active" data-quick-nav="false">
+                  <ul class="filter-list krds-accordion type-line">
+                    <li class="li accordion-item active">
+                      <h3 class="accordion-header">
+                        <button type="button" class="btn-accordion active" id="acc_pc_hd_01"
+                          aria-controls="acc_pc_col_01">
+                          <div class="tit">지역 선택</div>
+                        </button>
+                      </h3>
+                      <div class="accordion-collapse collapse" id="acc_pc_col_01" aria-labelledby="acc_pc_hd_01">
+                        <div class="accordion-body grid-input-action">
+                          <div class="form-group">
+                            <div class="form-conts">
+                              <input type="text" class="krds-input medium" placeholder="선택버튼을 눌러주세요" readonly>
+                            </div>
+                          </div>
+                          <button type="button" class="krds-btn medium tertiary">선택</button>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="li accordion-item active">
+                      <h3 class="accordion-header">
+                        <button type="button" class="btn-accordion active" id="acc_pc_hd_02"
+                          aria-controls="acc_pc_col_02">
+                          <div class="tit">기간 선택</div>
+                        </button>
+                      </h3>
+                      <div class="accordion-collapse collapse" id="acc_pc_col_02" aria-labelledby="acc_pc_hd_02">
+                        <div class="accordion-body">
+                          <div class="form-group">
+                            <div class="form-conts">
+                              <!-- 커스텀 데이트픽커 (년/월 선택용)-->
+                              <div class="form-conts calendar-conts month-picker-conts">
+                                <div class="calendar-input">
+                                  <input type="number"
+                                    class="krds-input medium form-control datepicker cal month-picker-input"
+                                    placeholder="시작년/월">
+                                  <button type="button" class="krds-btn medium icon form-btn-monthpicker">
+                                    <span class="sr-only">달력 열기</span>
+                                    <i class="svg-icon ico-calendar"></i>
+                                  </button>
+                                </div>
+                                <div class="krds-month-picker-area">
+                                  <div class="calendar-wrap bottom" aria-label="달력">
+                                    <div class="picker-head">
+                                      <button type="button" class="btn-prev-year btn-cal-move prev krds-btn icon"><span
+                                          class="sr-only">이전 년도</span></button>
+                                      <strong class="current-year">2026년</strong>
+                                      <button type="button" class="btn-next-year btn-cal-move next krds-btn icon"><span
+                                          class="sr-only">다음 년도</span></button>
+                                    </div>
+                                    <div class="picker-body">
+                                      <ul class="month-list">
+                                        <li><button type="button" class="btn-month" data-month="1">1월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="2">2월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="3">3월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="4">4월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="5">5월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="6">6월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="7">7월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="8">8월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="9">9월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="10">10월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="11">11월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="12">12월</button></li>
+                                      </ul>
+                                    </div>
+                                    <div class="picker-footer">
+                                      <div class="picker-btn-wrap">
+                                        <button type="button" class="krds-btn small tertiary btn-cancel">취소</button>
+                                        <button type="button" class="krds-btn small primary btn-confirm">선택</button>
+                                      </div>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- //커스텀 데이트픽커 (년/월 선택용)-->
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="form-conts">
+                              <!-- 커스텀 데이트픽커 (년/월 선택용)-->
+                              <div class="form-conts calendar-conts month-picker-conts">
+                                <div class="calendar-input">
+                                  <input type="number"
+                                    class="krds-input medium form-control datepicker cal month-picker-input"
+                                    placeholder="종료년/월">
+                                  <button type="button" class="krds-btn medium icon form-btn-monthpicker">
+                                    <span class="sr-only">달력 열기</span>
+                                    <i class="svg-icon ico-calendar"></i>
+                                  </button>
+                                </div>
+                                <div class="krds-month-picker-area">
+                                  <div class="calendar-wrap bottom" aria-label="달력">
+                                    <div class="picker-head">
+                                      <button type="button" class="btn-prev-year btn-cal-move prev krds-btn icon"><span
+                                          class="sr-only">이전 년도</span></button>
+                                      <strong class="current-year">2026년</strong>
+                                      <button type="button" class="btn-next-year btn-cal-move next krds-btn icon"><span
+                                          class="sr-only">다음 년도</span></button>
+                                    </div>
+                                    <div class="picker-body">
+                                      <ul class="month-list">
+                                        <li><button type="button" class="btn-month" data-month="1">1월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="2">2월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="3">3월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="4">4월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="5">5월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="6">6월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="7">7월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="8">8월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="9">9월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="10">10월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="11">11월</button></li>
+                                        <li><button type="button" class="btn-month" data-month="12">12월</button></li>
+                                      </ul>
+                                    </div>
+                                    <div class="picker-footer">
+                                      <div class="picker-btn-wrap">
+                                        <button type="button" class="krds-btn small tertiary btn-cancel">취소</button>
+                                        <button type="button" class="krds-btn small primary btn-confirm">선택</button>
+                                      </div>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- //커스텀 데이트픽커 (년/월 선택용)-->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </section>
+                <!-- //지역별 비교-->
+
+                <!-- 기간별 보기-->
+                <section id="panel_02" aria-labelledby="tab_02" class="tab-conts" data-quick-nav="false">
+
+                </section>
+                <!-- //기간별 보기-->
+              </div>
+              <!-- //tab contents -->
+            </dl>
+
+            <div class="filter-btn">
+              <button type="button" class="krds-btn medium tertiary">초기화</button>
+              <button type="button" class="krds-btn medium primary">분석하기</button>
+            </div>
+          </div>
+          <!-- //왼쪽 검색 필터 영역-->
+
+          <!-- 분석 결과-->
+          <div class="contents">
+
+            <div class="section-5">
+
+              <!-- 표 영역 -->
+              <div class="krds-table-wrap">
+                <table class="tbl col data center-table no-pointer mobile">
+                  <caption>
+                    외지인 매매 현황 분석 표
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="border-right">지역</th>
+                      <th scope="col">합계</th>
+                      <th scope="col">시(군)구 내</th>
+                      <th scope="col">경기도 내</th>
+                      <th scope="col">서울</th>
+                      <th scope="col">기타</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">지역</span><span class="tds">수원시</span>
+                      </td>
+                      <td>
+                        <span class="add-head">합계</span><span class="tds">24,503</span>
+                      </td>
+                      <td>
+                        <span class="add-head">시(군)구 내</span><span class="tds">11,306</span>
+                      </td>
+                      <td>
+                        <span class="add-head">경기도 내</span><span class="tds">9,607</span>
+                      </td>
+                      <td>
+                        <span class="add-head">서울</span><span class="tds">1,956</span>
+                      </td>
+                      <td>
+                        <span class="add-head">기타</span><span class="tds">1,634</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">지역</span><span class="tds">수원시 권선구</span>
+                      </td>
+                      <td>
+                        <span class="add-head">합계</span><span class="tds">10,455</span>
+                      </td>
+                      <td>
+                        <span class="add-head">시(군)구 내</span><span class="tds">4,661</span>
+                      </td>
+                      <td>
+                        <span class="add-head">경기도 내</span><span class="tds">4,307</span>
+                      </td>
+                      <td>
+                        <span class="add-head">서울</span><span class="tds">783</span>
+                      </td>
+                      <td>
+                        <span class="add-head">기타</span><span class="tds">754</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">지역</span><span class="tds">수원시 영통구</span>
+                      </td>
+                      <td>
+                        <span class="add-head">합계</span><span class="tds">10,455</span>
+                      </td>
+                      <td>
+                        <span class="add-head">시(군)구 내</span><span class="tds">4,661</span>
+                      </td>
+                      <td>
+                        <span class="add-head">경기도 내</span><span class="tds">4,307</span>
+                      </td>
+                      <td>
+                        <span class="add-head">서울</span><span class="tds">783</span>
+                      </td>
+                      <td>
+                        <span class="add-head">기타</span><span class="tds">754</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">지역</span><span class="tds">수원시 장안구</span>
+                      </td>
+                      <td>
+                        <span class="add-head">합계</span><span class="tds">10,455</span>
+                      </td>
+                      <td>
+                        <span class="add-head">시(군)구 내</span><span class="tds">4,661</span>
+                      </td>
+                      <td>
+                        <span class="add-head">경기도 내</span><span class="tds">4,307</span>
+                      </td>
+                      <td>
+                        <span class="add-head">서울</span><span class="tds">783</span>
+                      </td>
+                      <td>
+                        <span class="add-head">기타</span><span class="tds">754</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- //표 영역 -->
+
+              <!-- 차트 영역-->
+              <div class="chart-area mt-24">
+                <div class="img-area" style="width: 100%">
+                  <img src="../resources/img/bg/dummy-chart9.png" alt="chart 더미 이미지">
+                </div>
+              </div>
+              <!-- //차트 영역-->
+
+            </div>
+
+          </div>
+          <!-- //분석 결과-->
+
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+  </div>
+
+  <!-- 레이어 : 검색 필터-->
+  <section id="popFilterId" class="krds-modal fade" data-type="bottom-sheet" role="dialog">
+    <!-- modal-dialog -->
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 class="modal-title">검색 필터</h2>
+        </div>
+        <!-- //modal title -->
+
+        <!-- modal contents -->
+        <div class="modal-conts krds-tab-area layer">
+          <!-- tab list -->
+          <div class="tab fill full mb-16">
+            <ul role="tablist">
+              <li id="tab_m_01" role="tab" aria-selected="true" aria-controls="panel_m_01" class="active">
+                <button type="button" class="btn-tab">지역별 비교<i class="sr-only created"> 선택됨</i></button>
+              </li>
+              <li id="tab_m_02" role="tab" aria-selected="false" aria-controls="panel_m_02">
+                <button type="button" class="btn-tab">기간별 보기</button>
+              </li>
+            </ul>
+          </div>
+          <!-- //tab list -->
+
+          <!-- tab contents -->
+          <div class="tab-conts-wrap">
+            <!-- 지역별 비교-->
+            <section id="panel_m_01" aria-labelledby="tab_m_01" class="tab-conts active" data-quick-nav="false">
+              <ul class="filter-list krds-accordion type-line">
+                <li class="li accordion-item active">
+                  <h3 class="accordion-header">
+                    <button type="button" class="btn-accordion active" id="acc_m_hd_01" aria-controls="acc_m_col_01">
+                      <div class="tit">지역 선택</div>
+                    </button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="acc_m_col_01" aria-labelledby="acc_m_hd_01">
+                    <div class="accordion-body grid-input-action">
+                      <div class="form-group">
+                        <div class="form-conts">
+                          <input type="text" class="krds-input medium" placeholder="선택버튼을 눌러주세요" readonly>
+                        </div>
+                      </div>
+                      <button type="button" class="krds-btn medium tertiary">선택</button>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="li accordion-item active">
+                  <h3 class="accordion-header">
+                    <button type="button" class="btn-accordion active" id="acc_m_hd_02" aria-controls="acc_m_col_02">
+                      <div class="tit">기간 선택</div>
+                    </button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="acc_m_col_02" aria-labelledby="acc_m_hd_02">
+                    <div class="accordion-body">
+                      <div class="form-group">
+                        <div class="form-conts">
+                          <!-- 커스텀 데이트픽커 (년/월 선택용)-->
+                          <div class="form-conts calendar-conts month-picker-conts">
+                            <div class="calendar-input">
+                              <input type="number"
+                                class="krds-input medium form-control datepicker cal month-picker-input"
+                                placeholder="시작년/월">
+                              <button type="button" class="krds-btn medium icon form-btn-monthpicker">
+                                <span class="sr-only">달력 열기</span>
+                                <i class="svg-icon ico-calendar"></i>
+                              </button>
+                            </div>
+                            <div class="krds-month-picker-area">
+                              <div class="calendar-wrap bottom" aria-label="달력">
+                                <div class="picker-head">
+                                  <button type="button" class="btn-prev-year btn-cal-move prev krds-btn icon"><span
+                                      class="sr-only">이전 년도</span></button>
+                                  <strong class="current-year">2026년</strong>
+                                  <button type="button" class="btn-next-year btn-cal-move next krds-btn icon"><span
+                                      class="sr-only">다음 년도</span></button>
+                                </div>
+                                <div class="picker-body">
+                                  <ul class="month-list">
+                                    <li><button type="button" class="btn-month" data-month="1">1월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="2">2월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="3">3월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="4">4월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="5">5월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="6">6월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="7">7월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="8">8월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="9">9월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="10">10월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="11">11월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="12">12월</button></li>
+                                  </ul>
+                                </div>
+                                <div class="picker-footer">
+                                  <div class="picker-btn-wrap">
+                                    <button type="button" class="krds-btn small tertiary btn-cancel">취소</button>
+                                    <button type="button" class="krds-btn small primary btn-confirm">선택</button>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                          <!-- //커스텀 데이트픽커 (년/월 선택용)-->
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="form-conts">
+                          <!-- 커스텀 데이트픽커 (년/월 선택용)-->
+                          <div class="form-conts calendar-conts month-picker-conts">
+                            <div class="calendar-input">
+                              <input type="number"
+                                class="krds-input medium form-control datepicker cal month-picker-input"
+                                placeholder="종료년/월">
+                              <button type="button" class="krds-btn medium icon form-btn-monthpicker">
+                                <span class="sr-only">달력 열기</span>
+                                <i class="svg-icon ico-calendar"></i>
+                              </button>
+                            </div>
+                            <div class="krds-month-picker-area">
+                              <div class="calendar-wrap bottom" aria-label="달력">
+                                <div class="picker-head">
+                                  <button type="button" class="btn-prev-year btn-cal-move prev krds-btn icon"><span
+                                      class="sr-only">이전 년도</span></button>
+                                  <strong class="current-year">2026년</strong>
+                                  <button type="button" class="btn-next-year btn-cal-move next krds-btn icon"><span
+                                      class="sr-only">다음 년도</span></button>
+                                </div>
+                                <div class="picker-body">
+                                  <ul class="month-list">
+                                    <li><button type="button" class="btn-month" data-month="1">1월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="2">2월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="3">3월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="4">4월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="5">5월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="6">6월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="7">7월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="8">8월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="9">9월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="10">10월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="11">11월</button></li>
+                                    <li><button type="button" class="btn-month" data-month="12">12월</button></li>
+                                  </ul>
+                                </div>
+                                <div class="picker-footer">
+                                  <div class="picker-btn-wrap">
+                                    <button type="button" class="krds-btn small tertiary btn-cancel">취소</button>
+                                    <button type="button" class="krds-btn small primary btn-confirm">선택</button>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                          <!-- //커스텀 데이트픽커 (년/월 선택용)-->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </section>
+            <!-- //지역별 비교-->
+
+            <!-- 기간별 보기-->
+            <section id="panel_m_02" aria-labelledby="tab_m_02" class="tab-conts" data-quick-nav="false">
+
+            </section>
+            <!-- //기간별 보기-->
+          </div>
+          <!-- //tab contents -->
+        </div>
+        <!-- //modal contents -->
+
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">초기화</button>
+          <button type="button" class="krds-btn medium primary close-modal">분석하기</button>
+        </div>
+        <!-- //modal btn -->
+
+        <!-- close button -->
+        <button type="button" class="krds-btn medium icon btn-close close-modal">
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <!-- //modal-dialog -->
+    <div class="modal-back in"></div>
+  </section>
+  <!-- //레이어 : 검색 필터-->
+
+  <!-- js -->
+  <script src="../resources/js/component/ui-script.js"></script>
+  <script src="../resources/js/component/common.js"></script>
+</body>
+
+</html>

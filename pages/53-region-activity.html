@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>경기 데이터 분석 포털</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="경기 데이터 분석 포털" />
+  <!-- style sheets -->
+  <link href="../resources/css/token/krds_tokens.css" rel="stylesheet">
+  <link href="../resources/css/common/common.css" rel="stylesheet">
+  <link href="../resources/css/component/component.css" rel="stylesheet">
+  <link href="../resources/css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+  <div>
+    <!-- header -->
+
+    <div class="container">
+      <div class="inner">
+        <!-- breadcrumb -->
+        <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="home"><a href="#" class="txt">홈</a></li>
+            <li><a href="#" class="txt">분석 모델</a></li>
+            <li><a href="#" class="txt">부동산모니터링</a></li>
+            <li><a href="#" class="txt on">지역 활성도 모니터링</a></li>
+          </ol>
+        </nav>
+        <!-- breadcrumb -->
+
+        <!-- 페이지 타이틀 영역 -->
+        <div class="page-title-wrap">
+          <h1 class="h-tit">지역 활성도 모니터링</h1>
+          <div class="btn-wrap">
+            <!-- 모바일용 필터-->
+            <button type="button" class="krds-btn medium text m-filter open-modal" data-target="popFilterId">
+              <i class="svg-icon ico-filter"></i>
+              <span class="span">검색 필터</span>
+            </button>
+            <!-- //모바일용 필터-->
+            <button type="button" class="krds-btn medium text">
+              <i class="svg-icon ico-information"></i>
+              이용가이드
+            </button>
+          </div>
+        </div>
+        <!-- //페이지 타이틀 영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <div class="search-between-conts">
+          <!-- 왼쪽 검색 필터 영역-->
+          <div class="aside">
+            <dl class="filter-dl">
+              <dt>검색 필터</dt>
+              <dd>
+                <ul class="filter-list krds-accordion type-line">
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_01"
+                        aria-controls="acc_pc_col_01">
+                        <div class="tit">사용지표</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_01" aria-labelledby="acc_pc_hd_01">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>활성도 지표</option>
+                              <option value="">항목</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_02"
+                        aria-controls="acc_pc_col_02">
+                        <div class="tit">지역선택</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_02" aria-labelledby="acc_pc_hd_02">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>수원시 영통구</option>
+                              <option value="">항목</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_03"
+                        aria-controls="acc_pc_col_03">
+                        <div class="tit">기간 선택</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_03" aria-labelledby="acc_pc_hd_03">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <!-- 커스텀 데이트픽커 (년/월 선택용)-->
+                            <div class="form-conts calendar-conts month-picker-conts">
+                              <div class="calendar-input">
+                                <input type="number"
+                                  class="krds-input medium form-control datepicker cal month-picker-input"
+                                  placeholder="년/월 선택">
+                                <button type="button" class="krds-btn medium icon form-btn-monthpicker">
+                                  <span class="sr-only">달력 열기</span>
+                                  <i class="svg-icon ico-calendar"></i>
+                                </button>
+                              </div>
+                              <div class="krds-month-picker-area">
+                                <div class="calendar-wrap bottom" aria-label="달력">
+                                  <div class="picker-head">
+                                    <button type="button" class="btn-prev-year btn-cal-move prev krds-btn icon"><span
+                                        class="sr-only">이전 년도</span></button>
+                                    <strong class="current-year">2026년</strong>
+                                    <button type="button" class="btn-next-year btn-cal-move next krds-btn icon"><span
+                                        class="sr-only">다음 년도</span></button>
+                                  </div>
+                                  <div class="picker-body">
+                                    <ul class="month-list">
+                                      <li><button type="button" class="btn-month" data-month="1">1월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="2">2월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="3">3월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="4">4월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="5">5월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="6">6월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="7">7월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="8">8월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="9">9월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="10">10월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="11">11월</button></li>
+                                      <li><button type="button" class="btn-month" data-month="12">12월</button></li>
+                                    </ul>
+                                  </div>
+                                  <div class="picker-footer">
+                                    <div class="picker-btn-wrap">
+                                      <button type="button" class="krds-btn small tertiary btn-cancel">취소</button>
+                                      <button type="button" class="krds-btn small primary btn-confirm">선택</button>
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                            <!-- //커스텀 데이트픽커 (년/월 선택용)-->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_04"
+                        aria-controls="acc_pc_col_04">
+                        <div class="tit">기준값</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_04" aria-labelledby="acc_pc_hd_04">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">주민인구 백분위*가중치 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">유동인구 백분위*가중치 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">사업체수 백분위*가중치 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">종사자수 백분위*가중치 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">카드매출 백분위*가중치 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">건축물 연령 백분위*가중치 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_05"
+                        aria-controls="acc_pc_col_05">
+                        <div class="tit">추가값</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_05" aria-labelledby="acc_pc_hd_05">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">경제활동인구 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">고령인구수 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">노년부양비 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">노령화지수 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">노후건축물비율 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">노후주택비율 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">부동산공시지가 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">사업체당종사자수 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">소형주택비율 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">신규주택비율 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">인구변화율 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">접도율 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">총사업체수 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">총사업체수증감율 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-tit">
+                            <label for="consult_name">총종사자수증감율 (%)</label>
+                          </div>
+                          <div class="form-conts">
+                            <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+
+            <div class="filter-btn">
+              <button type="button" class="krds-btn medium tertiary">초기화</button>
+              <button type="button" class="krds-btn medium primary">분석하기</button>
+            </div>
+          </div>
+          <!-- //왼쪽 검색 필터 영역-->
+
+
+          <!-- 분석 결과-->
+          <div class="contents">
+
+            <div class="section-5">
+
+              <!-- 도움 박스-->
+              <div class="section-5 helper-box">
+                <p class="helper-tit">각 가중치의 합은 100%가 되어야 합니다.</p>
+              </div>
+
+              <div class="section-5 helper-box">
+                <p class="helper-tit">데이터 기준</p>
+                <ul class="krds-info-list decimal">
+                  <li>연도별 인구수: 2021 ~ 2023년 기준 / 출처: 행정안전부</li>
+                  <li>유동인구: 2021 ~ 2023년 기준 / 출처: KT</li>
+                  <li>사업체수: 2018 ~ 2022년 기준 / 출처: KOSIS</li>
+                  <li>종사자수: 2018 ~ 2022년 기준 / 출처: KOSIS</li>
+                  <li>카드매출액: 2021 ~ 2023년 기준 / 출처: BC</li>
+                  <li>건축물 노후도: 2021 ~ 2023년 기준 / 출처: 국토정보플랫폼</li>
+                  <li>기타 지표: 2018 ~ 2022년 기준 / 출처: 도시재생 종합정보체계</li>
+                </ul>
+              </div>
+              <!-- //도움 박스-->
+            </div>
+
+            <div class="section-5">
+              <div class="con-title-wrap">
+                <div class="con-title">
+                  <h1 class="txt">활성도 지표</h1>
+                </div>
+              </div>
+
+              <!-- 표 영역 -->
+              <div class="krds-table-wrap">
+                <table class="tbl col data center-table no-pointer mobile">
+                  <caption>
+                    지역 활성도 모니터링 표
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="border-right">순위</th>
+                      <th scope="col">행정동</th>
+                      <th scope="col">활성도 가중점수(점)</th>
+                      <th scope="col">활성도 종합 백분위(%)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">순위</span><span class="tds">8</span>
+                      </td>
+                      <td>
+                        <span class="add-head">행정동</span><span class="tds">매탄2동</span>
+                      </td>
+                      <td>
+                        <span class="add-head">활성도 가중점수(점)</span><span class="tds">70.39</span>
+                      </td>
+                      <td>
+                        <span class="add-head">활성도 종합 백분위(%)</span><span class="tds">98.9</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">순위</span><span class="tds">27</span>
+                      </td>
+                      <td>
+                        <span class="add-head">행정동</span><span class="tds">매탄1동</span>
+                      </td>
+                      <td>
+                        <span class="add-head">활성도 가중점수(점)</span><span class="tds">67.84</span>
+                      </td>
+                      <td>
+                        <span class="add-head">활성도 종합 백분위(%)</span><span class="tds">96.4</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">순위</span><span class="tds">28</span>
+                      </td>
+                      <td>
+                        <span class="add-head">행정동</span><span class="tds">매탄4동</span>
+                      </td>
+                      <td>
+                        <span class="add-head">활성도 가중점수(점)</span><span class="tds">67.6</span>
+                      </td>
+                      <td>
+                        <span class="add-head">활성도 종합 백분위(%)</span><span class="tds">95.93</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">순위</span><span class="tds">221</span>
+                      </td>
+                      <td>
+                        <span class="add-head">행정동</span><span class="tds">망포1동</span>
+                      </td>
+                      <td>
+                        <span class="add-head">활성도 가중점수(점)</span><span class="tds">54.5</span>
+                      </td>
+                      <td>
+                        <span class="add-head">활성도 종합 백분위(%)</span><span class="tds">60.88</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">순위</span><span class="tds">260</span>
+                      </td>
+                      <td>
+                        <span class="add-head">행정동</span><span class="tds">매탄3동</span>
+                      </td>
+                      <td>
+                        <span class="add-head">활성도 가중점수(점)</span><span class="tds">54.02</span>
+                      </td>
+                      <td>
+                        <span class="add-head">활성도 종합 백분위(%)</span><span class="tds">59.47</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- //표 영역 -->
+
+              <!-- 차트 영역-->
+              <div class="chart-area mt-24">
+                <div class="img-area" style="width: 100%">
+                  <img src="../resources/img/bg/dummy-chart11.png" alt="chart 더미 이미지">
+                </div>
+              </div>
+              <!-- //차트 영역-->
+
+            </div>
+
+          </div>
+          <!-- //분석 결과-->
+
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+  </div>
+
+  <!-- 레이어 : 검색 필터-->
+  <section id="popFilterId" class="krds-modal fade" data-type="bottom-sheet" role="dialog">
+    <!-- modal-dialog -->
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 class="modal-title">검색 필터</h2>
+        </div>
+        <!-- //modal title -->
+
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <ul class="filter-list krds-accordion type-line">
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_01" aria-controls="acc_m_col_01">
+                  <div class="tit">사용지표</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_01" aria-labelledby="acc_m_hd_01">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>활성도 지표</option>
+                        <option value="">항목</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_02" aria-controls="acc_m_col_02">
+                  <div class="tit">지역선택</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_02" aria-labelledby="acc_m_hd_02">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>수원시 영통구</option>
+                        <option value="">항목</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_03" aria-controls="acc_m_col_03">
+                  <div class="tit">기간 선택</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_03" aria-labelledby="acc_m_hd_03">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <!-- 커스텀 데이트픽커 (년/월 선택용)-->
+                      <div class="form-conts calendar-conts month-picker-conts">
+                        <div class="calendar-input">
+                          <input type="number" class="krds-input medium form-control datepicker cal month-picker-input"
+                            placeholder="년/월 선택">
+                          <button type="button" class="krds-btn medium icon form-btn-monthpicker">
+                            <span class="sr-only">달력 열기</span>
+                            <i class="svg-icon ico-calendar"></i>
+                          </button>
+                        </div>
+                        <div class="krds-month-picker-area">
+                          <div class="calendar-wrap bottom" aria-label="달력">
+                            <div class="picker-head">
+                              <button type="button" class="btn-prev-year btn-cal-move prev krds-btn icon"><span
+                                  class="sr-only">이전 년도</span></button>
+                              <strong class="current-year">2026년</strong>
+                              <button type="button" class="btn-next-year btn-cal-move next krds-btn icon"><span
+                                  class="sr-only">다음 년도</span></button>
+                            </div>
+                            <div class="picker-body">
+                              <ul class="month-list">
+                                <li><button type="button" class="btn-month" data-month="1">1월</button></li>
+                                <li><button type="button" class="btn-month" data-month="2">2월</button></li>
+                                <li><button type="button" class="btn-month" data-month="3">3월</button></li>
+                                <li><button type="button" class="btn-month" data-month="4">4월</button></li>
+                                <li><button type="button" class="btn-month" data-month="5">5월</button></li>
+                                <li><button type="button" class="btn-month" data-month="6">6월</button></li>
+                                <li><button type="button" class="btn-month" data-month="7">7월</button></li>
+                                <li><button type="button" class="btn-month" data-month="8">8월</button></li>
+                                <li><button type="button" class="btn-month" data-month="9">9월</button></li>
+                                <li><button type="button" class="btn-month" data-month="10">10월</button></li>
+                                <li><button type="button" class="btn-month" data-month="11">11월</button></li>
+                                <li><button type="button" class="btn-month" data-month="12">12월</button></li>
+                              </ul>
+                            </div>
+                            <div class="picker-footer">
+                              <div class="picker-btn-wrap">
+                                <button type="button" class="krds-btn small tertiary btn-cancel">취소</button>
+                                <button type="button" class="krds-btn small primary btn-confirm">선택</button>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //커스텀 데이트픽커 (년/월 선택용)-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_04" aria-controls="acc_m_col_04">
+                  <div class="tit">기준값</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_04" aria-labelledby="acc_m_hd_04">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">주민인구 백분위*가중치 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">유동인구 백분위*가중치 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">사업체수 백분위*가중치 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">종사자수 백분위*가중치 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">카드매출 백분위*가중치 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">건축물 연령 백분위*가중치 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_05" aria-controls="acc_m_col_05">
+                  <div class="tit">추가값</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_05" aria-labelledby="acc_m_hd_05">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">경제활동인구 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">고령인구수 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">노년부양비 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">노령화지수 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">노후건축물비율 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">노후주택비율 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">부동산공시지가 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">사업체당종사자수 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">소형주택비율 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">신규주택비율 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">인구변화율 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">접도율 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">총사업체수 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">총사업체수증감율 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-tit">
+                      <label for="consult_name">총종사자수증감율 (%)</label>
+                    </div>
+                    <div class="form-conts">
+                      <input type="text" id="consult_name" class="krds-input medium" placeholder="0">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- //modal contents -->
+
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">초기화</button>
+          <button type="button" class="krds-btn medium primary close-modal">분석하기</button>
+        </div>
+        <!-- //modal btn -->
+
+        <!-- close button -->
+        <button type="button" class="krds-btn medium icon btn-close close-modal">
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <!-- //modal-dialog -->
+    <div class="modal-back in"></div>
+  </section>
+  <!-- //레이어 : 검색 필터-->
+
+  <!-- js -->
+  <script src="../resources/js/component/ui-script.js"></script>
+  <script src="../resources/js/component/common.js"></script>
+</body>
+
+</html>

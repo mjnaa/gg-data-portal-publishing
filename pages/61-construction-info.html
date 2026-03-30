@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>경기 데이터 분석 포털</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="경기 데이터 분석 포털" />
+  <!-- style sheets -->
+  <link href="../resources/css/token/krds_tokens.css" rel="stylesheet">
+  <link href="../resources/css/common/common.css" rel="stylesheet">
+  <link href="../resources/css/component/component.css" rel="stylesheet">
+  <link href="../resources/css/custom.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div>
+    <!-- header -->
+
+    <div class="container">
+      <div class="inner">
+        <!-- breadcrumb -->
+        <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="home"><a href="#" class="txt">홈</a></li>
+            <li><a href="#" class="txt">분석 모델</a></li>
+            <li><a href="#" class="txt">건설업 등록기준 미달업체</a></li>
+            <li><a href="#" class="txt on">분석개요</a></li>
+          </ol>
+        </nav>
+        <!-- breadcrumb -->
+
+        <!-- 페이지 타이틀 영역 -->
+        <div class="page-title-wrap">
+          <h1 class="h-tit">건설업 등록 기준 미달 업체를 도출하기 위한 빅데이터 분석</h1>
+        </div>
+        <!-- //페이지 타이틀 영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <div class="conts">
+
+          <div class="contents">
+
+            <!-- 도움 박스-->
+            <div class="section-5 helper-box ver2">
+              <ul class="krds-info-list decimal">
+                <li>분석 페이지별 우측 상단의 이용가이드 내 상세 내용과 해석 방법이 포함되어있으니 참고부탁드립니다.</li>
+                <li>범례가 있는 분석 결과는 범례 클릭을 통해 그래프에 표현되는 그래프를 끄거나 켤 수 있습니다.</li>
+              </ul>
+            </div>
+            <!-- //도움 박스-->
+
+            <div class="section-5">
+              <div class="con-title-wrap">
+                <div class="con-title">
+                  <h1>모델 개요</h1>
+                </div>
+              </div>
+              <div>
+                <ul class="krds-info-list decimal">
+                  <li>3가지 요인(행정처분 건수, 자본금 미달, 건설공사대장 통보 현황)을 활용하여 점수 기반의 건설업 등록기준 미달 업체 도출</li>
+                  <li>행정처분 건수 : 국토교통부에서 제공하는 건설업체 행정처분 정보를 활용하여 각 업체별 행정처분 종류별 건수 도출</li>
+                  <li>자본금 미달 : 민간 기업정보 데이터를 활용하여 업체별 자본금 미달 여부 도출</li>
+                  <li>건설공사대장 미통보 : 조달청(나라장터) 공공 분야 계약 금액과 KISCON(건설산업지식정보 시스템) 건설공사대장 통보 실적을 비교하여 건설공사대장 미통보 여부 도출</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="section-5">
+              <div class="con-title-wrap">
+                <div class="con-title">
+                  <h1>분석 데이터</h1>
+                </div>
+              </div>
+              <div>
+                <ul class="krds-info-list decimal">
+                  <li>[공공 데이터] KISCON 건설업체정보 서비스
+                    <ul class="krds-info-list dash">
+                      <li>건설업체등록, 양도신고, 법인합병신고, 상속신고, 행정처분, 폐업신고</li>
+                    </ul>
+                  </li>
+                  <li>[민간 데이터] 기업정보 데이터
+                    <ul class="krds-info-list dash">
+                      <li>경기도 소재 기업정보, 기업정보 재무정보</li>
+                    </ul>
+                  </li>
+                  <li>[공공 데이터] 나라장터 계약현황
+                    <ul class="krds-info-list dash">
+                      <li>공공 부문 계약현황, 나라장터 수요기관 등록내역</li>
+                    </ul>
+                  </li>
+                  <li>[웹 크롤링] 건설공사대장 통보 현황
+                    <ul class="krds-info-list dash">
+                      <li>업체별 공공 부문 건설공사대장 통보 현황(3년)</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="section-5">
+              <div class="con-title-wrap">
+                <div class="con-title">
+                  <h1>데이터 업데이트 주기</h1>
+                </div>
+              </div>
+              <div>
+                <ul class="krds-info-list decimal">
+                  <li>KISCON 건설업체정보서비스 : 주 단위</li>
+                  <li>민간 데이터 : 월 단위</li>
+                  <li>나라장터 계약현황 : 월 단위</li>
+                  <li>건설공사대장 통보 현황: 월 단위</li>
+                  <li>업체정보 관리 페이지에 신규로 등록한 업체일 경우, 우선조사기업과 모형분석은 최소 일주일 이후에 조회 가능</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="section-4">
+              <div class="con-title-wrap">
+                <div class="con-title">
+                  <h1>분석 절차 및 결과 예시</h1>
+                </div>
+              </div>
+              <div class="section-3">
+                <h2>분석절차</h2>
+                <div class="section-5">
+                  <h3>1. 데이터 수집</h3>
+                  <ul class="krds-info-list decimal">
+                    <li>건설업 등록기준 미달 업체 도출을 위해 공공 데이터(건설업체 정보, 행정처분, 나라장터 계약현황, 건설공사대장 통보)와 경기도 내부 기업정보(기업 재무정보) 수집ㅅ</li>
+                  </ul>
+                </div>
+                <div class="section-5">
+                  <h3>2. 데이터 정제 및 분류</h3>
+                  <ul class="krds-info-list decimal">
+                    <li>행정처분 건수 카테고리
+                      <ul class="krds-info-list dash">
+                        <li>행정처분 내역별 카테고리 분류를 위한 랜덤포레스트 분류 알고리즘 모델 생성</li>
+                        <li>행정처분 이력 카테고리 9가지로 분류 후 이력 건수에 따른 점수 부여
+                          <ul class="krds-info-list hollow">
+                            <li>행정처분 이력 카테고리 : 건설공사대장 미통보, 자본금 미달, 기술인력 미달, 보증가능금액 미달, 시설·장비 미달, 불법 하도급, 자격증·경력증·등록증 대여, 기타(등록기준 관련), 기타</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>자본금 미달
+                      <ul class="krds-info-list dash">
+                        <li>건설업종별 자본금 기준*과 기업별 자본금 비교를 통해 자본금 미달 여부 도출
+                          <ul class="krds-info-list hollow">
+                            <li>「건설산업기본법 시행령 [별첨2]건설업의 등록기준</li>
+                          </ul>
+                        </li>
+                        <li>최근 결산일 기준 자본금 미달 여부에 따른 점수 부여
+                          <ul class="krds-info-list hollow">
+                            <li>점수 부여 기준 : 충족 : 0점, 미달 : 1점</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>건설공사대장 미통보 여부
+                      <ul class="krds-info-list dash">
+                        <li>나라장터 내 공공부문 계약 금액 총액과 건설산업지식정보시스템 내 공공 부문 건설공사대장 통보 금액 비교를 통해 건설공사대장 미통보 여부 도출</li>
+                        <li>계약 금액과 통보 금액 간 오차율에 따른 상이한 점수 부여
+                          <ul class="krds-info-list hollow">
+                            <li>점수 부여 기준
+                              <ul>
+                                <li>- 오차율 ≥ 0% : 0점</li>
+                                <li>- 공사통보실적 정보 없음 : 1점</li>
+                                <li>- 0% ＞ 오차율 ≥ -( 5%) : 2점</li>
+                                <li>- (-5%) ＞ 오차율 ≥ (-10%) : 3점</li>
+                                <li>- 오차율 ＜ (-10%) : 4점</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="section-5">
+                  <h3>3.건설업 등록 기준 미달 우선 조사 업체 도출</h3>
+                  <ul class="krds-info-list decimal">
+                    <li>업종별(종합/전문) 요인별 가중치 지정* 및 가중치 적용
+                      <ul class="krds-info-list dash">
+                        <li>경기도청 건설정책과 담당자 가중치 지정<br>
+                          점수 합계 기반 등록기준 미달 업체 순위 도출<br>
+                          (예시: 업체 A의 경우, 기력 미달 요인 점수와 가중치 등을 곱하여 총점을 산출하고 우선 조사 순위 1위 선정)</li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <div class="img-area" style="width: 100%">
+                    <img src="../resources/img/bg/dummy-image6.png" alt="더미 이미지">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+  </div>
+
+  <!-- 레이어 : 검색 필터-->
+  <section id="popFilterId" class="krds-modal fade" data-type="bottom-sheet" role="dialog">
+    <!-- modal-dialog -->
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 class="modal-title">검색 필터</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <ul class="filter-list krds-accordion type-line">
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_01" aria-controls="acc_m_col_01">
+                  <div class="tit">분석종류</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_01" aria-labelledby="acc_m_hd_01">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>성연령별 유동인구 분석</option>
+                        <option value="">요일별 유동인구 분석</option>
+                        <option value="">시간대별 유동인구 분석</option>
+                        <option value="">유입지별 유동인구 분석</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_02" aria-controls="acc_m_col_02">
+                  <div class="tit">분석영역</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_02" aria-labelledby="acc_m_hd_02">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>가평군</option>
+                        <option value="">고양시</option>
+                        <option value="">고양시 덕양군</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>전체</option>
+                        <option value="">남성 전체</option>
+                        <option value="">10대 남성</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_03" aria-controls="acc_m_col_03">
+                  <div class="tit">기준연월</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_03" aria-labelledby="acc_m_hd_03">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>기준연월</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_04" aria-controls="acc_m_col_04">
+                  <div class="tit">분석기간</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_04" aria-labelledby="acc_m_hd_04">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <!-- 커스텀 데이트픽커 (년/월 선택용)-->
+                      <div class="form-conts calendar-conts month-picker-conts">
+                        <div class="calendar-input">
+                          <input type="number" class="krds-input medium form-control datepicker cal month-picker-input"
+                            placeholder="년/월 선택">
+                          <button type="button" class="krds-btn medium icon form-btn-monthpicker">
+                            <span class="sr-only">달력 열기</span>
+                            <i class="svg-icon ico-calendar"></i>
+                          </button>
+                        </div>
+                        <div class="krds-month-picker-area">
+                          <div class="calendar-wrap bottom" aria-label="달력">
+                            <div class="picker-head">
+                              <button type="button" class="btn-prev-year btn-cal-move prev krds-btn icon"><span
+                                  class="sr-only">이전 년도</span></button>
+                              <strong class="current-year">2026년</strong>
+                              <button type="button" class="btn-next-year btn-cal-move next krds-btn icon"><span
+                                  class="sr-only">다음 년도</span></button>
+                            </div>
+                            <div class="picker-body">
+                              <ul class="month-list">
+                                <li><button type="button" class="btn-month" data-month="1">1월</button></li>
+                                <li><button type="button" class="btn-month" data-month="2">2월</button></li>
+                                <li><button type="button" class="btn-month" data-month="3">3월</button></li>
+                                <li><button type="button" class="btn-month" data-month="4">4월</button></li>
+                                <li><button type="button" class="btn-month" data-month="5">5월</button></li>
+                                <li><button type="button" class="btn-month" data-month="6">6월</button></li>
+                                <li><button type="button" class="btn-month" data-month="7">7월</button></li>
+                                <li><button type="button" class="btn-month" data-month="8">8월</button></li>
+                                <li><button type="button" class="btn-month" data-month="9">9월</button></li>
+                                <li><button type="button" class="btn-month" data-month="10">10월</button></li>
+                                <li><button type="button" class="btn-month" data-month="11">11월</button></li>
+                                <li><button type="button" class="btn-month" data-month="12">12월</button></li>
+                              </ul>
+                            </div>
+                            <div class="picker-footer">
+                              <div class="picker-btn-wrap">
+                                <button type="button" class="krds-btn small tertiary btn-cancel">취소</button>
+                                <button type="button" class="krds-btn small primary btn-confirm">선택</button>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //커스텀 데이트픽커 (년/월 선택용)-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_05" aria-controls="acc_m_col_05">
+                  <div class="tit">성별/연령</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_05" aria-labelledby="acc_m_hd_05">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>전체</option>
+                        <option value="">남성 전체</option>
+                        <option value="">10대 남성</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">초기화</button>
+          <button type="button" class="krds-btn medium primary close-modal">분석하기</button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button type="button" class="krds-btn medium icon btn-close close-modal">
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <!-- //modal-dialog -->
+    <div class="modal-back in"></div>
+  </section>
+  <!-- //레이어 : 검색 필터-->
+
+  <!-- js -->
+  <script src="../resources/js/component/ui-script.js"></script>
+  <script src="../resources/js/component/common.js"></script>
+</body>
+
+</html>

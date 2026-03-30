@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>경기 데이터 분석 포털</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="경기 데이터 분석 포털" />
+  <!-- style sheets -->
+  <link href="../resources/css/token/krds_tokens.css" rel="stylesheet">
+  <link href="../resources/css/common/common.css" rel="stylesheet">
+  <link href="../resources/css/component/component.css" rel="stylesheet">
+  <link href="../resources/css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+  <div>
+    <!-- header -->
+
+    <div class="container">
+      <div class="inner">
+        <!-- breadcrumb -->
+        <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="home"><a href="#" class="txt">홈</a></li>
+            <li><a href="#" class="txt">분석 모델</a></li>
+            <li><a href="#" class="txt">부동산모니터링</a></li>
+            <li><a href="#" class="txt on">아파트 시세 영향 요인 분석</a></li>
+          </ol>
+        </nav>
+        <!-- breadcrumb -->
+
+        <!-- 페이지 타이틀 영역 -->
+        <div class="page-title-wrap">
+          <h1 class="h-tit">아파트 시세 영향 요인 분석</h1>
+          <div class="btn-wrap">
+            <!-- 모바일용 필터-->
+            <button type="button" class="krds-btn medium text m-filter open-modal" data-target="popFilterId">
+              <i class="svg-icon ico-filter"></i>
+              <span class="span">검색 필터</span>
+            </button>
+            <!-- //모바일용 필터-->
+            <button type="button" class="krds-btn medium text">
+              <i class="svg-icon ico-down"></i>
+              다운로드
+            </button>
+            <button type="button" class="krds-btn medium text">
+              <i class="svg-icon ico-information"></i>
+              이용가이드
+            </button>
+          </div>
+        </div>
+        <!-- //페이지 타이틀 영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <div class="search-between-conts">
+          <!-- 왼쪽 검색 필터 영역-->
+          <div class="aside">
+            <dl class="filter-dl">
+              <dt>검색 필터</dt>
+              <dd>
+                <ul class="filter-list krds-accordion type-line">
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_01"
+                        aria-controls="acc_pc_col_01">
+                        <div class="tit">기간선택</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_01" aria-labelledby="acc_pc_hd_01">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>2023년</option>
+                              <option value="">항목</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="li accordion-item active">
+                    <h3 class="accordion-header">
+                      <button type="button" class="btn-accordion active" id="acc_pc_hd_02"
+                        aria-controls="acc_pc_col_02">
+                        <div class="tit">지역선택</div>
+                      </button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="acc_pc_col_02" aria-labelledby="acc_pc_hd_02">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <div class="form-conts">
+                            <select class="krds-form-select medium completed" title="선택">
+                              <option value="" selected>수원시</option>
+                              <option value="">항목</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+
+            <div class="filter-btn">
+              <button type="button" class="krds-btn medium tertiary">초기화</button>
+              <button type="button" class="krds-btn medium primary">분석하기</button>
+            </div>
+          </div>
+          <!-- //왼쪽 검색 필터 영역-->
+
+
+          <!-- 분석 결과-->
+          <div class="contents">
+
+            <div class="section-5">
+
+              <!-- 표 영역 -->
+              <div class="krds-table-wrap">
+                <table class="tbl col data center-table no-pointer mobile">
+                  <caption>
+                    아파트 시세 영향 요인 분석 표
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="border-right">No</th>
+                      <th scope="col">상관개수</th>
+                      <th scope="col">값</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">No</span><span class="tds">1</span>
+                      </td>
+                      <td>
+                        <span class="add-head">상관개수</span><span class="tds">단지_공동주택_20평이상_개수</span>
+                      </td>
+                      <td>
+                        <span class="add-head">값</span><span class="tds">0.58</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">No</span><span class="tds">2</span>
+                      </td>
+                      <td>
+                        <span class="add-head">상관개수</span><span class="tds">단지_공동주택_30평이상_개수</span>
+                      </td>
+                      <td>
+                        <span class="add-head">값</span><span class="tds">0.58</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">No</span><span class="tds">3</span>
+                      </td>
+                      <td>
+                        <span class="add-head">상관개수</span><span class="tds">단지_공동주택_30평이상_구성비</span>
+                      </td>
+                      <td>
+                        <span class="add-head">값</span><span class="tds">0.58</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">No</span><span class="tds">4</span>
+                      </td>
+                      <td>
+                        <span class="add-head">상관개수</span><span class="tds">단지_공동주택_40평이상_구성비</span>
+                      </td>
+                      <td>
+                        <span class="add-head">값</span><span class="tds">0.58</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">No</span><span class="tds">5</span>
+                      </td>
+                      <td>
+                        <span class="add-head">상관개수</span><span class="tds">단지_공동주택_호당_전용면적</span>
+                      </td>
+                      <td>
+                        <span class="add-head">값</span><span class="tds">0.58</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">No</span><span class="tds">6</span>
+                      </td>
+                      <td>
+                        <span class="add-head">상관개수</span><span class="tds">단지_공동주택_개수_합</span>
+                      </td>
+                      <td>
+                        <span class="add-head">값</span><span class="tds">0.58</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">No</span><span class="tds">7</span>
+                      </td>
+                      <td>
+                        <span class="add-head">상관개수</span><span class="tds">공동주택_호당_공시가격</span>
+                      </td>
+                      <td>
+                        <span class="add-head">값</span><span class="tds">0.58</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">No</span><span class="tds">8</span>
+                      </td>
+                      <td>
+                        <span class="add-head">상관개수</span><span class="tds">공동주택_전용면적당_공시가격</span>
+                      </td>
+                      <td>
+                        <span class="add-head">값</span><span class="tds">0.58</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-right">
+                        <span class="add-head">No</span><span class="tds">9</span>
+                      </td>
+                      <td>
+                        <span class="add-head">상관개수</span><span class="tds">건축물_개별주택가격_평균</span>
+                      </td>
+                      <td>
+                        <span class="add-head">값</span><span class="tds">0.58</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- //표 영역 -->
+
+              <!-- 차트 영역-->
+              <div class="chart-area mt-24">
+                <div class="img-area" style="width: 100%">
+                  <img src="../resources/img/bg/dummy-chart10.png" alt="chart 더미 이미지">
+                </div>
+              </div>
+              <!-- //차트 영역-->
+
+            </div>
+
+          </div>
+          <!-- //분석 결과-->
+
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+  </div>
+
+  <!-- 레이어 : 검색 필터-->
+  <section id="popFilterId" class="krds-modal fade" data-type="bottom-sheet" role="dialog">
+    <!-- modal-dialog -->
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 class="modal-title">검색 필터</h2>
+        </div>
+        <!-- //modal title -->
+
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <ul class="filter-list krds-accordion type-line">
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_01" aria-controls="acc_m_col_01">
+                  <div class="tit">기간선택</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_01" aria-labelledby="acc_m_hd_01">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>2023년</option>
+                        <option value="">항목</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_02" aria-controls="acc_m_col_02">
+                  <div class="tit">지역선택</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_02" aria-labelledby="acc_m_hd_02">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>수원시</option>
+                        <option value="">항목</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- //modal contents -->
+
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">초기화</button>
+          <button type="button" class="krds-btn medium primary close-modal">분석하기</button>
+        </div>
+        <!-- //modal btn -->
+
+        <!-- close button -->
+        <button type="button" class="krds-btn medium icon btn-close close-modal">
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <!-- //modal-dialog -->
+    <div class="modal-back in"></div>
+  </section>
+  <!-- //레이어 : 검색 필터-->
+
+  <!-- js -->
+  <script src="../resources/js/component/ui-script.js"></script>
+  <script src="../resources/js/component/common.js"></script>
+</body>
+
+</html>

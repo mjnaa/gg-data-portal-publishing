@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>경기 데이터 분석 포털</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="경기 데이터 분석 포털" />
+  <!-- style sheets -->
+  <link href="../resources/css/token/krds_tokens.css" rel="stylesheet">
+  <link href="../resources/css/common/common.css" rel="stylesheet">
+  <link href="../resources/css/component/component.css" rel="stylesheet">
+  <link href="../resources/css/custom.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div>
+    <!-- header -->
+
+    <div class="container">
+      <div class="inner">
+        <!-- breadcrumb -->
+        <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="home"><a href="#" class="txt">홈</a></li>
+            <li><a href="#" class="txt">분석 모델</a></li>
+            <li><a href="#" class="txt">생활인구</a></li>
+            <li><a href="#" class="txt on">분석개요</a></li>
+          </ol>
+        </nav>
+        <!-- breadcrumb -->
+
+        <!-- 페이지 타이틀 영역 -->
+        <div class="page-title-wrap">
+          <h1 class="h-tit">생활인구 상시 분석 서비스 고도화</h1>
+        </div>
+        <!-- //페이지 타이틀 영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <div class="conts">
+
+          <div class="contents">
+
+            <!-- 도움 박스-->
+            <div class="section-5 helper-box ver2">
+              <ul class="krds-info-list decimal">
+                <li>분석 페이지별 우측 상단의 이용가이드 내 상세 내용과 해석 방법이 포함되어있으니 참고부탁드립니다.</li>
+                <li>범례가 있는 분석 결과는 범례 클릭을 통해 그래프에 표현되는 그래프를 끄거나 켤 수 있습니다.</li>
+              </ul>
+            </div>
+            <!-- //도움 박스-->
+
+            <div class="section-5">
+              <div class="con-title-wrap">
+                <div class="con-title">
+                  <h1>모델 개요</h1>
+                </div>
+              </div>
+              <div>
+                <ul class="krds-info-list decimal">
+                  <li>현 유동인구 데이터를 생활인구 데이터로 변경하여 주간 생활인구 분석</li>
+                  <li>특성 도출 및 군집분석을 통한 거주/직장/방문 지역의 생활 권역 도출</li>
+                  <li>상가 및 건물 이용 용도 등을 활용한 건물 이용 적합도 도출</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="section-5">
+              <div class="con-title-wrap">
+                <div class="con-title">
+                  <h1>분석 데이터</h1>
+                </div>
+              </div>
+              <div>
+                <ul class="krds-info-list decimal">
+                  <li>생활인구데이터, 용도별건물속성데이터, 상가정보데이터, 대규모점포정보데이터, 공공기관정보데이터, 학교용지현황데이터</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="section-4">
+              <div class="con-title-wrap">
+                <div class="con-title">
+                  <h1>분석 절차 및 결과 예시</h1>
+                </div>
+              </div>
+              <div class="section-3">
+                <h2>분석절차</h2>
+                <div class="section-5">
+                  <h3>데이터 수집</h3>
+                  <ul class="krds-info-list decimal">
+                    <li>생활권 특성을 도출하기 위해 경기도 내부 데이터인 생활인구(성연령별, 요일별)와 행정동별 특성을 파악하기 위해 용도별 건물속성 정보, 상가 정보, 대규모 점포, 공공기관, 초중고등학교 용지 현황 데이터를 수집</li>
+                  </ul>
+                </div>
+                <div class="section-5">
+                  <h3>데이터 전처리</h3>
+                  <ul class="krds-info-list decimal">
+                    <li>데이터의 표준화·일관성을 위해 Geo-coding을 수행하여 행정동 단위로 통일</li>
+                    <li>실질적인 노동 인구와 방문 인구를 분석하기 위해 20대부터 60대 인구 추출하여 각 (거주/방문/직장)생활인구 특성 간 비율로 변환</li>
+                    <li>직장인구 특성이 강한 생활권을 도출하기 위해 요일별 생활인구 데이터를 주중·주말로 이분화하고 생활인구 특성 간 비율로 변환</li>
+                    <li>행정동별 거주/직장/방문에 대한 상대적인 비중을 도출하기 위하여 건물이용 용도(거주용, 농공업용)와 상가 간 비율로 변환</li>
+                    <li>대규모 점포, 공공기관, 초중고등학교 데이터의 경우 경기도 전역 내 분포를 확인하기 위해 전체에 대한 비율로 계산</li>
+                  </ul>
+                </div>
+                <div class="section-5">
+                  <h3>생활권 도출</h3>
+                  <ul class="krds-info-list decimal">
+                    <li>행정동별 생활권 도출을 위해 K-평균 군집 알고리즘을 활용하여 군집 분석을 수행- 최적의 군집 수 도출을 위해 Elbow Method 활용- 군집 결과에 대한 검증을 위해 Silhouette Coefficient 활용- 각 군집별 특성을 확인하여 생활권 분류</li>
+                  </ul>
+                </div>
+                <div class="section-5">
+                  <h3>생활권별 현황 분석 및 시각화</h3>
+                  <ul class="krds-info-list decimal">
+                    <li>생활권별 거주/직장/방문 특성별 생활인구 현황 분석- 생활권별 성연령별, 주중·주말별 생활인구 현황 분석- 생활권별 거주용/농공업용/상가 건물 비중 도출- 시군구별, 행정동별 생활권 요인의 수치를 표를 통해 표출- 특정 행정동 외 주변 행정동의 생활권을 GIS 시각화를 통해 표출</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="section-5 mt-24">
+                <h2>결과예시</h2>
+                <div class="section-5">
+                  <div class="img-area" style="width: 100%">
+                    <img src="../resources/img/bg/dummy-image3.png" alt="더미 이미지">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="section-4">
+              <div class="con-title-wrap">
+                <div class="con-title">
+                  <h1>범례 기능 안내</h1>
+                </div>
+              </div>
+              <div class="section-5">
+                <h2>범례 ON</h2>
+                <div class="section-5">
+                  <div class="img-area" style="width: 100%">
+                    <img src="../resources/img/bg/dummy-image4.png" alt="더미 이미지">
+                  </div>
+                </div>
+              </div>
+              <div class="section-5 mt-24">
+                <h2>범례 OFF</h2>
+                <div class="section-5">
+                  <div class="img-area" style="width: 100%">
+                    <img src="../resources/img/bg/dummy-image5.png" alt="더미 이미지">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+  </div>
+
+  <!-- 레이어 : 검색 필터-->
+  <section id="popFilterId" class="krds-modal fade" data-type="bottom-sheet" role="dialog">
+    <!-- modal-dialog -->
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 class="modal-title">검색 필터</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <ul class="filter-list krds-accordion type-line">
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_01" aria-controls="acc_m_col_01">
+                  <div class="tit">분석종류</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_01" aria-labelledby="acc_m_hd_01">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>성연령별 유동인구 분석</option>
+                        <option value="">요일별 유동인구 분석</option>
+                        <option value="">시간대별 유동인구 분석</option>
+                        <option value="">유입지별 유동인구 분석</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_02" aria-controls="acc_m_col_02">
+                  <div class="tit">분석영역</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_02" aria-labelledby="acc_m_hd_02">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>가평군</option>
+                        <option value="">고양시</option>
+                        <option value="">고양시 덕양군</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>전체</option>
+                        <option value="">남성 전체</option>
+                        <option value="">10대 남성</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_03" aria-controls="acc_m_col_03">
+                  <div class="tit">기준연월</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_03" aria-labelledby="acc_m_hd_03">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>기준연월</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_04" aria-controls="acc_m_col_04">
+                  <div class="tit">분석기간</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_04" aria-labelledby="acc_m_hd_04">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <!-- 커스텀 데이트픽커 (년/월 선택용)-->
+                      <div class="form-conts calendar-conts month-picker-conts">
+                        <div class="calendar-input">
+                          <input type="number" class="krds-input medium form-control datepicker cal month-picker-input"
+                            placeholder="년/월 선택">
+                          <button type="button" class="krds-btn medium icon form-btn-monthpicker">
+                            <span class="sr-only">달력 열기</span>
+                            <i class="svg-icon ico-calendar"></i>
+                          </button>
+                        </div>
+                        <div class="krds-month-picker-area">
+                          <div class="calendar-wrap bottom" aria-label="달력">
+                            <div class="picker-head">
+                              <button type="button" class="btn-prev-year btn-cal-move prev krds-btn icon"><span
+                                  class="sr-only">이전 년도</span></button>
+                              <strong class="current-year">2026년</strong>
+                              <button type="button" class="btn-next-year btn-cal-move next krds-btn icon"><span
+                                  class="sr-only">다음 년도</span></button>
+                            </div>
+                            <div class="picker-body">
+                              <ul class="month-list">
+                                <li><button type="button" class="btn-month" data-month="1">1월</button></li>
+                                <li><button type="button" class="btn-month" data-month="2">2월</button></li>
+                                <li><button type="button" class="btn-month" data-month="3">3월</button></li>
+                                <li><button type="button" class="btn-month" data-month="4">4월</button></li>
+                                <li><button type="button" class="btn-month" data-month="5">5월</button></li>
+                                <li><button type="button" class="btn-month" data-month="6">6월</button></li>
+                                <li><button type="button" class="btn-month" data-month="7">7월</button></li>
+                                <li><button type="button" class="btn-month" data-month="8">8월</button></li>
+                                <li><button type="button" class="btn-month" data-month="9">9월</button></li>
+                                <li><button type="button" class="btn-month" data-month="10">10월</button></li>
+                                <li><button type="button" class="btn-month" data-month="11">11월</button></li>
+                                <li><button type="button" class="btn-month" data-month="12">12월</button></li>
+                              </ul>
+                            </div>
+                            <div class="picker-footer">
+                              <div class="picker-btn-wrap">
+                                <button type="button" class="krds-btn small tertiary btn-cancel">취소</button>
+                                <button type="button" class="krds-btn small primary btn-confirm">선택</button>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //커스텀 데이트픽커 (년/월 선택용)-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="li accordion-item active">
+              <h3 class="accordion-header">
+                <button type="button" class="btn-accordion active" id="acc_m_hd_05" aria-controls="acc_m_col_05">
+                  <div class="tit">성별/연령</div>
+                </button>
+              </h3>
+              <div class="accordion-collapse collapse" id="acc_m_col_05" aria-labelledby="acc_m_hd_05">
+                <div class="accordion-body">
+                  <div class="form-group">
+                    <div class="form-conts">
+                      <select class="krds-form-select medium completed" title="선택">
+                        <option value="" selected>전체</option>
+                        <option value="">남성 전체</option>
+                        <option value="">10대 남성</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">초기화</button>
+          <button type="button" class="krds-btn medium primary close-modal">분석하기</button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button type="button" class="krds-btn medium icon btn-close close-modal">
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <!-- //modal-dialog -->
+    <div class="modal-back in"></div>
+  </section>
+  <!-- //레이어 : 검색 필터-->
+
+  <!-- js -->
+  <script src="../resources/js/component/ui-script.js"></script>
+  <script src="../resources/js/component/common.js"></script>
+</body>
+
+</html>
